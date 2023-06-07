@@ -3,7 +3,7 @@
 set -e
 
 start_coin() {
-  blackfuryd \
+  black \
     -port=22556 \
     -rpcuser=user \
     -rpcpassword=password \

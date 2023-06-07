@@ -1476,6 +1476,32 @@ workflows:
           <<: *bitcoincash
           <<: *only-main
 
+      ####### BLACKFURY
+      - deploy-coinstack-node:
+          name: preview blackfury
+          organization: TAXISTAKE
+          pulumi-command: preview
+          requires:
+            - validate dependencies
+          <<: *blackfury
+          <<: *only-main
+
+      - approve-coinstack:
+          name: approve blackfury coinstack
+          type: approval
+          requires:
+            - preview blackfury
+          <<: *only-main
+
+      - deploy-coinstack-node:
+          name: deploy blackfury
+          organization: TAXISTAKE
+          pulumi-command: up -f --yes
+          requires:
+            - approve blackfury coinstack
+          <<: *blackfury
+          <<: *only-main
+
       ####### DOGECOIN
       - deploy-coinstack-node:
           name: preview dogecoin

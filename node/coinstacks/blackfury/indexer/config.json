@@ -14,7 +14,7 @@
   "subversion": "",
   "address_format": "",
   "xpub_magic": 49990397,
-  "slip44": 3,
+  "slip44": 60,
   "mempool_workers": 8,
   "mempool_sub_workers": 2,
   "block_addresses_to_keep": 300
