@@ -6,7 +6,7 @@
     "storageDir": "~/.openapitools",
     "generators": {
       "avalanche": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/avalanche/api/src/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/avalanche/api/src/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/avalanche",
         "enablePostProcessFile": true,
@@ -19,7 +19,7 @@
         }
       },
       "bitcoin": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/bitcoin/api/src/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/bitcoin/api/src/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/bitcoin",
         "enablePostProcessFile": true,
@@ -32,7 +32,7 @@
         }
       },
       "bitcoincash": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/bitcoincash/api/src/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/bitcoincash/api/src/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/bitcoincash",
         "enablePostProcessFile": true,
@@ -45,7 +45,7 @@
         }
       },
       "bnbsmartchain": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/bnbsmartchain/api/src/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/bnbsmartchain/api/src/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/bnbsmartchain",
         "enablePostProcessFile": true,
@@ -58,7 +58,7 @@
         }
       },
       "cosmos": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/go/coinstacks/cosmos/api/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/go/coinstacks/cosmos/api/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/cosmos",
         "enablePostProcessFile": true,
@@ -71,7 +71,7 @@
         }
       },
       "dogecoin": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/dogecoin/api/src/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/dogecoin/api/src/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/dogecoin",
         "enablePostProcessFile": true,
@@ -83,21 +83,8 @@
           "useSingleRequestParameter": true
         }
       },
-      "blackfury": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/blackfury/api/src/swagger.json",
-        "generatorName": "typescript-fetch",
-        "output": "#{cwd}/src/generated/blackfury",
-        "enablePostProcessFile": true,
-        "reservedWordsMappings": {
-          "in": "in"
-        },
-        "additionalProperties": {
-          "supportsES6": "true",
-          "useSingleRequestParameter": true
-        }
-      },
       "ethereum": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/ethereum/api/src/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/ethereum/api/src/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/ethereum",
         "enablePostProcessFile": true,
@@ -110,7 +97,7 @@
         }
       },
       "litecoin": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/litecoin/api/src/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/litecoin/api/src/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/litecoin",
         "enablePostProcessFile": true,
@@ -123,7 +110,7 @@
         }
       },
       "optimism": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/optimism/api/src/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/optimism/api/src/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/optimism",
         "enablePostProcessFile": true,
@@ -135,8 +122,21 @@
           "useSingleRequestParameter": true
         }
       },
+      "blackfury": {
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/blackfury/api/src/swagger.json",
+        "generatorName": "typescript-fetch",
+        "output": "#{cwd}/src/generated/blackfury",
+        "enablePostProcessFile": true,
+        "reservedWordsMappings": {
+          "in": "in"
+        },
+        "additionalProperties": {
+          "supportsES6": "true",
+          "useSingleRequestParameter": true
+        }
+      },
       "osmosis": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/go/coinstacks/osmosis/api/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/go/coinstacks/osmosis/api/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/osmosis",
         "enablePostProcessFile": true,
@@ -149,7 +149,7 @@
         }
       },
       "thorchain": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/go/coinstacks/thorchain/api/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/go/coinstacks/thorchain/api/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/thorchain",
         "enablePostProcessFile": true,
