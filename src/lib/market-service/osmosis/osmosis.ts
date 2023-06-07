@@ -5,8 +5,8 @@ import type {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@xblackfury/types'
-import { HistoryTimeframe } from '@xblackfury/types'
+} from '@shapeshiftoss/types'
+import { HistoryTimeframe } from '@shapeshiftoss/types'
 import axios from 'axios'
 import { bn, bnOrZero } from 'lib/bignumber/bignumber'
 

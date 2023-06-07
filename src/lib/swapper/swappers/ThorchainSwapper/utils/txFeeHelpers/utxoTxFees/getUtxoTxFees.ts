@@ -1,6 +1,6 @@
 import type { AssetId } from '@xblackfury/caip'
 import type { UtxoBaseAdapter } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { bn } from 'lib/bignumber/bignumber'
 import type { ProtocolFee, QuoteFeeData } from 'lib/swapper/api'
 import { SwapError, SwapErrorType } from 'lib/swapper/api'

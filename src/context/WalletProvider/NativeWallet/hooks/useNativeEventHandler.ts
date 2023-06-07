@@ -1,5 +1,5 @@
-import type { Event } from '@xblackfury/hdwallet-core'
-import { NativeEvents } from '@xblackfury/hdwallet-native'
+import type { Event } from '@shapeshiftoss/hdwallet-core'
+import { NativeEvents } from '@shapeshiftoss/hdwallet-native'
 import type { Dispatch } from 'react'
 import { useEffect } from 'react'
 import type { ActionTypes } from 'context/WalletProvider/actions'

@@ -1,4 +1,4 @@
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import type { SwapSource, Trade } from 'lib/swapper/api'
 import type { ZrxSupportedChainId } from 'lib/swapper/swappers/ZrxSwapper/ZrxSwapper'
 

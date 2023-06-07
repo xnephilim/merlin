@@ -1,5 +1,5 @@
 import type { AssetId, ChainId } from '@xblackfury/caip'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import type BigNumber from 'bignumber.js'
 import { bn } from 'lib/bignumber/bignumber'
 

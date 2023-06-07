@@ -1,5 +1,5 @@
 import type { AssetId } from '@xblackfury/caip'
-import type { HistoryData } from '@xblackfury/types'
+import type { HistoryData } from '@shapeshiftoss/types'
 import intersection from 'lodash/intersection'
 import { useSelector } from 'react-redux'
 import { selectAssets } from 'state/slices/selectors'

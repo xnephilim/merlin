@@ -2,7 +2,7 @@ import { CheckIcon, CloseIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 import { Box, Button, Link, Stack } from '@chakra-ui/react'
 import type { AccountId } from '@xblackfury/caip'
 import { fromAccountId } from '@xblackfury/caip'
-import { WithdrawType } from '@xblackfury/types'
+import { WithdrawType } from '@shapeshiftoss/types'
 import { Summary } from 'features/defi/components/Summary'
 import { TxStatus } from 'features/defi/components/TxStatus/TxStatus'
 import type {

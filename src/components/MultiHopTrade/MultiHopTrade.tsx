@@ -1,6 +1,6 @@
 import { ArrowDownIcon, ArrowForwardIcon, ArrowUpIcon } from '@chakra-ui/icons'
 import { Button, Flex, IconButton, Stack, useColorModeValue, useMediaQuery } from '@chakra-ui/react'
-import { KeplrHDWallet } from '@xblackfury/hdwallet-keplr/dist/keplr'
+import { KeplrHDWallet } from '@shapeshiftoss/hdwallet-keplr/dist/keplr'
 import { useCallback, useMemo } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { useTranslate } from 'react-polyglot'

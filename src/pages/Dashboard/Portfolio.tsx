@@ -8,7 +8,7 @@ import {
   StatNumber,
   Switch,
 } from '@chakra-ui/react'
-import type { HistoryTimeframe } from '@xblackfury/types'
+import type { HistoryTimeframe } from '@shapeshiftoss/types'
 import { useCallback, useMemo, useState } from 'react'
 import { Amount } from 'components/Amount/Amount'
 import { BalanceChart } from 'components/BalanceChart/BalanceChart'

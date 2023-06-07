@@ -1,7 +1,7 @@
 import { useColorModeValue } from '@chakra-ui/color-mode'
 import { Stack as CStack } from '@chakra-ui/react'
 import { useToken } from '@chakra-ui/system'
-import type { HistoryData } from '@xblackfury/types'
+import type { HistoryData } from '@shapeshiftoss/types'
 import { LinearGradient } from '@visx/gradient'
 import { ScaleSVG } from '@visx/responsive'
 import { scaleLinear } from '@visx/scale'

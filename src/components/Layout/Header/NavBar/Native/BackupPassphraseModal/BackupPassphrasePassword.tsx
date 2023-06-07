@@ -11,7 +11,7 @@ import {
   ModalCloseButton,
   ModalHeader,
 } from '@chakra-ui/react'
-import { Vault } from '@xblackfury/hdwallet-native-vault'
+import { Vault } from '@shapeshiftoss/hdwallet-native-vault'
 import { useState } from 'react'
 import type { FieldValues } from 'react-hook-form'
 import { useForm } from 'react-hook-form'

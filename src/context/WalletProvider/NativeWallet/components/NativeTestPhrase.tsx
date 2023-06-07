@@ -1,5 +1,5 @@
 import { Box, Button, Checkbox, Divider, ModalBody, ModalHeader, Tag, Wrap } from '@chakra-ui/react'
-import * as native from '@xblackfury/hdwallet-native'
+import * as native from '@shapeshiftoss/hdwallet-native'
 import * as bip39 from 'bip39'
 import range from 'lodash/range'
 import shuffle from 'lodash/shuffle'

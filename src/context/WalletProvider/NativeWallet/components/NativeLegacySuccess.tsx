@@ -1,4 +1,4 @@
-import type { Vault } from '@xblackfury/hdwallet-native-vault'
+import type { Vault } from '@shapeshiftoss/hdwallet-native-vault'
 import { useHistory, useLocation } from 'react-router-dom'
 
 import { LegacyLoginSuccess } from './LegacyMigration/LegacyLoginSuccess'

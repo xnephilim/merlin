@@ -1,7 +1,7 @@
 import type { AssetId } from '@xblackfury/caip'
 import { fromAssetId } from '@xblackfury/caip'
 import type { EvmChainAdapter } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import {

@@ -1,4 +1,4 @@
-import type { XDEFIHDWallet } from '@xblackfury/hdwallet-xdefi'
+import type { XDEFIHDWallet } from '@shapeshiftoss/hdwallet-xdefi'
 import React, { useCallback, useEffect, useState } from 'react'
 import type { RouteComponentProps } from 'react-router-dom'
 import type { ActionTypes } from 'context/WalletProvider/actions'

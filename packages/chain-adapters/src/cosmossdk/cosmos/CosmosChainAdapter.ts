@@ -1,9 +1,9 @@
 import type { AssetId } from '@xblackfury/caip'
 import { ASSET_REFERENCE, cosmosAssetId } from '@xblackfury/caip'
-import type { CosmosSignTx } from '@xblackfury/hdwallet-core'
-import { supportsCosmos } from '@xblackfury/hdwallet-core'
-import type { BIP44Params } from '@xblackfury/types'
-import { KnownChainIds } from '@xblackfury/types'
+import type { CosmosSignTx } from '@shapeshiftoss/hdwallet-core'
+import { supportsCosmos } from '@shapeshiftoss/hdwallet-core'
+import type { BIP44Params } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 
 import { ErrorHandler } from '../../error/ErrorHandler'

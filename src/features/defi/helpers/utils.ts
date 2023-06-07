@@ -7,8 +7,8 @@ import type {
   FeeData,
   FeeDataEstimate,
 } from '@xblackfury/chain-adapters'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
-import { supportsETH } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import type { Asset } from 'lib/asset-service'
 import { bnOrZero } from 'lib/bignumber/bignumber'
 import { selectPortfolioCryptoPrecisionBalanceByFilter } from 'state/slices/selectors'

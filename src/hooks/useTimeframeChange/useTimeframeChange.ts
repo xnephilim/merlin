@@ -1,4 +1,4 @@
-import type { HistoryTimeframe } from '@xblackfury/types'
+import type { HistoryTimeframe } from '@shapeshiftoss/types'
 import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import { preferences } from 'state/slices/preferencesSlice/preferencesSlice'

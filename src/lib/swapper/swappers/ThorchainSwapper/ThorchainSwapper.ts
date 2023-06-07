@@ -9,7 +9,7 @@ import type {
   SignTx,
   UtxoBaseAdapter,
 } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import type Web3 from 'web3'

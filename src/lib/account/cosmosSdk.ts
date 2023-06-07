@@ -1,7 +1,7 @@
 import { CHAIN_REFERENCE, fromChainId, toAccountId } from '@xblackfury/caip'
 import type { CosmosSdkChainId } from '@xblackfury/chain-adapters'
 import { cosmosSdkChainIds } from '@xblackfury/chain-adapters'
-import { supportsCosmos, supportsOsmosis, supportsThorchain } from '@xblackfury/hdwallet-core'
+import { supportsCosmos, supportsOsmosis, supportsThorchain } from '@shapeshiftoss/hdwallet-core'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import type { AccountMetadataById } from 'state/slices/portfolioSlice/portfolioSliceCommon'
 

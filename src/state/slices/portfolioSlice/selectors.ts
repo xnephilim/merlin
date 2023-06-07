@@ -18,7 +18,7 @@ import {
   polygonAssetId,
   thorchainAssetId,
 } from '@xblackfury/caip'
-import type { BIP44Params } from '@xblackfury/types'
+import type { BIP44Params } from '@shapeshiftoss/types'
 import cloneDeep from 'lodash/cloneDeep'
 import entries from 'lodash/entries'
 import keys from 'lodash/keys'

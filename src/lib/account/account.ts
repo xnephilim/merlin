@@ -1,6 +1,6 @@
 import type { ChainId } from '@xblackfury/caip'
 import { CHAIN_NAMESPACE, fromChainId } from '@xblackfury/caip'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import merge from 'lodash/merge'
 import type { AccountMetadataById } from 'state/slices/portfolioSlice/portfolioSliceCommon'
 

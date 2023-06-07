@@ -1,5 +1,5 @@
 import type { cosmossdk } from '@xblackfury/chain-adapters'
-import type { BIP44Params } from '@xblackfury/types'
+import type { BIP44Params } from '@shapeshiftoss/types'
 import {
   isStakingChainAdapter,
   StakingAction,

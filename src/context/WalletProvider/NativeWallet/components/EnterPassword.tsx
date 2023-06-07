@@ -11,8 +11,8 @@ import {
   ModalBody,
   ModalHeader,
 } from '@chakra-ui/react'
-import type { crypto, NativeHDWallet } from '@xblackfury/hdwallet-native'
-import { Vault } from '@xblackfury/hdwallet-native-vault'
+import type { crypto, NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
+import { Vault } from '@shapeshiftoss/hdwallet-native-vault'
 import { useState } from 'react'
 import type { FieldValues } from 'react-hook-form'
 import { useForm } from 'react-hook-form'

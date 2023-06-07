@@ -9,7 +9,7 @@ import {
   polygonAssetId,
 } from '@xblackfury/caip'
 import type { Account } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { accountToPortfolio } from 'state/slices/portfolioSlice/utils'
 
 type MockChainIds =

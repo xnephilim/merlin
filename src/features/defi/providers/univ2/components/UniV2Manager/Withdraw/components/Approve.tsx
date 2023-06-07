@@ -1,7 +1,7 @@
 import { useToast } from '@chakra-ui/react'
 import type { AccountId } from '@xblackfury/caip'
 import { ethAssetId, fromAssetId, toAssetId } from '@xblackfury/caip'
-import { supportsETH } from '@xblackfury/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import { UNISWAP_V2_ROUTER_02_CONTRACT_ADDRESS } from 'contracts/constants'
 import { ethers } from 'ethers'
 import { Approve as ReusableApprove } from 'features/defi/components/Approve/Approve'

@@ -7,7 +7,7 @@ import {
   gnosisAssetId,
   polygonAssetId,
 } from '@xblackfury/caip'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import fs from 'fs'
 import merge from 'lodash/merge'
 import orderBy from 'lodash/orderBy'

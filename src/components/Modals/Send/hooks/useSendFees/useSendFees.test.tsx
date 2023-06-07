@@ -1,7 +1,7 @@
 import type { AssetId } from '@xblackfury/caip'
 import { ethAssetId } from '@xblackfury/caip'
 import { FeeDataKey } from '@xblackfury/chain-adapters'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import { renderHook, waitFor } from '@testing-library/react'
 import type { PropsWithChildren } from 'react'
 import { useFormContext, useWatch } from 'react-hook-form'

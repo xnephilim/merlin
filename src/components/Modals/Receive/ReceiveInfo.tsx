@@ -20,7 +20,7 @@ import {
 } from '@chakra-ui/react'
 import type { AccountId } from '@xblackfury/caip'
 import { CHAIN_NAMESPACE, fromChainId } from '@xblackfury/caip'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslate } from 'react-polyglot'
 import { useHistory } from 'react-router-dom'

@@ -22,7 +22,7 @@ import {
   toAccountId,
 } from '@xblackfury/caip'
 import type { Account } from '@xblackfury/chain-adapters'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import {
   supportsAvalanche,
   supportsBSC,
@@ -33,8 +33,8 @@ import {
   supportsOptimism,
   supportsPolygon,
   supportsThorchain,
-} from '@xblackfury/hdwallet-core'
-import type { KnownChainIds } from '@xblackfury/types'
+} from '@shapeshiftoss/hdwallet-core'
+import type { KnownChainIds } from '@shapeshiftoss/types'
 import cloneDeep from 'lodash/cloneDeep'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import type { BigNumber } from 'lib/bignumber/bignumber'

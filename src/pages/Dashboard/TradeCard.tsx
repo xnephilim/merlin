@@ -1,7 +1,7 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import type { AssetId } from '@xblackfury/caip'
 import { ethAssetId, merlinAssetId } from '@xblackfury/caip'
-import { KeplrHDWallet } from '@xblackfury/hdwallet-keplr/dist/keplr'
+import { KeplrHDWallet } from '@shapeshiftoss/hdwallet-keplr/dist/keplr'
 import { useEffect, useMemo } from 'react'
 import { useTranslate } from 'react-polyglot'
 import { useSelector } from 'react-redux'

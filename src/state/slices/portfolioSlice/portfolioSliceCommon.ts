@@ -1,5 +1,5 @@
 import type { AccountId, AssetId } from '@xblackfury/caip'
-import type { BIP44Params, UtxoAccountType } from '@xblackfury/types'
+import type { BIP44Params, UtxoAccountType } from '@shapeshiftoss/types'
 import type { PartialRecord } from 'lib/utils'
 import type { Nominal } from 'types/common'
 

@@ -1,5 +1,5 @@
 import type { AssetId, ChainId } from '@xblackfury/caip'
-import type { MarketData } from '@xblackfury/types'
+import type { MarketData } from '@shapeshiftoss/types'
 import type { Asset } from 'lib/asset-service'
 import { bnOrZero } from 'lib/bignumber/bignumber'
 import { fromBaseUnit } from 'lib/math'

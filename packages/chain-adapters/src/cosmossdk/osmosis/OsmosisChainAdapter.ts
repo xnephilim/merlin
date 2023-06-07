@@ -1,9 +1,9 @@
 import type { AssetId } from '@xblackfury/caip'
 import { ASSET_REFERENCE, osmosisAssetId } from '@xblackfury/caip'
-import type { OsmosisSignTx } from '@xblackfury/hdwallet-core'
-import { supportsOsmosis } from '@xblackfury/hdwallet-core'
-import type { BIP44Params } from '@xblackfury/types'
-import { KnownChainIds } from '@xblackfury/types'
+import type { OsmosisSignTx } from '@shapeshiftoss/hdwallet-core'
+import { supportsOsmosis } from '@shapeshiftoss/hdwallet-core'
+import type { BIP44Params } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 
 import { ErrorHandler } from '../../error/ErrorHandler'

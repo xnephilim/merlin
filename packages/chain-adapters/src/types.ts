@@ -6,8 +6,8 @@ import type {
   HDWallet,
   OsmosisSignTx,
   ThorchainSignTx,
-} from '@xblackfury/hdwallet-core'
-import type { ChainSpecific, KnownChainIds, UtxoAccountType } from '@xblackfury/types'
+} from '@shapeshiftoss/hdwallet-core'
+import type { ChainSpecific, KnownChainIds, UtxoAccountType } from '@shapeshiftoss/types'
 import type * as hightable from '@xblackfury/hightable-client'
 
 import * as cosmossdk from './cosmossdk/types'

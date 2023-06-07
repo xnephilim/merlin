@@ -1,6 +1,6 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Button, Flex, useColorModeValue } from '@chakra-ui/react'
-import { supportsETH } from '@xblackfury/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 import isBetween from 'dayjs/plugin/isBetween'

@@ -1,6 +1,6 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Button, Divider, Flex, ModalBody, ModalHeader, Stack } from '@chakra-ui/react'
-import { Vault } from '@xblackfury/hdwallet-native-vault'
+import { Vault } from '@shapeshiftoss/hdwallet-native-vault'
 import { useEffect } from 'react'
 import { useTranslate } from 'react-polyglot'
 import type { RouteComponentProps } from 'react-router'

@@ -14,7 +14,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import type { AccountId, AssetId } from '@xblackfury/caip'
-import type { HistoryTimeframe } from '@xblackfury/types'
+import type { HistoryTimeframe } from '@shapeshiftoss/types'
 import { useEffect, useMemo, useState } from 'react'
 import NumberFormat from 'react-number-format'
 import { useTranslate } from 'react-polyglot'

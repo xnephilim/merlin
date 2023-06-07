@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@xblackfury/caip": "workspace:^",
-    "@xblackfury/types": "workspace:^",
+    "@shapeshiftoss/types": "workspace:^",
     "@xblackfury/hightable-client": "workspace:^",
     "bech32": "^2.0.0",
     "bitcoinjs-lib": "^5.2.0",

@@ -1,6 +1,6 @@
 import { Box, IconButton, useColorMode } from '@chakra-ui/react'
-import type { BIP32Path, ETHSignTypedData } from '@xblackfury/hdwallet-core'
-import { supportsETH } from '@xblackfury/hdwallet-core'
+import type { BIP32Path, ETHSignTypedData } from '@shapeshiftoss/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import type { CustomTheme } from '@wherever/react-notification-feed'
 import {
   NotificationBell,

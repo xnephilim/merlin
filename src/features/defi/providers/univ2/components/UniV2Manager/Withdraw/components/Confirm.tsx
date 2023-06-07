@@ -1,7 +1,7 @@
 import { Alert, AlertIcon, Box, Stack } from '@chakra-ui/react'
 import type { AccountId } from '@xblackfury/caip'
 import { ethAssetId, toAssetId } from '@xblackfury/caip'
-import { supportsETH } from '@xblackfury/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import { Confirm as ReusableConfirm } from 'features/defi/components/Confirm/Confirm'
 import { PairIcons } from 'features/defi/components/PairIcons/PairIcons'
 import { Summary } from 'features/defi/components/Summary'

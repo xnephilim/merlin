@@ -12,7 +12,7 @@ import {
 } from '@xblackfury/caip'
 import type { EvmChainId } from '@xblackfury/chain-adapters'
 import { evmChainIds } from '@xblackfury/chain-adapters'
-import { WalletConnectHDWallet } from '@xblackfury/hdwallet-walletconnect'
+import { WalletConnectHDWallet } from '@shapeshiftoss/hdwallet-walletconnect'
 import WalletConnect from '@walletconnect/client'
 import type { IClientMeta, IUpdateChainParams } from '@walletconnect/legacy-types'
 import { useIsWalletConnectToDappsSupportedWallet } from 'plugins/walletConnectToDapps/hooks/useIsWalletConnectToDappsSupportedWallet'

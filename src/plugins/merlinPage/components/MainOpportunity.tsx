@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Skeleton, Text as CText, useColorModeValue } from '@chakra-ui/react'
 import type { ToAssetIdArgs } from '@xblackfury/caip'
 import { ethChainId } from '@xblackfury/caip'
-import { supportsETH } from '@xblackfury/hdwallet-core/dist/wallet'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core/dist/wallet'
 import { useMemo } from 'react'
 import { Amount } from 'components/Amount/Amount'
 import { AssetIcon } from 'components/AssetIcon'

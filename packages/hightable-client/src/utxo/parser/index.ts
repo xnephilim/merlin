@@ -1,5 +1,5 @@
 import type { AssetId, ChainId } from '@xblackfury/caip'
-import type { utxo } from '@xblackfury/common-api'
+import type { utxo } from '@shapeshiftoss/common-api'
 import { BigNumber } from 'bignumber.js'
 
 import type { ParsedTx } from '../../types'

@@ -2,7 +2,7 @@ import { createSlice, prepareAutoBatched } from '@reduxjs/toolkit'
 import { createApi } from '@reduxjs/toolkit/dist/query/react'
 import type { AssetId } from '@xblackfury/caip'
 import { fromAssetId } from '@xblackfury/caip'
-import type { HistoryData, MarketCapResult, MarketData } from '@xblackfury/types'
+import type { HistoryData, MarketCapResult, MarketData } from '@shapeshiftoss/types'
 import merge from 'lodash/merge'
 import { bnOrZero } from 'lib/bignumber/bignumber'
 import type {

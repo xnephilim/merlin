@@ -2,7 +2,7 @@ import { Alert, AlertIcon, Box, Skeleton, Stack, useToast } from '@chakra-ui/rea
 import type { AccountId } from '@xblackfury/caip'
 import { bchChainId, fromAccountId, toAssetId } from '@xblackfury/caip'
 import { FeeDataKey } from '@xblackfury/chain-adapters'
-import { supportsETH } from '@xblackfury/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import dayjs from 'dayjs'
 import { Confirm as ReusableConfirm } from 'features/defi/components/Confirm/Confirm'
 import { Summary } from 'features/defi/components/Summary'

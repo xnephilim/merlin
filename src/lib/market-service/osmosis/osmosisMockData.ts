@@ -1,4 +1,4 @@
-import type { MarketData } from '@xblackfury/types'
+import type { MarketData } from '@shapeshiftoss/types'
 
 import type { OsmosisMarketCap } from './osmosis-types'
 

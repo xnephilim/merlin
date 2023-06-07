@@ -1,6 +1,6 @@
 import { CHAIN_NAMESPACE, fromAssetId } from '@xblackfury/caip'
 import type { EvmChainId } from '@xblackfury/chain-adapters'
-import type { KnownChainIds } from '@xblackfury/types'
+import type { KnownChainIds } from '@shapeshiftoss/types'
 import type { DisplayFeeData, GetFormFeesArgs, GetReceiveAddressArgs } from 'components/Trade/types'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import type { Asset } from 'lib/asset-service'

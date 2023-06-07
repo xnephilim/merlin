@@ -1,5 +1,5 @@
 import { polygonAssetId, polygonChainId } from '@xblackfury/caip'
-import type { evm } from '@xblackfury/common-api'
+import type { evm } from '@shapeshiftoss/common-api'
 
 import type { Trade, Transfer } from '../../../../types'
 import { Dex, TradeType, TransferType, TxStatus } from '../../../../types'

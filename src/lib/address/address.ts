@@ -1,6 +1,6 @@
 import type { AssetId, ChainId } from '@xblackfury/caip'
 import { bchChainId, btcChainId, dogeChainId, ethChainId, ltcChainId } from '@xblackfury/caip'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import bip21 from 'bip21'
 import { parse as parseEthUrl } from 'eth-url-parser'
 import type { Address } from 'viem'

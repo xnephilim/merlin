@@ -1,7 +1,7 @@
 import { CHAIN_REFERENCE, fromChainId } from '@xblackfury/caip'
 import type { osmosis } from '@xblackfury/chain-adapters'
 import { toAddressNList } from '@xblackfury/chain-adapters'
-import type { HDWallet, Osmosis } from '@xblackfury/hdwallet-core'
+import type { HDWallet, Osmosis } from '@shapeshiftoss/hdwallet-core'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import axios from 'axios'

@@ -5,11 +5,11 @@
  * @group unit
  */
 import { ASSET_REFERENCE, bscAssetId, bscChainId, fromChainId } from '@xblackfury/caip'
-import type { ETHSignMessage, ETHSignTx, ETHWallet } from '@xblackfury/hdwallet-core'
-import type { NativeAdapterArgs } from '@xblackfury/hdwallet-native'
-import { NativeHDWallet } from '@xblackfury/hdwallet-native'
-import type { BIP44Params } from '@xblackfury/types'
-import { KnownChainIds } from '@xblackfury/types'
+import type { ETHSignMessage, ETHSignTx, ETHWallet } from '@shapeshiftoss/hdwallet-core'
+import type { NativeAdapterArgs } from '@shapeshiftoss/hdwallet-native'
+import { NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
+import type { BIP44Params } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import type * as hightable from '@xblackfury/hightable-client'
 import { merge } from 'lodash'
 import { numberToHex } from 'web3-utils'

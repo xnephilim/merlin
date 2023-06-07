@@ -8,7 +8,7 @@ import type {
   UtxoChainId,
 } from '@xblackfury/chain-adapters'
 import { FeeDataKey } from '@xblackfury/chain-adapters'
-import { supportsETH } from '@xblackfury/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import { utils } from 'ethers'
 import { Confirm as ReusableConfirm } from 'features/defi/components/Confirm/Confirm'
 import { Summary } from 'features/defi/components/Summary'

@@ -1,4 +1,4 @@
-import { Vault } from '@xblackfury/hdwallet-native-vault'
+import { Vault } from '@shapeshiftoss/hdwallet-native-vault'
 import { useHistory } from 'react-router-dom'
 import { decryptNativeWallet } from 'lib/cryptography/login'
 

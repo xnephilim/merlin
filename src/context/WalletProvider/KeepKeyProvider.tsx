@@ -10,8 +10,8 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import type { Features } from '@keepkey/device-protocol/lib/messages_pb'
-import type { KeepKeyHDWallet } from '@xblackfury/hdwallet-keepkey'
-import { isKeepKey } from '@xblackfury/hdwallet-keepkey'
+import type { KeepKeyHDWallet } from '@shapeshiftoss/hdwallet-keepkey'
+import { isKeepKey } from '@shapeshiftoss/hdwallet-keepkey'
 import React, {
   createContext,
   useCallback,

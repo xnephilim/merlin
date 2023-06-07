@@ -1,5 +1,5 @@
 import type { ChainId } from '@xblackfury/caip'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import type * as hightable from '@xblackfury/hightable-client'
 
 import type * as common from '../types'

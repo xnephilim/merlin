@@ -1,7 +1,7 @@
 import { fromAssetId, fromChainId } from '@xblackfury/caip'
 import type { SignMessageInput } from '@xblackfury/chain-adapters'
 import { toAddressNList } from '@xblackfury/chain-adapters'
-import type { ETHSignMessage } from '@xblackfury/hdwallet-core'
+import type { ETHSignMessage } from '@shapeshiftoss/hdwallet-core'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import { getConfig } from 'config'

@@ -1,6 +1,6 @@
 import type { ChainId } from '@xblackfury/caip'
 import { CHAIN_NAMESPACE, fromChainId } from '@xblackfury/caip'
-import type { ETHWallet } from '@xblackfury/hdwallet-core'
+import type { ETHWallet } from '@shapeshiftoss/hdwallet-core'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import { useWallet } from 'hooks/useWallet/useWallet'

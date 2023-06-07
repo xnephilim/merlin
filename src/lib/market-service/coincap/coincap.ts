@@ -6,8 +6,8 @@ import type {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@xblackfury/types'
-import { HistoryTimeframe } from '@xblackfury/types'
+} from '@shapeshiftoss/types'
+import { HistoryTimeframe } from '@shapeshiftoss/types'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import omit from 'lodash/omit'

@@ -1,5 +1,5 @@
 import type { ChainAdapter } from '@xblackfury/chain-adapters'
-import type { KnownChainIds } from '@xblackfury/types'
+import type { KnownChainIds } from '@shapeshiftoss/types'
 // import https from 'https'
 import { find } from 'lodash'
 import filter from 'lodash/filter'

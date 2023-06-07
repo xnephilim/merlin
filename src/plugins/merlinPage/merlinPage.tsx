@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react'
 import type { AssetId, ToAssetIdArgs } from '@xblackfury/caip'
 import { ethChainId, merlinAssetId, merlinxAssetId } from '@xblackfury/caip'
-import { supportsETH } from '@xblackfury/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import qs from 'qs'
 import { useCallback, useMemo } from 'react'
 import { useTranslate } from 'react-polyglot'

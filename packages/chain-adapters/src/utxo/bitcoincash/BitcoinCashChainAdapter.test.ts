@@ -7,16 +7,16 @@
  */
 
 import { bchAssetId, bchChainId } from '@xblackfury/caip'
-import type { BTCSignTx, BTCWallet, HDWallet } from '@xblackfury/hdwallet-core'
+import type { BTCSignTx, BTCWallet, HDWallet } from '@shapeshiftoss/hdwallet-core'
 import {
   BTCInputScriptType,
   BTCOutputAddressType,
   BTCOutputScriptType,
-} from '@xblackfury/hdwallet-core'
-import type { NativeAdapterArgs } from '@xblackfury/hdwallet-native'
-import { NativeHDWallet } from '@xblackfury/hdwallet-native'
-import type { BIP44Params } from '@xblackfury/types'
-import { KnownChainIds, UtxoAccountType } from '@xblackfury/types'
+} from '@shapeshiftoss/hdwallet-core'
+import type { NativeAdapterArgs } from '@shapeshiftoss/hdwallet-native'
+import { NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
+import type { BIP44Params } from '@shapeshiftoss/types'
+import { KnownChainIds, UtxoAccountType } from '@shapeshiftoss/types'
 
 import type { Account, BuildSendTxInput } from '../../types'
 import type { ChainAdapterArgs } from '../UtxoBaseAdapter'

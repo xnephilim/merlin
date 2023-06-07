@@ -8,7 +8,7 @@ import {
   supportsGnosis,
   supportsOptimism,
   supportsPolygon,
-} from '@xblackfury/hdwallet-core'
+} from '@shapeshiftoss/hdwallet-core'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import type { AccountMetadataById } from 'state/slices/portfolioSlice/portfolioSliceCommon'
 

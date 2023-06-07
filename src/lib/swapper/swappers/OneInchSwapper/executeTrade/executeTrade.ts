@@ -1,6 +1,6 @@
 import { fromAssetId } from '@xblackfury/caip'
 import type { EvmChainId } from '@xblackfury/chain-adapters'
-import { supportsETH } from '@xblackfury/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'

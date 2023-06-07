@@ -1,9 +1,9 @@
 import { useToast } from '@chakra-ui/react'
 import { ethAssetId, ethChainId } from '@xblackfury/caip'
 import { FeeDataKey } from '@xblackfury/chain-adapters'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
-import { supportsETH } from '@xblackfury/hdwallet-core'
-import { KnownChainIds } from '@xblackfury/types'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { renderHook } from '@testing-library/react'
 import { ethereum as mockEthereum } from 'test/mocks/assets'
 import { EthSend } from 'test/mocks/txs'
@@ -33,8 +33,8 @@ jest.mock('@chakra-ui/react', () => ({
   ...jest.requireActual('@chakra-ui/react'),
   useToast: jest.fn(),
 }))
-jest.mock('@xblackfury/hdwallet-core', () => ({
-  ...jest.requireActual('@xblackfury/hdwallet-core'),
+jest.mock('@shapeshiftoss/hdwallet-core', () => ({
+  ...jest.requireActual('@shapeshiftoss/hdwallet-core'),
   supportsETH: jest.fn(),
 }))
 jest.mock('react-hook-form')

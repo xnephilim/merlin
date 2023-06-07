@@ -1,6 +1,6 @@
 import { adapters } from '@xblackfury/caip'
-import type { MarketData } from '@xblackfury/types'
-import { HistoryTimeframe } from '@xblackfury/types'
+import type { MarketData } from '@shapeshiftoss/types'
+import { HistoryTimeframe } from '@shapeshiftoss/types'
 import axios from 'axios'
 
 import { CoinGeckoMarketService } from './coingecko'

@@ -1,7 +1,7 @@
 import type { ChainId } from '@xblackfury/caip'
 import type { ethereum, gnosis } from '@xblackfury/chain-adapters'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
-import type { KnownChainIds } from '@xblackfury/types'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import type { KnownChainIds } from '@shapeshiftoss/types'
 import type { Trade, TradeResult } from 'lib/swapper/api'
 
 export type CowSwapQuoteResponse = {

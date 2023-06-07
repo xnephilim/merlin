@@ -1,7 +1,7 @@
 import type { ChainId } from '@xblackfury/caip'
 import type { ChainAdapter } from '@xblackfury/chain-adapters'
 import { ethereum } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 import { getConfig } from 'config'
 import { type Plugins } from 'plugins/types'

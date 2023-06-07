@@ -1,5 +1,5 @@
 import { ethAssetId, ethChainId } from '@xblackfury/caip'
-import type { evm } from '@xblackfury/common-api'
+import type { evm } from '@shapeshiftoss/common-api'
 import axios from 'axios'
 
 import type { Trade } from '../../../../types'

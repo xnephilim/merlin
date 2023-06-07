@@ -7,11 +7,11 @@
  */
 
 import { ltcAssetId, ltcChainId } from '@xblackfury/caip'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
-import type { NativeAdapterArgs } from '@xblackfury/hdwallet-native'
-import { NativeHDWallet } from '@xblackfury/hdwallet-native'
-import type { BIP44Params } from '@xblackfury/types'
-import { KnownChainIds, UtxoAccountType } from '@xblackfury/types'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import type { NativeAdapterArgs } from '@shapeshiftoss/hdwallet-native'
+import { NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
+import type { BIP44Params } from '@shapeshiftoss/types'
+import { KnownChainIds, UtxoAccountType } from '@shapeshiftoss/types'
 
 import type { Account, BuildSendTxInput } from '../../types'
 import type { ChainAdapterArgs } from '../UtxoBaseAdapter'

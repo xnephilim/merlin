@@ -14,7 +14,7 @@ import {
   polygonChainId,
   thorchainChainId,
 } from '@xblackfury/caip'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import {
   supportsAvalanche,
   supportsBSC,
@@ -26,7 +26,7 @@ import {
   supportsOsmosis,
   supportsPolygon,
   supportsThorchain,
-} from '@xblackfury/hdwallet-core'
+} from '@shapeshiftoss/hdwallet-core'
 
 type UseWalletSupportsChainArgs = { chainId: ChainId; wallet: HDWallet | null }
 type UseWalletSupportsChain = (args: UseWalletSupportsChainArgs) => boolean

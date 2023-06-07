@@ -1,6 +1,6 @@
 import { btcAssetId, cosmosAssetId } from '@xblackfury/caip'
 import { FeeDataKey } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { act, renderHook, waitFor } from '@testing-library/react'
 import { mocked } from 'jest-mock'
 import type { PropsWithChildren } from 'react'

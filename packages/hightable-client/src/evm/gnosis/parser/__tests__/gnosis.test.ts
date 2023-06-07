@@ -1,5 +1,5 @@
 import { gnosisAssetId, gnosisChainId } from '@xblackfury/caip'
-import type { evm } from '@xblackfury/common-api'
+import type { evm } from '@shapeshiftoss/common-api'
 
 import { TransferType, TxStatus } from '../../../../types'
 import type { ParsedTx } from '../../../parser'

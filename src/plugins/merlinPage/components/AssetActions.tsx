@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 import type { AssetId } from '@xblackfury/caip'
 import { merlinAssetId } from '@xblackfury/caip'
-import { supportsETH } from '@xblackfury/hdwallet-core/dist/wallet'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core/dist/wallet'
 import isEqual from 'lodash/isEqual'
 import qs from 'qs'
 import { useCallback, useMemo } from 'react'

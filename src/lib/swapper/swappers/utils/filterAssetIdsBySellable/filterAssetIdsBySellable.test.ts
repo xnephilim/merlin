@@ -6,7 +6,7 @@ import {
   optimismAssetId,
   thorchainAssetId,
 } from '@xblackfury/caip'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import type { Asset } from 'lib/asset-service'
 
 import * as selectors from '../../../../../state/slices/assetsSlice/selectors'

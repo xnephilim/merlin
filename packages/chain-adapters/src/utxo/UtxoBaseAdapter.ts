@@ -4,14 +4,14 @@ import type {
   BTCSignTxOutput,
   HDWallet,
   PublicKey,
-} from '@xblackfury/hdwallet-core'
+} from '@shapeshiftoss/hdwallet-core'
 import {
   bip32ToAddressNList,
   BTCOutputAddressType,
   supportsBTC,
-} from '@xblackfury/hdwallet-core'
-import type { BIP44Params } from '@xblackfury/types'
-import { KnownChainIds, UtxoAccountType } from '@xblackfury/types'
+} from '@shapeshiftoss/hdwallet-core'
+import type { BIP44Params } from '@shapeshiftoss/types'
+import { KnownChainIds, UtxoAccountType } from '@shapeshiftoss/types'
 import type * as hightable from '@xblackfury/hightable-client'
 import WAValidator from 'multicoin-address-validator'
 

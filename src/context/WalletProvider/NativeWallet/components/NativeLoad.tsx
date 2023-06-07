@@ -10,7 +10,7 @@ import {
   ModalHeader,
   VStack,
 } from '@chakra-ui/react'
-import { Vault } from '@xblackfury/hdwallet-native-vault'
+import { Vault } from '@shapeshiftoss/hdwallet-native-vault'
 import dayjs from 'dayjs'
 import { useEffect, useState } from 'react'
 import { FaWallet } from 'react-icons/fa'

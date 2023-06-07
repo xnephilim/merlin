@@ -1,7 +1,7 @@
 import type Lifi from '@lifi/sdk/dist/Lifi'
 import type { GetStatusRequest, Route } from '@lifi/sdk/dist/types'
 import type { BuildSendTxInput, EvmChainId } from '@xblackfury/chain-adapters'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import type { providers } from 'ethers'

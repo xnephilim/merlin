@@ -1,13 +1,13 @@
 import type { AssetId, ChainId } from '@xblackfury/caip'
 import type { CosmosSdkChainId, EvmChainId, UtxoChainId } from '@xblackfury/chain-adapters'
 import { createErrorClass } from '@xblackfury/errors'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import type {
   ChainSpecific,
   KnownChainIds,
   MarketData,
   UtxoAccountType,
-} from '@xblackfury/types'
+} from '@shapeshiftoss/types'
 import type { Result } from '@sniptt/monads'
 import type { Asset } from 'lib/asset-service'
 

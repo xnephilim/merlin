@@ -1,6 +1,6 @@
 import type { ethereum } from '@xblackfury/chain-adapters'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
-import { KnownChainIds } from '@xblackfury/types'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { Ok } from '@sniptt/monads'
 import type { AxiosStatic } from 'axios'
 import Web3 from 'web3'
@@ -23,7 +23,7 @@ jest.mock('lib/swapper/swappers/ZrxSwapper/utils/zrxService', () => {
   }
 })
 jest.mock('@xblackfury/chain-adapters', () => {
-  const { KnownChainIds } = require('@xblackfury/types')
+  const { KnownChainIds } = require('@shapeshiftoss/types')
   return {
     isEvmChainId: jest.fn(() => true),
     evmChainIds: [KnownChainIds.EthereumMainnet],
@@ -33,7 +33,7 @@ jest.mock('@xblackfury/chain-adapters', () => {
   }
 })
 jest.mock('context/PluginProvider/chainAdapterSingleton', () => {
-  const { KnownChainIds } = require('@xblackfury/types')
+  const { KnownChainIds } = require('@shapeshiftoss/types')
   const { feeData } = require('../../utils/test-data/setupDeps')
   return {
     getChainAdapterManager: jest.fn(

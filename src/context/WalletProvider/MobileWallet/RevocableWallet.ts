@@ -1,4 +1,4 @@
-import { crypto } from '@xblackfury/hdwallet-native'
+import { crypto } from '@shapeshiftoss/hdwallet-native'
 import { generateMnemonic, validateMnemonic } from 'bip39'
 
 import type { MobileWalletInfoWithMnemonic, RevocableObject } from './types'

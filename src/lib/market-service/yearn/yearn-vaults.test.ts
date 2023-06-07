@@ -1,5 +1,5 @@
 import { CHAIN_NAMESPACE, CHAIN_REFERENCE, toAssetId } from '@xblackfury/caip'
-import { HistoryTimeframe } from '@xblackfury/types'
+import { HistoryTimeframe } from '@shapeshiftoss/types'
 
 import { YearnVaultMarketCapService } from './yearn-vaults'
 import { mockYearnGQLData, mockYearnVaultRestData } from './yearnMockData'

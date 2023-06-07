@@ -1,4 +1,4 @@
-import type { KnownChainIds } from '@xblackfury/types'
+import type { KnownChainIds } from '@shapeshiftoss/types'
 import { Ok } from '@sniptt/monads'
 import type { AxiosResponse, AxiosStatic } from 'axios'
 import type Web3 from 'web3'

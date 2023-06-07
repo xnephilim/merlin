@@ -1,4 +1,4 @@
-import type { Keyring } from '@xblackfury/hdwallet-core'
+import type { Keyring } from '@shapeshiftoss/hdwallet-core'
 import { useEffect } from 'react'
 
 interface KeyringState {

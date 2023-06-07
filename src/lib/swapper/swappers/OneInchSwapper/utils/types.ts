@@ -1,5 +1,5 @@
 import type { EvmChainId } from '@xblackfury/chain-adapters'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import type { Trade } from 'lib/swapper/api'
 
 export type OneInchQuoteApiInput = {

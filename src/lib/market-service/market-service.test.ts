@@ -1,4 +1,4 @@
-import { HistoryTimeframe } from '@xblackfury/types'
+import { HistoryTimeframe } from '@shapeshiftoss/types'
 
 import { CoinGeckoMarketService } from './coingecko/coingecko'
 import {

@@ -33,7 +33,7 @@ jest.mock('state/zustand/swapperStore/amountSelectors', () => ({
   selectSellAssetUsdRate: jest.fn(() => '1'),
 }))
 jest.mock('@xblackfury/chain-adapters', () => {
-  const { KnownChainIds } = require('@xblackfury/types')
+  const { KnownChainIds } = require('@shapeshiftoss/types')
   return {
     isEvmChainId: jest.fn(() => true),
     evmChainIds: [KnownChainIds.EthereumMainnet],
@@ -43,7 +43,7 @@ jest.mock('@xblackfury/chain-adapters', () => {
   }
 })
 jest.mock('context/PluginProvider/chainAdapterSingleton', () => {
-  const { KnownChainIds } = require('@xblackfury/types')
+  const { KnownChainIds } = require('@shapeshiftoss/types')
   const { gasFeeData } = require('../../utils/test-data/setupDeps')
   return {
     getChainAdapterManager: jest.fn(

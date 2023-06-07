@@ -1,7 +1,7 @@
 import type { AssetId, ChainId } from '@xblackfury/caip'
 import { fromChainId, generateAssetIdFromOsmosisDenom } from '@xblackfury/caip'
-import type { BIP44Params } from '@xblackfury/types'
-import { KnownChainIds } from '@xblackfury/types'
+import type { BIP44Params } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 import { bech32 } from 'bech32'
 

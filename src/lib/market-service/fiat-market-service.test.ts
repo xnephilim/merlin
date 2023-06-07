@@ -1,4 +1,4 @@
-import { HistoryTimeframe } from '@xblackfury/types'
+import { HistoryTimeframe } from '@shapeshiftoss/types'
 
 import { mockERHFindByFiatSymbol, mockERHPriceHistoryData } from './exchange-rates-host/erhMockData'
 import { FiatMarketProviders } from './fiat-market-providers'

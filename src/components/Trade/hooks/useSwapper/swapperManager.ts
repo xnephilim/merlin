@@ -1,5 +1,5 @@
 import { ethChainId } from '@xblackfury/caip'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { getConfig } from 'config'
 import stableStringify from 'fast-json-stable-stringify'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'

@@ -1,7 +1,7 @@
 import type { AssetId, ChainId } from '@xblackfury/caip'
 import { cosmosChainId, fromAccountId, osmosisChainId, toAccountId } from '@xblackfury/caip'
 import type { Account, CosmosSdkChainId } from '@xblackfury/chain-adapters'
-import type { MarketData } from '@xblackfury/types'
+import type { MarketData } from '@shapeshiftoss/types'
 import dayjs from 'dayjs'
 import flatMapDeep from 'lodash/flatMapDeep'
 import groupBy from 'lodash/groupBy'

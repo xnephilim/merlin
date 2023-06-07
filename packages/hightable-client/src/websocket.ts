@@ -1,4 +1,4 @@
-import type { ErrorResponse, RequestPayload, Topics, TxsTopicData } from '@xblackfury/common-api'
+import type { ErrorResponse, RequestPayload, Topics, TxsTopicData } from '@shapeshiftoss/common-api'
 import WebSocket from 'isomorphic-ws'
 
 const NORMAL_CLOSURE_CODE = 1000

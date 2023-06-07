@@ -11,8 +11,8 @@ import {
   Tag,
   Wrap,
 } from '@chakra-ui/react'
-import * as native from '@xblackfury/hdwallet-native'
-import { GENERATE_MNEMONIC, Vault } from '@xblackfury/hdwallet-native-vault'
+import * as native from '@shapeshiftoss/hdwallet-native'
+import { GENERATE_MNEMONIC, Vault } from '@shapeshiftoss/hdwallet-native-vault'
 import { range } from 'lodash'
 import type { ReactNode } from 'react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'

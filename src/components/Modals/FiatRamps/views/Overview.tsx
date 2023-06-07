@@ -18,7 +18,7 @@ import {
 } from '@chakra-ui/react'
 import type { AccountId, AssetId } from '@xblackfury/caip'
 import { fromAccountId } from '@xblackfury/caip'
-import { KeepKeyHDWallet } from '@xblackfury/hdwallet-keepkey'
+import { KeepKeyHDWallet } from '@shapeshiftoss/hdwallet-keepkey'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { FaCreditCard } from 'react-icons/fa'
 import { useTranslate } from 'react-polyglot'

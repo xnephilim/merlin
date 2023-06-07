@@ -1,5 +1,5 @@
 import { Box, ModalBody, ModalHeader } from '@chakra-ui/react'
-import type { NativeHDWallet } from '@xblackfury/hdwallet-native'
+import type { NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
 import { useEffect } from 'react'
 import { Text } from 'components/Text'
 import { WalletActions } from 'context/WalletProvider/actions'

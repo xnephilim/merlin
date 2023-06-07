@@ -1,7 +1,7 @@
 import type { AssetId } from '@xblackfury/caip'
 import { fromAssetId } from '@xblackfury/caip'
 import type { evm, UtxoBaseAdapter, UtxoChainId } from '@xblackfury/chain-adapters'
-import { supportsETH } from '@xblackfury/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useDonationAmountBelowMinimum } from 'components/Trade/hooks/useDonationAmountBelowMinimum'

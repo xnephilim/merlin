@@ -1,5 +1,5 @@
 import type { ChainAdapter } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { getConfig } from 'config'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import { IdleInvestor } from 'lib/investor/investor-idle'

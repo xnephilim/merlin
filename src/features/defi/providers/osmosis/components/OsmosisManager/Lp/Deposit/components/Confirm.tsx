@@ -2,7 +2,7 @@ import { Alert, AlertIcon, Box, Stack, useToast } from '@chakra-ui/react'
 import type { AccountId } from '@xblackfury/caip'
 import { fromAssetId, osmosisAssetId } from '@xblackfury/caip'
 import type { CosmosSdkChainId, FeeData, osmosis } from '@xblackfury/chain-adapters'
-import { supportsOsmosis } from '@xblackfury/hdwallet-core'
+import { supportsOsmosis } from '@shapeshiftoss/hdwallet-core'
 import { Confirm as ReusableConfirm } from 'features/defi/components/Confirm/Confirm'
 import { Summary } from 'features/defi/components/Summary'
 import type {

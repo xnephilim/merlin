@@ -1,7 +1,7 @@
 import { ethChainId, gnosisChainId } from '@xblackfury/caip'
 import type { EvmChainAdapter } from '@xblackfury/chain-adapters'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
-import { KnownChainIds } from '@xblackfury/types'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { Ok } from '@sniptt/monads'
 import type { AxiosStatic } from 'axios'
 import { ethers } from 'ethers'
@@ -61,7 +61,7 @@ const mockGnosisChainAdapter = {
 } as unknown as EvmChainAdapter
 
 jest.mock('context/PluginProvider/chainAdapterSingleton', () => {
-  const { KnownChainIds } = require('@xblackfury/types')
+  const { KnownChainIds } = require('@shapeshiftoss/types')
 
   return {
     getChainAdapterManager: jest.fn(

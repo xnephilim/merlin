@@ -1,5 +1,5 @@
 import type { ethereum } from '@xblackfury/chain-adapters'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 
 import { setupQuote } from '../../utils/test-data/setupSwapQuote'
 import type { ZrxExecuteTradeInput, ZrxTrade } from '../types'
@@ -9,7 +9,7 @@ const txid = '0xffaac3dd529171e8a9a2adaf36b0344877c4894720d65dfd86e4b3a56c5a857e
 const receiveAddress = '0xc770eefad204b5180df6a14ee197d99d808ee52d'
 
 jest.mock('context/PluginProvider/chainAdapterSingleton', () => {
-  const { KnownChainIds } = require('@xblackfury/types')
+  const { KnownChainIds } = require('@shapeshiftoss/types')
   const { feeData } = require('../../utils/test-data/setupDeps')
   return {
     getChainAdapterManager: jest.fn(

@@ -20,9 +20,9 @@ import {
   type UtxoChainId,
   utxoChainIds,
 } from '@xblackfury/chain-adapters'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
-import { supportsETH } from '@xblackfury/hdwallet-core'
-import { KnownChainIds } from '@xblackfury/types'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { supportsETH } from '@shapeshiftoss/hdwallet-core'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import { getSupportedEvmChainIds } from 'hooks/useEvm/useEvm'
 import { bn, bnOrZero } from 'lib/bignumber/bignumber'

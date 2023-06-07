@@ -1,5 +1,5 @@
-import type { HistoryData, MarketData } from '@xblackfury/types'
-import { HistoryTimeframe } from '@xblackfury/types'
+import type { HistoryData, MarketData } from '@shapeshiftoss/types'
+import { HistoryTimeframe } from '@shapeshiftoss/types'
 import axios from 'axios'
 import type { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'

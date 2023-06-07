@@ -4,9 +4,9 @@ import type { AccountId } from '@xblackfury/caip'
 import { fromAccountId } from '@xblackfury/caip'
 import type { EvmBaseAdapter, EvmChainId } from '@xblackfury/chain-adapters'
 import { toAddressNList } from '@xblackfury/chain-adapters'
-import type { ETHSignedTypedData, HDWallet } from '@xblackfury/hdwallet-core'
-import type { KeepKeyHDWallet } from '@xblackfury/hdwallet-keepkey'
-import type { NativeHDWallet } from '@xblackfury/hdwallet-native'
+import type { ETHSignedTypedData, HDWallet } from '@shapeshiftoss/hdwallet-core'
+import type { KeepKeyHDWallet } from '@shapeshiftoss/hdwallet-keepkey'
+import type { NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
 import { getSdkError } from '@walletconnect/utils'
 import {
   convertNumberToHex,

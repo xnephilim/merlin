@@ -1,7 +1,7 @@
 import { EvmChain, GasToken } from '@axelar-network/axelarjs-sdk'
 import type { AssetId, ChainId } from '@xblackfury/caip'
 import { avalancheChainId, ethChainId, fromAssetId, toAssetId } from '@xblackfury/caip'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { getAxelarQuerySdk } from 'components/Bridge/axelarQuerySdkSingleton'
 import type { AxelarChainName, BridgeAsset } from 'components/Bridge/types'
 import { AxelarChainNames } from 'components/Bridge/types'

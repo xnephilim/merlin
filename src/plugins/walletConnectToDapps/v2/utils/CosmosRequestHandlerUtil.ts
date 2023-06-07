@@ -3,7 +3,7 @@ import { formatJsonRpcResult } from '@json-rpc-tools/utils'
 import type { AccountId } from '@xblackfury/caip'
 import type { ChainAdapter, CosmosSdkChainId } from '@xblackfury/chain-adapters'
 import { toAddressNList } from '@xblackfury/chain-adapters'
-import type { Cosmos, CosmosSignTx, HDWallet } from '@xblackfury/hdwallet-core'
+import type { Cosmos, CosmosSignTx, HDWallet } from '@shapeshiftoss/hdwallet-core'
 import { getSdkError } from '@walletconnect/utils'
 import type {
   CustomTransactionData,

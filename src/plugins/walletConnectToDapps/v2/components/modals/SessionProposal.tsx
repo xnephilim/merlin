@@ -1,7 +1,7 @@
 import { Alert, AlertIcon, AlertTitle, Button, VStack } from '@chakra-ui/react'
 import type { AccountId } from '@xblackfury/caip'
 import { fromAccountId } from '@xblackfury/caip'
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import type { ProposalTypes, SessionTypes } from '@walletconnect/types'
 import { getSdkError } from '@walletconnect/utils'
 import { ModalSection } from 'plugins/walletConnectToDapps/components/modals/ModalSection'

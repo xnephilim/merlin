@@ -1,5 +1,5 @@
 import type { AccountId } from '@xblackfury/caip'
-import type { KnownChainIds } from '@xblackfury/types'
+import type { KnownChainIds } from '@shapeshiftoss/types'
 import type { AssetClickAction } from 'components/Trade/hooks/useTradeRoutes/types'
 import type { DisplayFeeData, TradeAmountInputField } from 'components/Trade/types'
 import type { Asset } from 'lib/asset-service'

@@ -1,6 +1,6 @@
 import type { AssetId } from '@xblackfury/caip'
 import { fromAssetId } from '@xblackfury/caip'
-import type { MarketData } from '@xblackfury/types'
+import type { MarketData } from '@shapeshiftoss/types'
 import { uniq } from 'lodash'
 import { createSelector } from 'reselect'
 import type { Asset } from 'lib/asset-service'

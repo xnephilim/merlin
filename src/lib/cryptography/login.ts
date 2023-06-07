@@ -1,4 +1,4 @@
-import { crypto } from '@xblackfury/hdwallet-native'
+import { crypto } from '@shapeshiftoss/hdwallet-native'
 import {
   decryptWallet,
   hashPassword,

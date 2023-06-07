@@ -1,5 +1,5 @@
 import { ethAssetId, thorchainAssetId } from '@xblackfury/caip'
-import { isKeepKey } from '@xblackfury/hdwallet-keepkey'
+import { isKeepKey } from '@shapeshiftoss/hdwallet-keepkey'
 import { useMemo } from 'react'
 import { useWallet } from 'hooks/useWallet/useWallet'
 import { bnOrZero } from 'lib/bignumber/bignumber'

@@ -1,6 +1,6 @@
 import { ethereum } from '@xblackfury/chain-adapters'
-import type { NativeAdapterArgs } from '@xblackfury/hdwallet-native'
-import { NativeHDWallet } from '@xblackfury/hdwallet-native'
+import type { NativeAdapterArgs } from '@shapeshiftoss/hdwallet-native'
+import { NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
 import * as hightable from '@xblackfury/hightable-client'
 import dotenv from 'dotenv'
 import { bn } from 'lib/bignumber/bignumber'

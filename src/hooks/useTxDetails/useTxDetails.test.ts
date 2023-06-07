@@ -1,5 +1,5 @@
 import type { AssetId } from '@xblackfury/caip'
-import type { MarketData } from '@xblackfury/types'
+import type { MarketData } from '@shapeshiftoss/types'
 import { TradeType, TransferType } from '@xblackfury/hightable-client'
 import { mockAssetState } from 'test/mocks/assets'
 import { createMockEthTxs, EthReceive, EthSend, TradeTx } from 'test/mocks/txs'

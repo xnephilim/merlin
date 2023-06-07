@@ -1,6 +1,6 @@
 import { useToast } from '@chakra-ui/toast'
-import type { Event } from '@xblackfury/hdwallet-core'
-import { Events } from '@xblackfury/hdwallet-core'
+import type { Event } from '@shapeshiftoss/hdwallet-core'
+import { Events } from '@shapeshiftoss/hdwallet-core'
 import type { Dispatch } from 'react'
 import { useEffect } from 'react'
 import { useTranslate } from 'react-polyglot'

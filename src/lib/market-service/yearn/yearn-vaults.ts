@@ -6,8 +6,8 @@ import type {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@xblackfury/types'
-import { HistoryTimeframe } from '@xblackfury/types'
+} from '@shapeshiftoss/types'
+import { HistoryTimeframe } from '@shapeshiftoss/types'
 import type { ChainId, Yearn } from '@yfi/sdk'
 import head from 'lodash/head'
 import { bn, bnOrZero } from 'lib/bignumber/bignumber'

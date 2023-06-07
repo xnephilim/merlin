@@ -5,7 +5,7 @@ import * as gnosis from './gnosis'
 import * as optimism from './optimism'
 import * as polygon from './polygon'
 
-export type { evm as types } from '@xblackfury/common-api'
+export type { evm as types } from '@shapeshiftoss/common-api'
 
 export type Api =
   | ethereum.V1Api

@@ -6,7 +6,7 @@ import {
   ModalBody,
   ModalHeader,
 } from '@chakra-ui/react'
-import type { Event } from '@xblackfury/hdwallet-core'
+import type { Event } from '@shapeshiftoss/hdwallet-core'
 import { useCallback, useState } from 'react'
 import { CircularProgress } from 'components/CircularProgress/CircularProgress'
 import { Text } from 'components/Text'

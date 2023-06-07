@@ -1,4 +1,4 @@
-import type { Vault } from '@xblackfury/hdwallet-native-vault'
+import type { Vault } from '@shapeshiftoss/hdwallet-native-vault'
 import type React from 'react'
 import type { RouteComponentProps } from 'react-router-dom'
 import type { ActionTypes } from 'context/WalletProvider/actions'

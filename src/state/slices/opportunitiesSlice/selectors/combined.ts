@@ -1,6 +1,6 @@
 import { QueryStatus } from '@reduxjs/toolkit/dist/query'
 import type { AssetId } from '@xblackfury/caip'
-import type { MarketData } from '@xblackfury/types'
+import type { MarketData } from '@shapeshiftoss/types'
 import BigNumber from 'bignumber.js'
 import isEmpty from 'lodash/isEmpty'
 import partition from 'lodash/partition'

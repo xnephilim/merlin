@@ -1,9 +1,9 @@
 import type { AssetId } from '@xblackfury/caip'
 import { ASSET_REFERENCE, thorchainAssetId } from '@xblackfury/caip'
-import type { ThorchainSignTx } from '@xblackfury/hdwallet-core'
-import { supportsThorchain } from '@xblackfury/hdwallet-core'
-import type { BIP44Params } from '@xblackfury/types'
-import { KnownChainIds } from '@xblackfury/types'
+import type { ThorchainSignTx } from '@shapeshiftoss/hdwallet-core'
+import { supportsThorchain } from '@shapeshiftoss/hdwallet-core'
+import type { BIP44Params } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 
 import { ErrorHandler } from '../../error/ErrorHandler'

@@ -224,7 +224,7 @@ It is recommended that you use a compatible `ChainAdapter` from `@xblackfury/cha
 
 #### `wallet: HDWallet`
 
-Your function will be given an [HDWallet](https://github.com/xnephilim/hdwallet) (`@xblackfury/hdwallet-core`) instance that can be used to sign the transaction.
+Your function will be given an [HDWallet](https://github.com/xnephilim/hdwallet) (`@shapeshiftoss/hdwallet-core`) instance that can be used to sign the transaction.
 
 #### `tx: TxType`
 

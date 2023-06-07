@@ -1,4 +1,4 @@
-import type { HDWallet } from '@xblackfury/hdwallet-core'
+import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 
 import { setupBuildTrade, setupQuote } from '../utils/test-data/setupSwapQuote'
 import { getZrxTradeQuote } from './getZrxTradeQuote/getZrxTradeQuote'

@@ -6,7 +6,7 @@ import type {
   ETHSignTypedData,
   ETHWallet,
   HDWallet,
-} from '@xblackfury/hdwallet-core'
+} from '@shapeshiftoss/hdwallet-core'
 import {
   supportsAvalanche,
   supportsBSC,
@@ -14,9 +14,9 @@ import {
   supportsGnosis,
   supportsOptimism,
   supportsPolygon,
-} from '@xblackfury/hdwallet-core'
-import type { BIP44Params } from '@xblackfury/types'
-import { KnownChainIds } from '@xblackfury/types'
+} from '@shapeshiftoss/hdwallet-core'
+import type { BIP44Params } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import type * as hightable from '@xblackfury/hightable-client'
 import { utils } from 'ethers'
 import { numberToHex } from 'web3-utils'

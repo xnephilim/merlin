@@ -1,5 +1,5 @@
-import type { crypto, NativeHDWallet } from '@xblackfury/hdwallet-native'
-import type { Vault } from '@xblackfury/hdwallet-native-vault'
+import type { crypto, NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
+import type { Vault } from '@shapeshiftoss/hdwallet-native-vault'
 import { useEffect } from 'react'
 import { WalletActions } from 'context/WalletProvider/actions'
 import { KeyManager } from 'context/WalletProvider/KeyManager'

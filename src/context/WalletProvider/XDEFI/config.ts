@@ -1,4 +1,4 @@
-import { XDEFIAdapter } from '@xblackfury/hdwallet-xdefi'
+import { XDEFIAdapter } from '@shapeshiftoss/hdwallet-xdefi'
 import { XDEFIIcon } from 'components/Icons/XDEFIIcon'
 import type { SupportedWalletInfo } from 'context/WalletProvider/config'
 

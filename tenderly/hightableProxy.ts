@@ -1,4 +1,4 @@
-import type { evm } from '@xblackfury/common-api'
+import type { evm } from '@shapeshiftoss/common-api'
 import dotenv from 'dotenv'
 import express from 'express'
 import { readFileSync } from 'fs'
