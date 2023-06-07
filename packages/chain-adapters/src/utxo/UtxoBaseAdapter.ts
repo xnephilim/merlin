@@ -7,8 +7,8 @@ import {
   HDWallet,
   PublicKey,
   supportsBTC,
-} from '@xblackfury/hdwallet-core'
-import { BIP44Params, KnownChainIds, UtxoAccountType } from '@xblackfury/types'
+} from '@shapeshiftoss/hdwallet-core'
+import { BIP44Params, KnownChainIds, UtxoAccountType } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 import WAValidator from 'multicoin-address-validator'
 

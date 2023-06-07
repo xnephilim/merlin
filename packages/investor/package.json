@@ -26,8 +26,8 @@
     "test": "jest --coverage"
   },
   "devDependencies": {
-    "@xblackfury/hdwallet-core": "^1.46.0",
-    "@xblackfury/types": "8.1.0",
+    "@shapeshiftoss/hdwallet-core": "^1.46.0",
+    "@shapeshiftoss/types": "8.1.0",
     "bignumber.js": "^9.1.1"
   }
 }

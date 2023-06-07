@@ -1,6 +1,6 @@
 import { AssetId, ethChainId, toAssetId } from '@xblackfury/caip'
 import { ChainAdapter, toAddressNList } from '@xblackfury/chain-adapters'
-import { ETHSignTx, HDWallet } from '@xblackfury/hdwallet-core'
+import { ETHSignTx, HDWallet } from '@shapeshiftoss/hdwallet-core'
 import {
   ApprovalRequired,
   DepositWithdrawArgs,
@@ -8,7 +8,7 @@ import {
   InvestorOpportunity,
 } from '@xblackfury/investor'
 import { Logger } from '@shapeshiftoss/logger'
-import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { BIP44Params, KnownChainIds } from '@shapeshiftoss/types'
 import type { BigNumber } from 'bignumber.js'
 import toLower from 'lodash/toLower'
 import Web3 from 'web3'

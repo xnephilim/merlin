@@ -1,4 +1,4 @@
-import type { evm } from '@xblackfury/common-api'
+import type { evm } from '@shapeshiftoss/common-api'
 
 import { StandardTx } from '../../types'
 import * as bep20 from '../bnbsmartchain/parser/bep20'

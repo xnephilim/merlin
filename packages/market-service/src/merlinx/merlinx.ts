@@ -6,7 +6,7 @@ import {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@xblackfury/types'
+} from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 
 import { MarketService } from '../api'

@@ -6,7 +6,7 @@ import {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@xblackfury/types'
+} from '@shapeshiftoss/types'
 import axios from 'axios'
 
 import { MarketService } from '../api'

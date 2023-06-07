@@ -1,7 +1,7 @@
 import { Asset } from '@xblackfury/asset-service'
 import { AssetId, ChainId, fromAssetId } from '@xblackfury/caip'
 import { avalanche, bnbsmartchain, ethereum, optimism } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 
 import {
   ApprovalNeededInput,

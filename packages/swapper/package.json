@@ -35,16 +35,16 @@
     "@xblackfury/caip": "^8.0.0",
     "@xblackfury/chain-adapters": "^11.0.0",
     "@xblackfury/errors": "^1.1.2",
-    "@xblackfury/hdwallet-core": "^1.46.0",
-    "@xblackfury/types": "^8.1.0"
+    "@shapeshiftoss/hdwallet-core": "^1.46.0",
+    "@shapeshiftoss/types": "^8.1.0"
   },
   "devDependencies": {
     "@xblackfury/asset-service": "^8.0.1",
     "@xblackfury/caip": "^8.0.0",
     "@xblackfury/chain-adapters": "^11.0.0",
     "@xblackfury/errors": "^1.1.2",
-    "@xblackfury/hdwallet-core": "^1.46.0",
-    "@xblackfury/types": "^8.1.0",
+    "@shapeshiftoss/hdwallet-core": "^1.46.0",
+    "@shapeshiftoss/types": "^8.1.0",
     "@xblackfury/hightable-client": "^10.0.1",
     "@types/readline-sync": "^1.4.4",
     "readline-sync": "^1.4.10",

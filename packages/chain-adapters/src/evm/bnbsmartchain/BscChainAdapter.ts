@@ -1,5 +1,5 @@
 import { ASSET_REFERENCE, AssetId, bscAssetId } from '@xblackfury/caip'
-import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { BIP44Params, KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 
 import { ChainAdapterDisplayName } from '../../types'

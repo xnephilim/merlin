@@ -14,7 +14,7 @@
       "@xblackfury/errors/*": ["packages/errors"],
       "@xblackfury/market-service/*": ["packages/market-service"],
       "@xblackfury/swapper/*": ["packages/swapper"],
-      "@xblackfury/types/*": ["packages/types"],
+      "@shapeshiftoss/types/*": ["packages/types"],
       "@xblackfury/hightable-client/*": ["packages/hightable-client"]
     },
     "noEmit": true

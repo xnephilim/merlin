@@ -1,4 +1,4 @@
-import { HDWallet } from '@xblackfury/hdwallet-core'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
 
 import { setupQuote } from '../../utils/test-data/setupSwapQuote'
 import { setupThorswapDeps } from '../utils/test-data/setupThorswapDeps'

@@ -1,6 +1,6 @@
 import { ethereum } from '@xblackfury/chain-adapters'
-import { NativeAdapterArgs, NativeHDWallet } from '@xblackfury/hdwallet-native'
-import { WithdrawType } from '@xblackfury/types'
+import { NativeAdapterArgs, NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
+import { WithdrawType } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 import dotenv from 'dotenv'
 import readline from 'readline-sync'

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { NativeAdapterArgs, NativeHDWallet } from '@xblackfury/hdwallet-native'
-import { UtxoAccountType } from '@xblackfury/types'
+import { NativeAdapterArgs, NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
+import { UtxoAccountType } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 import dotenv from 'dotenv'
 

@@ -1,7 +1,7 @@
 import { Asset } from '@xblackfury/asset-service'
 import { ASSET_NAMESPACE, AssetId, fromAssetId } from '@xblackfury/caip'
 import { ethereum } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import Web3 from 'web3'
 
 import {

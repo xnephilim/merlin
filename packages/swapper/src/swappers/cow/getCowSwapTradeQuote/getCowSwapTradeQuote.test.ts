@@ -1,6 +1,6 @@
 import { Asset } from '@xblackfury/asset-service'
 import { ethereum, FeeDataEstimate } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import Web3 from 'web3'
 
 import { GetTradeQuoteInput, SwapperName, TradeQuote } from '../../../api'

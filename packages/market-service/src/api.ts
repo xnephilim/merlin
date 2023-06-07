@@ -3,7 +3,7 @@ import {
   MarketData,
   MarketDataArgs,
   PriceHistoryType,
-} from '@xblackfury/types'
+} from '@shapeshiftoss/types'
 
 import { FiatPriceHistoryType, FindByFiatMarketType } from './fiat-market-service-types'
 

@@ -1,4 +1,4 @@
-import { HistoryData, MarketData } from '@xblackfury/types'
+import { HistoryData, MarketData } from '@shapeshiftoss/types'
 
 import { FiatMarketProviders } from './fiat-market-providers'
 import {

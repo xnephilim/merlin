@@ -1,7 +1,7 @@
 import type { ChainAdapter } from '@xblackfury/chain-adapters'
 import { Investor } from '@xblackfury/investor'
 import { Logger } from '@shapeshiftoss/logger'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 // import https from 'https'
 import { find } from 'lodash'
 import filter from 'lodash/filter'

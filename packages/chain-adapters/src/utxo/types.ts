@@ -1,4 +1,4 @@
-import { UtxoAccountType } from '@xblackfury/types'
+import { UtxoAccountType } from '@shapeshiftoss/types'
 
 import { GetAddressInputBase } from '../types'
 

@@ -1,5 +1,5 @@
-import { HDWallet } from '@xblackfury/hdwallet-core'
-import { KnownChainIds } from '@xblackfury/types'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { KnownChainIds } from '@shapeshiftoss/types'
 
 import { ApprovalNeededInput } from '../../../api'
 import { getERC20Allowance } from '../../utils/helpers/helpers'

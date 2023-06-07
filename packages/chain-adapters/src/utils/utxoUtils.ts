@@ -6,8 +6,8 @@ import {
   dogeChainId,
   ltcChainId,
 } from '@xblackfury/caip'
-import { BTCInputScriptType, BTCOutputScriptType } from '@xblackfury/hdwallet-core'
-import { BIP44Params, UtxoAccountType } from '@xblackfury/types'
+import { BTCInputScriptType, BTCOutputScriptType } from '@shapeshiftoss/hdwallet-core'
+import { BIP44Params, UtxoAccountType } from '@shapeshiftoss/types'
 import { decode, encode } from 'bs58check'
 
 /**

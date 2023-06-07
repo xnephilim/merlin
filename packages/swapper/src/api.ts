@@ -2,8 +2,8 @@ import { Asset } from '@xblackfury/asset-service'
 import { AssetId, ChainId } from '@xblackfury/caip'
 import { CosmosSdkChainId, EvmChainId, UtxoChainId } from '@xblackfury/chain-adapters'
 import { createErrorClass } from '@xblackfury/errors'
-import { HDWallet } from '@xblackfury/hdwallet-core'
-import { ChainSpecific, KnownChainIds, UtxoAccountType } from '@xblackfury/types'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { ChainSpecific, KnownChainIds, UtxoAccountType } from '@shapeshiftoss/types'
 
 export const SwapError = createErrorClass('SwapError')
 

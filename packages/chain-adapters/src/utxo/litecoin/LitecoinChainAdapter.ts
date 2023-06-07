@@ -1,5 +1,5 @@
 import { ASSET_REFERENCE, AssetId, ltcAssetId } from '@xblackfury/caip'
-import { BIP44Params, KnownChainIds, UtxoAccountType } from '@xblackfury/types'
+import { BIP44Params, KnownChainIds, UtxoAccountType } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 
 import { ChainAdapterDisplayName } from '../../types'

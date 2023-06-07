@@ -1,4 +1,4 @@
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import Web3 from 'web3'
 
 import type { GetTradeQuoteInput, TradeQuote } from '../../../api'

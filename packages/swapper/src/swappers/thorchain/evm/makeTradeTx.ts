@@ -1,7 +1,7 @@
 import { Asset } from '@xblackfury/asset-service'
 import { fromAssetId } from '@xblackfury/caip'
 import { EvmBaseAdapter } from '@xblackfury/chain-adapters'
-import { ETHSignTx, HDWallet } from '@xblackfury/hdwallet-core'
+import { ETHSignTx, HDWallet } from '@shapeshiftoss/hdwallet-core'
 import { numberToHex } from 'web3-utils'
 
 import { SwapError, SwapErrorType } from '../../../api'

@@ -7,7 +7,7 @@ import {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@xblackfury/types'
+} from '@shapeshiftoss/types'
 import { ChainId, Yearn } from '@yfi/sdk'
 import head from 'lodash/head'
 

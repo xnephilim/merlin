@@ -10,9 +10,9 @@ import {
   avalancheChainId,
   fromChainId,
 } from '@xblackfury/caip'
-import { ETHSignMessage, ETHSignTx, ETHWallet } from '@xblackfury/hdwallet-core'
-import { NativeAdapterArgs, NativeHDWallet } from '@xblackfury/hdwallet-native'
-import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { ETHSignMessage, ETHSignTx, ETHWallet } from '@shapeshiftoss/hdwallet-core'
+import { NativeAdapterArgs, NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
+import { BIP44Params, KnownChainIds } from '@shapeshiftoss/types'
 import hightable from '@xblackfury/hightable-client'
 import { merge } from 'lodash'
 import { numberToHex } from 'web3-utils'

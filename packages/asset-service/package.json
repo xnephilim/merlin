@@ -38,13 +38,13 @@
   },
   "peerDependencies": {
     "@xblackfury/caip": "^8.0.0",
-    "@xblackfury/types": "^8.1.0"
+    "@shapeshiftoss/types": "^8.1.0"
   },
   "devDependencies": {
     "@ethersproject/providers": "^5.5.3",
     "@xblackfury/caip": "^8.0.0",
     "@xblackfury/investor-idle": "^2.4.1",
-    "@xblackfury/types": "^8.1.0",
+    "@shapeshiftoss/types": "^8.1.0",
     "@types/node-polyglot": "^2.4.2",
     "@yfi/sdk": "^1.2.0",
     "colorthief": "^2.3.2",

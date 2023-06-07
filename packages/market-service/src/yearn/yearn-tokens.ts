@@ -5,7 +5,7 @@ import {
   MarketCapResult,
   MarketData,
   MarketDataArgs,
-} from '@xblackfury/types'
+} from '@shapeshiftoss/types'
 import { ChainId, Token, Yearn } from '@yfi/sdk'
 import uniqBy from 'lodash/uniqBy'
 

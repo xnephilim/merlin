@@ -8,7 +8,7 @@ import {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@xblackfury/types'
+} from '@shapeshiftoss/types'
 import dayjs from 'dayjs'
 
 import { MarketService } from '../api'

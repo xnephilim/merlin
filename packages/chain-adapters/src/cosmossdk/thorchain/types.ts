@@ -1,5 +1,5 @@
-import { HDWallet } from '@xblackfury/hdwallet-core'
-import { BIP44Params } from '@xblackfury/types'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { BIP44Params } from '@shapeshiftoss/types'
 
 export type BuildDepositTxInput = {
   memo: string

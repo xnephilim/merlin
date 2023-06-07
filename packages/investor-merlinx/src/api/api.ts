@@ -1,7 +1,7 @@
 import { JsonRpcProvider } from '@ethersproject/providers'
 import { CHAIN_NAMESPACE, CHAIN_REFERENCE, ChainReference, toAssetId } from '@xblackfury/caip'
 import { ChainAdapter } from '@xblackfury/chain-adapters'
-import { KnownChainIds, WithdrawType } from '@xblackfury/types'
+import { KnownChainIds, WithdrawType } from '@shapeshiftoss/types'
 import axios from 'axios'
 import { BigNumber } from 'bignumber.js'
 import { toLower } from 'lodash'

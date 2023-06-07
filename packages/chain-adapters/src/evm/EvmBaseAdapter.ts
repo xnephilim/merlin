@@ -8,8 +8,8 @@ import {
   supportsBSC,
   supportsETH,
   supportsOptimism,
-} from '@xblackfury/hdwallet-core'
-import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+} from '@shapeshiftoss/hdwallet-core'
+import { BIP44Params, KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 import { utils } from 'ethers'
 import WAValidator from 'multicoin-address-validator'

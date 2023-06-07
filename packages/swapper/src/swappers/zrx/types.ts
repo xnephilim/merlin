@@ -1,4 +1,4 @@
-import { HDWallet } from '@xblackfury/hdwallet-core'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import type Web3 from 'web3'
 
 import { SwapSource, Trade } from '../../api'

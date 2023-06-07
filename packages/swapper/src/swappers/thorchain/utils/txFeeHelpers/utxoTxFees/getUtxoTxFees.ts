@@ -1,5 +1,5 @@
 import { UtxoBaseAdapter } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 
 import { QuoteFeeData, SwapError, SwapErrorType } from '../../../../../api'
 import { bn } from '../../../../utils/bignumber'

@@ -8,7 +8,7 @@ import {
   osmosisChainId,
 } from '@xblackfury/caip'
 import { cosmos, osmosis } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 
 import {
   ApprovalNeededOutput,

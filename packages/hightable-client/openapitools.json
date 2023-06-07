@@ -83,6 +83,19 @@
           "useSingleRequestParameter": true
         }
       },
+      "blackfury": {
+        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/blackfury/api/src/swagger.json",
+        "generatorName": "typescript-fetch",
+        "output": "#{cwd}/src/generated/blackfury",
+        "enablePostProcessFile": true,
+        "reservedWordsMappings": {
+          "in": "in"
+        },
+        "additionalProperties": {
+          "supportsES6": "true",
+          "useSingleRequestParameter": true
+        }
+      },
       "ethereum": {
         "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/ethereum/api/src/swagger.json",
         "generatorName": "typescript-fetch",

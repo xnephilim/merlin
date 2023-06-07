@@ -923,7 +923,7 @@ now refers to any UTXO chain
 
 ### BREAKING CHANGES
 
-* **swapper:** SwapperType has been removed from @xblackfury/types and will instead need to be imported from @shaperhiftoss/swapper.
+* **swapper:** SwapperType has been removed from @shapeshiftoss/types and will instead need to be imported from @shaperhiftoss/swapper.
 
 * fix: correct import
 

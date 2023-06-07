@@ -7,7 +7,7 @@ import {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@xblackfury/types'
+} from '@shapeshiftoss/types'
 import dayjs from 'dayjs'
 import omit from 'lodash/omit'
 

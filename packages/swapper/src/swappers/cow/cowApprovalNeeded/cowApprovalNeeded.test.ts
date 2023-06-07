@@ -1,5 +1,5 @@
-import { HDWallet } from '@xblackfury/hdwallet-core'
-import { KnownChainIds } from '@xblackfury/types'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import Web3 from 'web3'
 
 import { ApprovalNeededInput } from '../../../api'

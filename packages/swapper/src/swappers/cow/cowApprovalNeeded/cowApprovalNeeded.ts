@@ -1,5 +1,5 @@
 import { fromAssetId } from '@xblackfury/caip'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 
 import { ApprovalNeededInput, ApprovalNeededOutput, SwapError, SwapErrorType } from '../../../api'
 import { erc20AllowanceAbi } from '../../utils/abi/erc20Allowance-abi'

@@ -1,4 +1,4 @@
-import type { ErrorResponse, RequestPayload, Topics, TxsTopicData } from '@xblackfury/common-api'
+import type { ErrorResponse, RequestPayload, Topics, TxsTopicData } from '@shapeshiftoss/common-api'
 import { Logger } from '@shapeshiftoss/logger'
 import WebSocket from 'isomorphic-ws'
 

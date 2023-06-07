@@ -1,5 +1,5 @@
 import { ethereum } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 
 import { ApproveInfiniteInput, SwapError, SwapErrorType } from '../../../api'
 import { erc20Abi } from '../../utils/abi/erc20-abi'

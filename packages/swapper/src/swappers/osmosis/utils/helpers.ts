@@ -1,6 +1,6 @@
 import { CHAIN_REFERENCE, fromChainId } from '@xblackfury/caip'
 import { osmosis, toAddressNList } from '@xblackfury/chain-adapters'
-import { HDWallet, Osmosis } from '@xblackfury/hdwallet-core'
+import { HDWallet, Osmosis } from '@shapeshiftoss/hdwallet-core'
 import axios from 'axios'
 import { find } from 'lodash'
 

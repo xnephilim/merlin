@@ -1,7 +1,7 @@
 import { fromAssetId, toAssetId } from '@xblackfury/caip'
 import { ethereum } from '@xblackfury/chain-adapters'
 import { IdleInvestor } from '@xblackfury/investor-idle'
-import { MarketCapResult, MarketData, MarketDataArgs } from '@xblackfury/types'
+import { MarketCapResult, MarketData, MarketDataArgs } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 
 import { MarketService } from '../api'

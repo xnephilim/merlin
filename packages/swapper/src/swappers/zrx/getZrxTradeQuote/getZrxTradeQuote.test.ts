@@ -1,5 +1,5 @@
 import { ethereum } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { AxiosStatic } from 'axios'
 import Web3 from 'web3'
 

@@ -1,6 +1,6 @@
 import { ChainAdapter } from '@xblackfury/chain-adapters'
-import { HDWallet } from '@xblackfury/hdwallet-core'
-import { KnownChainIds } from '@xblackfury/types'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { KnownChainIds } from '@shapeshiftoss/types'
 
 import { setupQuote } from '../../utils/test-data/setupSwapQuote'
 import { ZrxExecuteTradeInput, ZrxSwapperDeps, ZrxTrade } from '../types'

@@ -39,7 +39,7 @@
     "@xblackfury/chain-adapters": "^11.0.0",
     "@xblackfury/investor-merlinx": "^8.0.0",
     "@xblackfury/investor-idle": "^2.3.2",
-    "@xblackfury/types": "^8.1.0",
+    "@shapeshiftoss/types": "^8.1.0",
     "@xblackfury/hightable-client": "^10.0.1"
   },
   "devDependencies": {
@@ -47,7 +47,7 @@
     "@xblackfury/chain-adapters": "^11.0.0",
     "@xblackfury/investor-merlinx": "^8.0.0",
     "@xblackfury/investor-idle": "^2.3.2",
-    "@xblackfury/types": "^8.1.0",
+    "@shapeshiftoss/types": "^8.1.0",
     "@xblackfury/hightable-client": "^10.0.1",
     "limiter": "^2.1.0"
   }

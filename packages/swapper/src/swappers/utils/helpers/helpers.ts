@@ -1,7 +1,7 @@
 import { Asset } from '@xblackfury/asset-service'
 import { fromAssetId } from '@xblackfury/caip'
 import { EvmChainAdapter, EvmChainId } from '@xblackfury/chain-adapters'
-import { HDWallet } from '@xblackfury/hdwallet-core'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import Web3 from 'web3'
 import { AbiItem, numberToHex } from 'web3-utils'
 

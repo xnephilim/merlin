@@ -1,5 +1,5 @@
 import { adapters } from '@xblackfury/caip'
-import { HistoryTimeframe, MarketData } from '@xblackfury/types'
+import { HistoryTimeframe, MarketData } from '@shapeshiftoss/types'
 import axios from 'axios'
 
 import { OsmosisMarketService } from './osmosis'

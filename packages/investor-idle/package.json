@@ -37,16 +37,16 @@
   "peerDependencies": {
     "@xblackfury/caip": "^8.4.2",
     "@xblackfury/chain-adapters": "^11.0.0",
-    "@xblackfury/hdwallet-core": "^1.46.0",
+    "@shapeshiftoss/hdwallet-core": "^1.46.0",
     "@xblackfury/investor": "^3.0.0",
-    "@xblackfury/types": "^8.3.1"
+    "@shapeshiftoss/types": "^8.3.1"
   },
   "devDependencies": {
     "@xblackfury/caip": "^8.4.2",
     "@xblackfury/chain-adapters": "^11.0.0",
-    "@xblackfury/hdwallet-core": "^1.46.0",
+    "@shapeshiftoss/hdwallet-core": "^1.46.0",
     "@xblackfury/investor": "^3.0.0",
-    "@xblackfury/types": "^8.3.1",
+    "@shapeshiftoss/types": "^8.3.1",
     "@xblackfury/hightable-client": "^10.0.2"
   }
 }

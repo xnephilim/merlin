@@ -1,6 +1,6 @@
 import { ethereum } from '@xblackfury/chain-adapters'
-import { HDWallet } from '@xblackfury/hdwallet-core'
-import { KnownChainIds } from '@xblackfury/types'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 import { AxiosStatic } from 'axios'
 import Web3 from 'web3'

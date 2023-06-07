@@ -1,6 +1,6 @@
 import { Asset } from '@xblackfury/asset-service'
 import { fromAssetId } from '@xblackfury/caip'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 
 import { MinMaxOutput, SwapError, SwapErrorType } from '../../../api'
 import { bn, bnOrZero } from '../../utils/bignumber'

@@ -1,7 +1,7 @@
 import { JsonRpcProvider } from '@ethersproject/providers'
 import type { ChainAdapter } from '@xblackfury/chain-adapters'
 import { Investor } from '@xblackfury/investor'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { type ChainId, type VaultMetadata, Yearn } from '@yfi/sdk'
 import { find } from 'lodash'
 import filter from 'lodash/filter'

@@ -7,7 +7,7 @@ import {
   ethereum,
   thorchain,
 } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
 import dotenv from 'dotenv'
 

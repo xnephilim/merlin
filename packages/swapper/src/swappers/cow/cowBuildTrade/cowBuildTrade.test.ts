@@ -1,7 +1,7 @@
 import { Asset } from '@xblackfury/asset-service'
 import { ethereum, FeeDataEstimate } from '@xblackfury/chain-adapters'
-import { HDWallet } from '@xblackfury/hdwallet-core'
-import { KnownChainIds } from '@xblackfury/types'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import Web3 from 'web3'
 
 import { BuildTradeInput, SwapperName } from '../../../api'

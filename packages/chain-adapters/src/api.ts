@@ -1,5 +1,5 @@
 import { AssetId, ChainId } from '@xblackfury/caip'
-import { BIP44Params, UtxoAccountType } from '@xblackfury/types'
+import { BIP44Params, UtxoAccountType } from '@shapeshiftoss/types'
 
 import {
   Account,

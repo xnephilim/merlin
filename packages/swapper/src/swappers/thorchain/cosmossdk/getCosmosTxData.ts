@@ -1,8 +1,8 @@
 import { Asset } from '@xblackfury/asset-service'
 import { ChainId, cosmosAssetId } from '@xblackfury/caip'
 import { CosmosSdkBaseAdapter, thorchain } from '@xblackfury/chain-adapters'
-import { HDWallet } from '@xblackfury/hdwallet-core'
-import { KnownChainIds } from '@xblackfury/types'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import { KnownChainIds } from '@shapeshiftoss/types'
 
 import { SwapError, SwapErrorType, TradeQuote } from '../../../api'
 import { ThorCosmosSdkSupportedChainId } from '../ThorchainSwapper'

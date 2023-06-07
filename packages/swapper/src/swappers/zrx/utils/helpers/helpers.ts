@@ -8,7 +8,7 @@ import {
   fromAssetId,
   optimismAssetId,
 } from '@xblackfury/caip'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { AxiosResponse } from 'axios'
 
 import { SwapError, SwapErrorType } from '../../../../api'

@@ -1,7 +1,7 @@
 import { ethereum } from '@xblackfury/chain-adapters'
-import { HDWallet } from '@xblackfury/hdwallet-core'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import { SwapperType } from '@xblackfury/swapper'
-import { KnownChainIds } from '@xblackfury/types'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import Web3 from 'web3'
 
 import { ZrxSwapper } from '..'

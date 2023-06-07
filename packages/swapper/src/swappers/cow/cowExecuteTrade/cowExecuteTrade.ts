@@ -1,7 +1,7 @@
 import { ethAssetId, fromAssetId } from '@xblackfury/caip'
 import { SignMessageInput, toAddressNList } from '@xblackfury/chain-adapters'
-import { ETHSignMessage } from '@xblackfury/hdwallet-core'
-import { KnownChainIds } from '@xblackfury/types'
+import { ETHSignMessage } from '@shapeshiftoss/hdwallet-core'
+import { KnownChainIds } from '@shapeshiftoss/types'
 import { AxiosResponse } from 'axios'
 import { ethers } from 'ethers'
 
