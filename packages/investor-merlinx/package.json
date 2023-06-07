@@ -1,6 +1,6 @@
 {
   "name": "@xblackfury/investor-merlinx",
-  "version": "8.0.1",
+  "version": "9.0.0",
   "description": "An API layer for interaction with the ShapeShift MERLINy contract",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,16 +36,16 @@
     "web3-utils": "1.7.4"
   },
   "peerDependencies": {
-    "@xblackfury/caip": "^8.0.0",
-    "@xblackfury/chain-adapters": "^11.0.0",
-    "@shapeshiftoss/hdwallet-core": "^1.46.0",
-    "@shapeshiftoss/types": "^8.1.0"
-  },
-  "devDependencies": {
-    "@xblackfury/caip": "^8.0.0",
-    "@xblackfury/chain-adapters": "^11.0.0",
     "@shapeshiftoss/hdwallet-core": "^1.46.0",
     "@shapeshiftoss/types": "^8.1.0",
-    "@xblackfury/hightable-client": "^10.0.1"
+    "@xblackfury/caip": "^8.0.0",
+    "@xblackfury/chain-adapters": "^11.0.0"
+  },
+  "devDependencies": {
+    "@shapeshiftoss/hdwallet-core": "^1.46.0",
+    "@shapeshiftoss/types": "^9.0.0",
+    "@xblackfury/caip": "^9.0.0",
+    "@xblackfury/chain-adapters": "^12.0.0",
+    "@xblackfury/hightable-client": "^11.0.0"
   }
 }

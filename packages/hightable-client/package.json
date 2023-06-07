@@ -1,6 +1,6 @@
 {
   "name": "@xblackfury/hightable-client",
-  "version": "10.14.0",
+  "version": "11.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "source": "src/index.ts",
@@ -24,16 +24,16 @@
     "ws": "^8.3.0"
   },
   "peerDependencies": {
-    "@xblackfury/caip": "^8.0.0",
     "@shapeshiftoss/logger": "^1.1.2",
-    "@shapeshiftoss/types": "^8.1.0"
+    "@shapeshiftoss/types": "^8.1.0",
+    "@xblackfury/caip": "^8.0.0"
   },
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.1",
-    "@xblackfury/caip": "^8.0.0",
     "@shapeshiftoss/common-api": "^8.3.0",
-    "@shapeshiftoss/logger": "^1.1.2",
-    "@shapeshiftoss/types": "^8.1.0",
-    "@types/ws": "^8.2.1"
+    "@shapeshiftoss/logger": "^2.0.0",
+    "@shapeshiftoss/types": "^9.0.0",
+    "@types/ws": "^8.2.1",
+    "@xblackfury/caip": "^9.0.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@xblackfury/market-service",
-  "version": "7.8.0",
+  "version": "8.0.0",
   "description": "ShapeShift market data service",
   "homepage": "",
   "license": "MIT",
@@ -35,20 +35,20 @@
     "p-ratelimit": "^1.0.1"
   },
   "peerDependencies": {
+    "@shapeshiftoss/types": "^8.1.0",
     "@xblackfury/caip": "^8.0.0",
     "@xblackfury/chain-adapters": "^11.0.0",
-    "@xblackfury/investor-merlinx": "^8.0.0",
+    "@xblackfury/hightable-client": "^10.0.1",
     "@xblackfury/investor-idle": "^2.3.2",
-    "@shapeshiftoss/types": "^8.1.0",
-    "@xblackfury/hightable-client": "^10.0.1"
+    "@xblackfury/investor-merlinx": "^8.0.0"
   },
   "devDependencies": {
-    "@xblackfury/caip": "^8.0.0",
-    "@xblackfury/chain-adapters": "^11.0.0",
-    "@xblackfury/investor-merlinx": "^8.0.0",
-    "@xblackfury/investor-idle": "^2.3.2",
-    "@shapeshiftoss/types": "^8.1.0",
-    "@xblackfury/hightable-client": "^10.0.1",
+    "@shapeshiftoss/types": "^9.0.0",
+    "@xblackfury/caip": "^9.0.0",
+    "@xblackfury/chain-adapters": "^12.0.0",
+    "@xblackfury/hightable-client": "^11.0.0",
+    "@xblackfury/investor-idle": "^3.0.0",
+    "@xblackfury/investor-merlinx": "^9.0.0",
     "limiter": "^2.1.0"
   }
 }

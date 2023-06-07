@@ -1,6 +1,6 @@
 {
   "name": "@xblackfury/caip",
-  "version": "8.15.0",
+  "version": "9.0.0",
   "description": "CAIP Implementation",
   "homepage": "",
   "license": "MIT",
@@ -34,7 +34,7 @@
     "@shapeshiftoss/types": "^8.1.0"
   },
   "devDependencies": {
-    "@shapeshiftoss/types": "^8.1.0",
+    "@shapeshiftoss/types": "^9.0.0",
     "@yfi/sdk": "^1.2.0",
     "axios": "^0.26.1",
     "ts-node": "^10.7.0"
