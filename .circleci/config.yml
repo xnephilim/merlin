@@ -389,6 +389,47 @@ aliases:
     api-memory-limit: 250Mi
     stateful-service-replicas: 1
 
+  - &blackfury
+    assetName: blackfury
+    pulumi-stack: public-us-east-2
+    pulumi-dir: coinstacks/blackfury/pulumi
+    rpc-url: http://user:password@blackfury-svc.hightable.svc.cluster.local:8332
+    indexer-url: http://blackfury-svc.hightable.svc.cluster.local:8001
+    indexer-ws-url: ws://blackfury-svc.hightable.svc.cluster.local:8001/websocket
+    api-autoscaling: true
+    api-replicas: 2
+    api-max-replicas: 6
+    api-cpu-limit: 500m
+    api-cpu-request: 250m
+    api-cpu-threshold: 50
+    api-memory-limit: 500Mi
+    stateful-service-replicas: 2
+    service-name-1: daemon
+    service-image-1: xnephelim/blackfury:0.1.0
+    service-cpu-limit-1: "2"
+    service-cpu-request-1: "1"
+    service-memory-limit-1: 4Gi
+    service-storage-size-1: 250Gi
+    service-name-2: indexer
+    service-image-2: xnephilimdao/hightable-blockbook:fdc2b86
+    service-cpu-limit-2: "2"
+    service-cpu-request-2: "1"
+    service-memory-limit-2: 8Gi
+    service-storage-size-2: 250Gi
+
+  - &blackfury-dev
+    <<: *blackfury
+    environment: dev
+    pulumi-stack: public-dev-us-east-2
+    rpc-url: http://user:password@blackfury-svc.hightable-dev.svc.cluster.local:8332
+    indexer-url: http://blackfury-svc.hightable-dev.svc.cluster.local:8001
+    indexer-ws-url: ws://blackfury-svc.hightable-dev.svc.cluster.local:8001/websocket
+    api-replicas: 1
+    api-max-replicas: 2
+    api-cpu-limit: 300m
+    api-memory-limit: 250Mi
+    stateful-service-replicas: 1
+
   - &litecoin
     assetName: litecoin
     pulumi-stack: public-us-east-2

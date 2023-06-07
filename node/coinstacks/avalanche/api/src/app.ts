@@ -10,7 +10,7 @@ import {
   Registry,
   BlockHandler,
   TransactionHandler,
-} from '@xblackfury/common-api'
+} from '@shapeshiftoss/common-api'
 import { Tx as BlockbookTx, WebsocketClient, getAddresses, NewBlock } from '@xblackfury/blockbook'
 import { Logger } from '@shapeshiftoss/logger'
 import { service } from './controller'

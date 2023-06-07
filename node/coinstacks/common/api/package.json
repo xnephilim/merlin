@@ -1,5 +1,5 @@
 {
-  "name": "@xblackfury/common-api",
+  "name": "@shapeshiftoss/common-api",
   "version": "9.3.0",
   "license": "MIT",
   "main": "dist/index.js",
@@ -14,7 +14,7 @@
     "watch": "tsc --watch"
   },
   "dependencies": {
-    "@xblackfury/blockbook": "^9.3.0",
+    "@shapeshiftoss/blockbook": "^9.3.0",
     "bignumber.js": "^9.1.1",
     "tsoa": "^4.1.0",
     "uuid": "^8.3.2",

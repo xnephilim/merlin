@@ -1,5 +1,5 @@
 {
-  "name": "@xblackfury/optimism-api",
+  "name": "@shapeshiftoss/optimism-api",
   "version": "9.3.0",
   "license": "MIT",
   "private": true,
@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@eth-optimism/contracts": "^0.5.40",
-    "@xblackfury/blockbook": "^9.3.0",
-    "@xblackfury/common-api": "^9.3.0",
+    "@shapeshiftoss/blockbook": "^9.3.0",
+    "@shapeshiftoss/common-api": "^9.3.0",
     "bignumber.js": "^9.1.1"
   }
 }
