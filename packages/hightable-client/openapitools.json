@@ -123,7 +123,7 @@
         }
       },
       "blackfury": {
-        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/blackfury/api/src/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/blackfury/api/src/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/blackfury",
         "enablePostProcessFile": true,
