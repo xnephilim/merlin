@@ -1,0 +1,11 @@
+https://app.xnephilim.com
+https://app.xnephilim.com/#/connect-wallet
+https://app.xnephilim.com/#/demo/merlin
+https://app.xnephilim.com/#/demo/defi
+https://app.xnephilim.com/#/demo/defi/earn
+https://app.xnephilim.com/#/demo/trade
+https://app.xnephilim.com/#/demo/assets
+https://app.xnephilim.com/#/demo/assets/bip122:000000000019d6689c085ae165831e93/slip44:0
+https://app.xnephilim.com/#/demo/assets/eip155:1/slip44:60
+https://app.xnephilim.com/#/demo/assets/eip155:1/erc20:0xc770eefad204b5180df6a14ee197d99d808ee52d
+https://app.xnephilim.com/#/demo/assets/eip155:1/erc20:0xdc49108ce5c57bc3408c3a5e95f3d864ec386ed3

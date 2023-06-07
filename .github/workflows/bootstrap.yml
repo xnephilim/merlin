@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop, release, yeet, private, beard, juice, wood, gome, cafe]
+  pull_request:
+    branches: [main, develop, release, yeet, private]
+
+jobs:
+  install-and-cache:
+    name: Install and Cache
+    runs-on: size-bertha
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            ~/.cache/Cypress
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Yarn Install
+        run: yarn install --immutable
+
+  call-pr-workflow:
+    name: Call
+    uses: ./.github/workflows/pr.yml
+    needs: [install-and-cache]
+
+  call-cloudflare-workflow:
+    name: Call
+    uses: ./.github/workflows/cloudflare.yml
+    secrets: inherit # pass org/repo secrets to the called workflow
+    needs: [install-and-cache]
