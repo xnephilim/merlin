@@ -1,0 +1,33 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    // Configure imports and their directory resolution
+    "paths": {
+      "@xblackfury/asset-service/*": ["packages/asset-service"],
+      "@xblackfury/caip/*": ["packages/caip"],
+      "@xblackfury/chain-adapters/*": ["packages/chain-adapters"],
+      "@xblackfury/investory-merlinx/*": ["packages/investory-merlinx"],
+      "@xblackfury/investory-yearn/*": ["packages/investory-yearn"],
+      "@xblackfury/investory-idle/*": ["packages/investory-idle"],
+      "@shapeshiftoss/logger/*": ["packages/logger"],
+      "@xblackfury/errors/*": ["packages/errors"],
+      "@xblackfury/market-service/*": ["packages/market-service"],
+      "@xblackfury/swapper/*": ["packages/swapper"],
+      "@xblackfury/types/*": ["packages/types"],
+      "@xblackfury/hightable-client/*": ["packages/hightable-client"]
+    },
+    "noEmit": true
+  },
+  "watchOptions": {
+    // Use native file system events for files and directories
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    // Poll files for updates more frequently
+    // when they're updated a lot. (use as fallback)
+    "fallbackPolling": "dynamicPriority",
+    // Don't coalesce watch notification
+    "synchronousWatchDirectory": true
+  },
+  "exclude": ["node_modules", "**/*.test.ts", "**/*.spec.ts", "**/__mocks__"]
+}
