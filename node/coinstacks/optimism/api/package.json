@@ -1,6 +1,6 @@
 {
   "name": "@shapeshiftoss/optimism-api",
-  "version": "9.3.0",
+  "version": "10.0.0",
   "license": "MIT",
   "private": true,
   "files": [
@@ -14,7 +14,7 @@
   "dependencies": {
     "@eth-optimism/contracts": "^0.5.40",
     "@shapeshiftoss/blockbook": "^9.3.0",
-    "@shapeshiftoss/common-api": "^9.3.0",
+    "@shapeshiftoss/common-api": "^10.0.0",
     "bignumber.js": "^9.1.1"
   }
 }
