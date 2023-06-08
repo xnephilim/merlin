@@ -1,0 +1,54 @@
+{
+  "name": "@xblackfury/market-service",
+  "version": "8.0.0",
+  "description": "ShapeShift market data service",
+  "homepage": "",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xnephilim/lib"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf dist && rm -rf tsconfig.build.tsbuildinfo",
+    "compile": "tsc -p tsconfig.build.json",
+    "dev": "tsc --watch",
+    "prepare": "yarn build",
+    "test": "jest test",
+    "type-check": "tsc --project ./tsconfig.build.json --noEmit"
+  },
+  "dependencies": {
+    "@ethersproject/providers": "^5.5.3",
+    "@yfi/sdk": "^1.2.0",
+    "axios": "^0.26.1",
+    "axios-rate-limit": "^1.3.0",
+    "bignumber.js": "^9.1.1",
+    "dayjs": "^1.10.6",
+    "p-ratelimit": "^1.0.1"
+  },
+  "peerDependencies": {
+    "@xblackfury/types": "9.0.0",
+    "@xgridiron/caip": "^8.0.0",
+    "@xblackfury/chain-adapters": "^11.0.0",
+    "@xblackfury/hightable-client": "^11.0.0",
+    "@xblackfury/investor-idle": "^2.3.2",
+    "@xblackfury/investor-merlinx": "^8.0.0"
+  },
+  "devDependencies": {
+    "@xblackfury/types": "^9.0.0",
+    "@xgridiron/caip": "^9.0.0",
+    "@xblackfury/chain-adapters": "^12.0.0",
+    "@xblackfury/hightable-client": "^11.0.0",
+    "@xblackfury/investor-idle": "^3.0.0",
+    "@xblackfury/investor-merlinx": "^9.0.0",
+    "limiter": "^2.1.0"
+  }
+}

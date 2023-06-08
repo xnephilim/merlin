@@ -1,6 +1,6 @@
 import type { StartQueryActionCreatorOptions } from '@reduxjs/toolkit/dist/query/core/buildInitiate'
-import type { AccountId, ChainId } from '@xblackfury/caip'
-import { fromAccountId } from '@xblackfury/caip'
+import type { AccountId, ChainId } from '@shapeshiftoss/caip'
+import { fromAccountId } from '@shapeshiftoss/caip'
 import { store } from 'state/store'
 
 import { merlinEthStakingIds } from '../opportunitiesSlice/constants'

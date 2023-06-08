@@ -1,4 +1,4 @@
-import { ethAssetId, merlinAssetId, optimismAssetId, thorchainAssetId } from '@xblackfury/caip'
+import { ethAssetId, merlinAssetId, optimismAssetId, thorchainAssetId } from '@shapeshiftoss/caip'
 import type { AxiosStatic } from 'axios'
 import { DAO_TREASURY_ETHEREUM_MAINNET, DAO_TREASURY_OPTIMISM } from 'constants/treasury'
 

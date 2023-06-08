@@ -1,5 +1,5 @@
 import { Button, Flex } from '@chakra-ui/react'
-import { merlinAssetId } from '@xblackfury/caip'
+import { merlinAssetId } from '@shapeshiftoss/caip'
 import { useCallback } from 'react'
 import { useTranslate } from 'react-polyglot'
 import { useHistory } from 'react-router'

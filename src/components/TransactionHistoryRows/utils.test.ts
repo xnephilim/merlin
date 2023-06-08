@@ -1,7 +1,7 @@
 import { MaxUint256 } from '@ethersproject/constants'
-import { ethChainId, merlinAssetId } from '@xblackfury/caip'
+import { ethChainId, merlinAssetId } from '@shapeshiftoss/caip'
 import type { TxMetadata } from '@xblackfury/chain-adapters'
-import type { MarketData } from '@shapeshiftoss/types'
+import type { MarketData } from '@xblackfury/types'
 import { mockMarketData } from 'test/mocks/marketData'
 import type { Asset } from 'lib/asset-service'
 

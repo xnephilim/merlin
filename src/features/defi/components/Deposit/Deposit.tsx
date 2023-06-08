@@ -1,6 +1,6 @@
 import { Button, Stack, useColorModeValue } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
-import type { MarketData } from '@shapeshiftoss/types'
+import type { AccountId } from '@shapeshiftoss/caip'
+import type { MarketData } from '@xblackfury/types'
 import get from 'lodash/get'
 import type { PropsWithChildren } from 'react'
 import { useCallback } from 'react'

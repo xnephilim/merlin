@@ -1,4 +1,4 @@
-import { adapters, thorchainAssetId } from '@xblackfury/caip'
+import { adapters, thorchainAssetId } from '@shapeshiftoss/caip'
 import { SwapError, SwapErrorType } from 'lib/swapper/api'
 import { THORCHAIN_AFFILIATE_NAME } from 'lib/swapper/swappers/ThorchainSwapper/utils/constants'
 import { assertIsValidMemo } from 'lib/swapper/swappers/ThorchainSwapper/utils/makeSwapMemo/assertIsValidMemo'

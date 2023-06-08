@@ -4,7 +4,7 @@ import {
   ethAssetId,
   optimismAssetId,
   polygonAssetId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import { mockChainAdapters } from 'test/mocks/portfolio'
 
 import {

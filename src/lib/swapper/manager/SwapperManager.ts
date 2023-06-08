@@ -1,4 +1,4 @@
-import type { ChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import { sortBy } from 'lodash'

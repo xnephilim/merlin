@@ -1,6 +1,6 @@
-import type { ChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
 import type { ChainAdapter } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import { PluginManager } from 'plugins'
 import { activePlugins } from 'plugins/activePlugins'
 import React, { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react'

@@ -7,7 +7,7 @@ import {
   ethChainId,
   ltcChainId,
   osmosisChainId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import pipe from 'lodash/flow'
 
 import {

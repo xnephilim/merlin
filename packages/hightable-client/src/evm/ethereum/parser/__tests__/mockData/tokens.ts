@@ -1,4 +1,4 @@
-import type { Token } from '../../../../../index'
+import { Token } from '@xblackfury/hightable-client'
 
 export const uniV2Token: Token = {
   contract: '0x470e8de2eBaef52014A47Cb5E6aF86884947F08c',

@@ -1,5 +1,5 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
-import { adapters, CHAIN_NAMESPACE, fromAssetId, thorchainAssetId } from '@xblackfury/caip'
+import type { AssetId, ChainId } from '@shapeshiftoss/caip'
+import { adapters, CHAIN_NAMESPACE, fromAssetId, thorchainAssetId } from '@shapeshiftoss/caip'
 import type {
   avalanche,
   ChainAdapterManager,
@@ -9,7 +9,7 @@ import type {
   SignTx,
   UtxoBaseAdapter,
 } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import type Web3 from 'web3'

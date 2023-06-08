@@ -1,4 +1,4 @@
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import type { SwapSource } from 'lib/swapper/api'
 import { SwapperName } from 'lib/swapper/api'
 

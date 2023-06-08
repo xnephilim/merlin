@@ -1,29 +1,23 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
-import { fromAssetId, fromChainId, toAssetId } from '@xblackfury/caip'
-import type {
+import {
   ETHSignMessage,
   ETHSignTx,
-  ETHSignTypedData,
   ETHWallet,
   HDWallet,
-} from '@shapeshiftoss/hdwallet-core'
-import {
   supportsAvalanche,
   supportsBSC,
   supportsETH,
-  supportsGnosis,
   supportsOptimism,
-  supportsPolygon,
 } from '@shapeshiftoss/hdwallet-core'
-import type { BIP44Params } from '@shapeshiftoss/types'
-import { KnownChainIds } from '@shapeshiftoss/types'
-import type * as hightable from '@xblackfury/hightable-client'
+import * as hightable from '@xblackfury/hightable-client'
+import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { AssetId, ChainId, fromAssetId, fromChainId, toAssetId } from '@xgridiron/caip'
 import { utils } from 'ethers'
+import WAValidator from 'multicoin-address-validator'
 import { numberToHex } from 'web3-utils'
 
-import type { ChainAdapter as IChainAdapter } from '../api'
+import { ChainAdapter as IChainAdapter } from '../api'
 import { ErrorHandler } from '../error/ErrorHandler'
-import type {
+import {
   Account,
   BuildSendTxInput,
   FeeDataEstimate,
@@ -33,19 +27,23 @@ import type {
   SignMessageInput,
   SignTx,
   SignTxInput,
-  SignTypedDataInput,
   SubscribeError,
   SubscribeTxsInput,
   Transaction,
   TxHistoryInput,
   TxHistoryResponse,
   ValidAddressResult,
+  ValidAddressResultType,
 } from '../types'
-import { ValidAddressResultType } from '../types'
-import { getAssetNamespace, toAddressNList, toRootDerivationPath } from '../utils'
+import {
+  chainIdToChainLabel,
+  getAssetNamespace,
+  toAddressNList,
+  toRootDerivationPath,
+} from '../utils'
 import { bnOrZero } from '../utils/bignumber'
-import type { avalanche, bnbsmartchain, ethereum, gnosis, optimism, polygon } from '.'
-import type { BuildCustomTxInput, EstimateGasRequest, Fees, GasFeeDataEstimate } from './types'
+import { avalanche, bnbsmartchain, ethereum, optimism } from '.'
+import { BuildCustomTxInput, EstimateGasRequest, Fees, GasFeeDataEstimate } from './types'
 import { getErc20Data } from './utils'
 
 export const evmChainIds = [
@@ -53,8 +51,6 @@ export const evmChainIds = [
   KnownChainIds.AvalancheMainnet,
   KnownChainIds.OptimismMainnet,
   KnownChainIds.BnbSmartChainMainnet,
-  KnownChainIds.PolygonMainnet,
-  KnownChainIds.GnosisMainnet,
 ] as const
 
 export type EvmChainId = typeof evmChainIds[number]
@@ -64,8 +60,6 @@ export type EvmChainAdapter =
   | avalanche.ChainAdapter
   | optimism.ChainAdapter
   | bnbsmartchain.ChainAdapter
-  | polygon.ChainAdapter
-  | gnosis.ChainAdapter
 
 export const isEvmChainId = (
   maybeEvmChainId: string | EvmChainId,
@@ -73,7 +67,13 @@ export const isEvmChainId = (
   return evmChainIds.includes(maybeEvmChainId as EvmChainId)
 }
 
-export interface ChainAdapterArgs<T = hightable.evm.Api> {
+type EvmApi =
+  | hightable.ethereum.V1Api
+  | hightable.avalanche.V1Api
+  | hightable.optimism.V1Api
+  | hightable.bnbsmartchain.V1Api
+
+export interface ChainAdapterArgs<T = EvmApi> {
   chainId?: EvmChainId
   providers: {
     http: T
@@ -83,11 +83,9 @@ export interface ChainAdapterArgs<T = hightable.evm.Api> {
 }
 
 export interface EvmBaseAdapterArgs extends ChainAdapterArgs {
-  assetId: AssetId
-  chainId: EvmChainId
   defaultBIP44Params: BIP44Params
   supportedChainIds: ChainId[]
-  parser: hightable.evm.BaseTransactionParser<hightable.evm.types.Tx>
+  chainId: EvmChainId
 }
 
 export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdapter<T> {
@@ -95,7 +93,7 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
   protected readonly defaultBIP44Params: BIP44Params
   protected readonly supportedChainIds: ChainId[]
   protected readonly providers: {
-    http: hightable.evm.Api
+    http: EvmApi
     ws: hightable.ws.Client<hightable.evm.types.Tx>
   }
 
@@ -104,13 +102,11 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
   protected parser: hightable.evm.BaseTransactionParser<hightable.evm.types.Tx>
 
   protected constructor(args: EvmBaseAdapterArgs) {
-    this.assetId = args.assetId
     this.chainId = args.chainId
     this.defaultBIP44Params = args.defaultBIP44Params
-    this.parser = args.parser
+    this.supportedChainIds = args.supportedChainIds
     this.providers = args.providers
     this.rpcUrl = args.rpcUrl
-    this.supportedChainIds = args.supportedChainIds
 
     if (!this.supportedChainIds.includes(this.chainId)) {
       throw new Error(`${this.chainId} not supported. (supported: ${this.supportedChainIds})`)
@@ -149,10 +145,6 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
         return supportsETH(wallet)
       case Number(fromChainId(KnownChainIds.OptimismMainnet).chainReference):
         return supportsOptimism(wallet)
-      case Number(fromChainId(KnownChainIds.PolygonMainnet).chainReference):
-        return supportsPolygon(wallet)
-      case Number(fromChainId(KnownChainIds.GnosisMainnet).chainReference):
-        return supportsGnosis(wallet)
       default:
         return false
     }
@@ -185,16 +177,6 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
         name: 'BNB',
         symbol: 'BNB',
         explorer: 'https://bscscan.com',
-      },
-      [KnownChainIds.PolygonMainnet]: {
-        name: 'Polygon',
-        symbol: 'MATIC',
-        explorer: 'https://polygonscan.com/',
-      },
-      [KnownChainIds.GnosisMainnet]: {
-        name: 'xDAI',
-        symbol: 'xDAI',
-        explorer: 'https://gnosisscan.io/',
       },
       [KnownChainIds.EthereumMainnet]: {
         name: 'Ethereum',
@@ -246,7 +228,7 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
 
       if (sendMax) {
         if (isTokenSend) {
-          const tokenBalance = account.chainSpecific.tokens?.find(token => {
+          const tokenBalance = account.chainSpecific.tokens?.find((token) => {
             return fromAssetId(token.assetId).assetReference === tokenContractAddress.toLowerCase()
           })?.balance
           if (!tokenBalance) throw new Error('no balance')
@@ -302,7 +284,7 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
     // get the exact send max value for an erc20 send to ensure we have the correct input data when estimating fees
     if (sendMax && isTokenSend) {
       const account = await this.getAccount(from)
-      const tokenBalance = account.chainSpecific.tokens?.find(token => {
+      const tokenBalance = account.chainSpecific.tokens?.find((token) => {
         const { assetReference } = fromAssetId(token.assetId)
         return assetReference === contractAddress.toLowerCase()
       })?.balance
@@ -335,12 +317,12 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
         chain: this.getType(),
         chainSpecific: {
           nonce: data.nonce,
-          tokens: data.tokens.map(token => ({
+          tokens: data.tokens.map((token) => ({
             balance: token.balance,
             assetId: toAssetId({
               chainId: this.chainId,
               assetNamespace: getAssetNamespace(token.type),
-              assetReference: token.id ? `${token.contract}/${token.id}` : token.contract,
+              assetReference: token.contract,
             }),
           })),
         },
@@ -359,7 +341,7 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
     })
 
     const txs = await Promise.all(
-      data.txs.map(async tx => {
+      data.txs.map(async (tx) => {
         const parsedTx = await this.parser.parse(tx, input.pubkey)
 
         return {
@@ -374,14 +356,12 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
           fee: parsedTx.fee,
           status: parsedTx.status,
           trade: parsedTx.trade,
-          transfers: parsedTx.transfers.map(transfer => ({
+          transfers: parsedTx.transfers.map((transfer) => ({
             assetId: transfer.assetId,
             from: transfer.from,
             to: transfer.to,
             type: transfer.type,
             value: transfer.totalValue,
-            id: transfer.id,
-            token: transfer.token,
           })),
           data: parsedTx.data,
         }
@@ -431,7 +411,7 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
     }
   }
 
-  broadcastTransaction(hex: string): Promise<string> {
+  async broadcastTransaction(hex: string) {
     return this.providers.http.sendTx({ sendTxBody: { hex } })
   }
 
@@ -452,28 +432,6 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
     }
   }
 
-  async signTypedData(input: SignTypedDataInput<ETHSignTypedData>): Promise<string> {
-    try {
-      const { typedDataToSign, wallet } = input
-
-      if (!this.supportsChain(wallet)) {
-        throw new Error(`wallet does not support ${this.getDisplayName()}`)
-      }
-
-      if (!wallet.ethSignTypedData) {
-        throw new Error('wallet does not support signing typed data')
-      }
-
-      const result = await wallet.ethSignTypedData(typedDataToSign)
-
-      if (!result) throw new Error('EvmBaseAdapter: error signing typed data')
-
-      return result.signature
-    } catch (err) {
-      return ErrorHandler(err)
-    }
-  }
-
   async getAddress(input: GetAddressInput): Promise<string> {
     const { accountNumber, wallet, showOnDevice = false } = input
     const bip44Params = this.getBIP44Params({ accountNumber })
@@ -487,9 +445,9 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
     return address
   }
 
-  // eslint-disable-next-line require-await
   async validateAddress(address: string): Promise<ValidAddressResult> {
-    const isValidAddress = utils.isAddress(address)
+    const chainLabel = chainIdToChainLabel(this.chainId)
+    const isValidAddress = WAValidator.validate(address, chainLabel)
     if (isValidAddress) return { valid: true, result: ValidAddressResultType.Valid }
     return { valid: false, result: ValidAddressResultType.Invalid }
   }
@@ -508,7 +466,7 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
     await this.providers.ws.subscribeTxs(
       subscriptionId,
       { topic: 'txs', addresses: [address] },
-      async msg => {
+      async (msg) => {
         const tx = await this.parser.parse(msg.data, msg.address)
 
         onMessage({
@@ -521,20 +479,18 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
           fee: tx.fee,
           status: tx.status,
           trade: tx.trade,
-          transfers: tx.transfers.map(transfer => ({
+          transfers: tx.transfers.map((transfer) => ({
             assetId: transfer.assetId,
             from: transfer.from,
             to: transfer.to,
             type: transfer.type,
             value: transfer.totalValue,
-            id: transfer.id,
-            token: transfer.token,
           })),
           txid: tx.txid,
           data: tx.data,
         })
       },
-      err => onError({ message: err.message }),
+      (err) => onError({ message: err.message }),
     )
   }
 
@@ -576,7 +532,7 @@ export abstract class EvmBaseAdapter<T extends EvmChainId> implements IChainAdap
       const bip44Params = this.getBIP44Params({ accountNumber })
       const txToSign = {
         addressNList: toAddressNList(bip44Params),
-        value: numberToHex(value),
+        value,
         to,
         chainId: Number(fromChainId(this.chainId).chainReference),
         data,

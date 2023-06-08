@@ -1,7 +1,7 @@
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons'
 import { Center } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
-import { ethChainId, toAssetId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { ethChainId, toAssetId } from '@shapeshiftoss/caip'
 import type { DefiButtonProps } from 'features/defi/components/DefiActionButtons'
 import { Overview } from 'features/defi/components/Overview/Overview'
 import type {

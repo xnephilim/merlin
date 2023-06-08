@@ -1,4 +1,4 @@
-import type { ChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
 import type { ChainAdapter } from '@xblackfury/chain-adapters'
 import type { Route } from 'Routes/helpers'
 import type { FeatureFlags } from 'state/slices/preferencesSlice/preferencesSlice'

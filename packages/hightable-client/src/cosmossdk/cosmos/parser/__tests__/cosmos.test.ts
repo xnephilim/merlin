@@ -1,7 +1,7 @@
-import { cosmosAssetId, cosmosChainId } from '@xblackfury/caip'
+import { cosmosAssetId, cosmosChainId } from '@xgridiron/caip'
 
 import { TransferType, TxStatus } from '../../../../types'
-import type { ParsedTx } from '../../../parser'
+import { ParsedTx } from '../../../parser'
 import { TransactionParser } from '../index'
 import delegate from './mockData/delegate'
 import ibc_receive from './mockData/ibc_receive'
@@ -11,7 +11,7 @@ import reward from './mockData/reward'
 import standard from './mockData/standard'
 import undelegate from './mockData/undelegate'
 
-const txParser = new TransactionParser({ chainId: cosmosChainId, assetId: cosmosAssetId })
+const txParser = new TransactionParser({ chainId: cosmosChainId })
 
 describe('parseTx', () => {
   it('should be able to parse a standard send tx', async () => {

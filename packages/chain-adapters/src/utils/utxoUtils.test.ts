@@ -1,4 +1,4 @@
-import { UtxoAccountType } from '@shapeshiftoss/types'
+import { UtxoAccountType } from '@xblackfury/types'
 
 import { convertXpubVersion } from './utxoUtils'
 
@@ -21,8 +21,11 @@ describe('utxoUtils', () => {
       [zpub, UtxoAccountType.P2pkh, xpub],
       [zpub, UtxoAccountType.SegwitP2sh, ypub],
       [zpub, UtxoAccountType.SegwitNative, zpub],
-    ])('should convert %s to %s', (input: string, type: UtxoAccountType, expected: string) => {
-      expect(convertXpubVersion(input, type)).toBe(expected)
-    })
+    ])(
+      'should convert %s to %s',
+      async (input: string, type: UtxoAccountType, expected: string) => {
+        expect(convertXpubVersion(input, type)).toBe(expected)
+      },
+    )
   })
 })

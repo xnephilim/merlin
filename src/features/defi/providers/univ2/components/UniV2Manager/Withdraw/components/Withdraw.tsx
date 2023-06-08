@@ -1,5 +1,5 @@
-import type { AccountId } from '@xblackfury/caip'
-import { ASSET_REFERENCE, fromAssetId, toAssetId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { ASSET_REFERENCE, fromAssetId, toAssetId } from '@shapeshiftoss/caip'
 import { ethers } from 'ethers'
 import type { WithdrawValues } from 'features/defi/components/Withdraw/Withdraw'
 import { Field, Withdraw as ReusableWithdraw } from 'features/defi/components/Withdraw/Withdraw'

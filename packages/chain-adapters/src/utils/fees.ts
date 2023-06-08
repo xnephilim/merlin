@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 
-import type { FeeDataKey } from '../types'
+import { FeeDataKey } from '../types'
 import { bnOrZero } from './bignumber'
 
 export type ConfirmationSpeed = `${FeeDataKey}`

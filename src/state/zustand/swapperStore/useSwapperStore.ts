@@ -1,4 +1,4 @@
-import { ethAssetId, merlinAssetId } from '@xblackfury/caip'
+import { ethAssetId, merlinAssetId } from '@shapeshiftoss/caip'
 import { createStore, useStore } from 'zustand'
 import { devtools } from 'zustand/middleware'
 import { immer } from 'zustand/middleware/immer'

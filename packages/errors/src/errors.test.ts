@@ -1,9 +1,9 @@
-import { ErrorWithDetails } from './ErrorWithDetails'
-import { ForbiddenError } from './ForbiddenError'
-import { NotFoundError } from './NotFoundError'
-import { RateLimitError } from './RateLimitError'
-import { UnauthorizedError } from './UnauthorizedError'
-import { ValidationError } from './ValidationError'
+import { default as ErrorWithDetails } from './ErrorWithDetails'
+import { default as ForbiddenError } from './ForbiddenError'
+import { default as NotFoundError } from './NotFoundError'
+import { default as RateLimitError } from './RateLimitError'
+import { default as UnauthorizedError } from './UnauthorizedError'
+import { default as ValidationError } from './ValidationError'
 
 describe.each`
   TestError            | code

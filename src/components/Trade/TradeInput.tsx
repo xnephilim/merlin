@@ -9,8 +9,8 @@ import {
   useColorModeValue,
   useMediaQuery,
 } from '@chakra-ui/react'
-import type { AssetId } from '@xblackfury/caip'
-import { ethAssetId, ethChainId, osmosisAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { ethAssetId, ethChainId, osmosisAssetId } from '@shapeshiftoss/caip'
 import type { InterpolationOptions } from 'node-polyglot'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useFormContext } from 'react-hook-form'

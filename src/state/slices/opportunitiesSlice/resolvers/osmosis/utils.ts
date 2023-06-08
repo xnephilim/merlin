@@ -1,5 +1,5 @@
-import type { AssetId, AssetReference } from '@xblackfury/caip'
-import { ASSET_NAMESPACE, ASSET_REFERENCE, osmosisChainId, toAssetId } from '@xblackfury/caip'
+import type { AssetId, AssetReference } from '@shapeshiftoss/caip'
+import { ASSET_NAMESPACE, ASSET_REFERENCE, osmosisChainId, toAssetId } from '@shapeshiftoss/caip'
 import type { AxiosResponse } from 'axios'
 import axios from 'axios'
 import { getConfig } from 'config'

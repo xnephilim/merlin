@@ -40,12 +40,12 @@ const makeMockOsmosisNativeResponse = () => ({
 
 jest.mock('fs', () => ({
   promises: {
-    writeFile: jest.fn(() => undefined),
+    writeFile: jest.fn(async () => undefined),
   },
 }))
 
 describe('parseOsmosisData', () => {
-  it('can parse osmosis data', () => {
+  it('can parse osmosis data', async () => {
     const result = parseOsmosisData([
       makeMockOsmosisNativeResponse(),
       makeMockOsmosisIbcResponse(),
@@ -62,7 +62,7 @@ describe('parseOsmosisData', () => {
 })
 
 describe('parseData', () => {
-  it('can parse all data', () => {
+  it('can parse all data', async () => {
     const result = parseData([
       makeMockOsmosisIonResponse(),
       makeMockOsmosisIbcResponse(),

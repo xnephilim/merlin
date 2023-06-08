@@ -1,6 +1,6 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
+import type { AssetId, ChainId } from '@shapeshiftoss/caip'
 import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
-import type { KnownChainIds } from '@shapeshiftoss/types'
+import type { KnownChainIds } from '@xblackfury/types'
 import type { Asset } from 'lib/asset-service'
 import type {
   BuildTradeInput,

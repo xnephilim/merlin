@@ -1,4 +1,4 @@
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import type { EvmBaseAdapter } from '@xblackfury/chain-adapters'
 import { bn } from 'lib/bignumber/bignumber'
 import type { ProtocolFee, QuoteFeeData } from 'lib/swapper/api'

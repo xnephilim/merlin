@@ -1,7 +1,4 @@
-import invert from 'lodash/invert'
-
-import type { AssetId } from '../../assetId/assetId'
-import { fromAssetId } from '../../assetId/assetId'
+import { AssetId, fromAssetId } from '../../assetId/assetId'
 import * as adapters from './generated'
 import { isNumeric, isOsmosisLpAsset } from './utils'
 
@@ -14,7 +11,10 @@ const generatedAssetIdToOsmosisMap = Object.values(adapters).reduce((acc, cur) =
   ...cur,
 })) as Record<string, string>
 
-const generatedOsmosisToAssetIdMap = invert(generatedAssetIdToOsmosisMap)
+const invert = <T extends Record<string, string>>(data: T) =>
+  Object.entries(data).reduce((acc, [k, v]) => ((acc[v] = k), acc), {} as Record<string, string>)
+
+const generatedOsmosisToAssetIdMap: Record<string, string> = invert(generatedAssetIdToOsmosisMap)
 
 export const osmosisToAssetId = (id: string): string | undefined => generatedOsmosisToAssetIdMap[id]
 

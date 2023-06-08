@@ -1,4 +1,4 @@
-import { fromAccountId } from '@xblackfury/caip'
+import { fromAccountId } from '@shapeshiftoss/caip'
 import type { EvmBaseAdapter, EvmChainId } from '@xblackfury/chain-adapters'
 import { FeeDataKey } from '@xblackfury/chain-adapters'
 import { getFeesForTx } from 'plugins/walletConnectToDapps/utils'

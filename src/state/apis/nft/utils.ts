@@ -1,4 +1,4 @@
-import type { AccountId, AssetId, ChainId } from '@xblackfury/caip'
+import type { AccountId, AssetId, ChainId } from '@shapeshiftoss/caip'
 import {
   avalancheChainId,
   bscChainId,
@@ -9,7 +9,7 @@ import {
   fromAssetId,
   optimismChainId,
   polygonChainId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import { isEvmChainId } from '@xblackfury/chain-adapters'
 import { NftFilters } from 'alchemy-sdk'
 import { invert } from 'lodash'

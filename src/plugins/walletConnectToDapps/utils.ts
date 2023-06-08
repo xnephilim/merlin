@@ -1,5 +1,5 @@
-import type { AccountId } from '@xblackfury/caip'
-import { fromAccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { fromAccountId } from '@shapeshiftoss/caip'
 import type {
   EvmBaseAdapter,
   EvmChainId,

@@ -1,7 +1,7 @@
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import type { FeeDataEstimate } from '@xblackfury/chain-adapters'
 import type { ETHWallet } from '@shapeshiftoss/hdwallet-core'
-import type { BIP44Params, KnownChainIds, WithdrawType } from '@shapeshiftoss/types'
+import type { BIP44Params, KnownChainIds, WithdrawType } from '@xblackfury/types'
 import type { BigNumber } from 'bignumber.js'
 import type { Contract } from 'ethers'
 

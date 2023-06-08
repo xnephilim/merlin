@@ -95,13 +95,13 @@ const makeOsmosisMockCoincapResponse = () => ({
 
 jest.mock('fs', () => ({
   promises: {
-    writeFile: jest.fn(() => undefined),
+    writeFile: jest.fn(async () => undefined),
   },
 }))
 
 describe('adapters:coincap:utils', () => {
   describe('parseEthData', () => {
-    it('can parse eth data', () => {
+    it('can parse eth data', async () => {
       const result = parseEthData([makeEthMockCoincapResponse(), makeMerlinMockCoincapResponse()])
       const expected = {
         'eip155:1/slip44:60': 'ethereum',
@@ -110,19 +110,19 @@ describe('adapters:coincap:utils', () => {
       expect(result).toEqual(expected)
     })
 
-    it('can parse btc data', () => {
+    it('can parse btc data', async () => {
       const result = bitcoinAssetMap
       const expected = { 'bip122:000000000019d6689c085ae165831e93/slip44:0': 'bitcoin' }
       expect(result).toEqual(expected)
     })
 
-    it('can parse cosmos data', () => {
+    it('can parse cosmos data', async () => {
       const result = cosmosAssetMap
       const expected = { 'cosmos:cosmoshub-4/slip44:118': 'cosmos' }
       expect(result).toEqual(expected)
     })
 
-    it('can parse osmosis data', () => {
+    it('can parse osmosis data', async () => {
       const result = osmosisAssetMap
       const expected = {
         'cosmos:osmosis-1/slip44:118': 'osmosis',
@@ -132,7 +132,7 @@ describe('adapters:coincap:utils', () => {
   })
 
   describe('parseData', () => {
-    it('can parse all data', () => {
+    it('can parse all data', async () => {
       const result = parseData([
         makeEthMockCoincapResponse(),
         makeMerlinMockCoincapResponse(),

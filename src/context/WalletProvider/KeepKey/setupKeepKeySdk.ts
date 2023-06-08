@@ -1,6 +1,6 @@
 import type { PairingInfo } from '@keepkey/keepkey-sdk'
 import { KeepKeySdk } from '@keepkey/keepkey-sdk'
-import { merlinAssetId } from '@xblackfury/caip'
+import { merlinAssetId } from '@shapeshiftoss/caip'
 import { store } from 'state/store'
 
 type Config = {

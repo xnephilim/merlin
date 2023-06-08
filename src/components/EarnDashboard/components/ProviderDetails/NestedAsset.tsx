@@ -1,5 +1,5 @@
 import { Button, Flex, useColorModeValue } from '@chakra-ui/react'
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import { bnOrZero } from '@xblackfury/chain-adapters'
 import { useMemo } from 'react'
 import { Amount } from 'components/Amount/Amount'

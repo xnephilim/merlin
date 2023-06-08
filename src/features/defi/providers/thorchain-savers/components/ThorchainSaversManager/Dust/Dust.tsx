@@ -1,6 +1,6 @@
 import { ArrowDownIcon, WarningIcon } from '@chakra-ui/icons'
 import { Avatar, Box, Button, Divider, Flex, Stack, useColorModeValue } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
 import { DefiModalHeader } from 'features/defi/components/DefiModal/DefiModalHeader'
 import { Summary } from 'features/defi/components/Summary'
 import type {

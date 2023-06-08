@@ -1,4 +1,4 @@
-import type * as hightable from '@xblackfury/hightable-client'
+import * as hightable from '@xblackfury/hightable-client'
 import coinSelect from 'coinselect'
 import split from 'coinselect/split'
 
@@ -57,5 +57,5 @@ export const utxoSelect = (input: UTXOSelectInput) => {
     result.outputs[1] = { address: input.from, value }
   }
 
-  return { ...result, outputs: result.outputs?.filter(o => !o.script) }
+  return { ...result, outputs: result.outputs?.filter((o) => !o.script) }
 }

@@ -1,4 +1,4 @@
-import { fromAssetId, fromChainId } from '@xblackfury/caip'
+import { fromAssetId, fromChainId } from '@shapeshiftoss/caip'
 import type { EvmBaseAdapter, EvmChainId } from '@xblackfury/chain-adapters'
 import type { GasFeeDataEstimate } from '@xblackfury/chain-adapters/src/evm/types'
 import type { Result } from '@sniptt/monads'

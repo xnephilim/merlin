@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { fromAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { fromAssetId } from '@shapeshiftoss/caip'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import max from 'lodash/max'

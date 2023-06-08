@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { ethAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { ethAssetId } from '@shapeshiftoss/caip'
 import { FeeDataKey } from '@xblackfury/chain-adapters'
 import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import { renderHook, waitFor } from '@testing-library/react'

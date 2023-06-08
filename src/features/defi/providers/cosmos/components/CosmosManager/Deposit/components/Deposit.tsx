@@ -1,6 +1,6 @@
 import { useToast } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
-import { toAssetId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { toAssetId } from '@shapeshiftoss/caip'
 import type { DepositValues } from 'features/defi/components/Deposit/Deposit'
 import { Deposit as ReusableDeposit, Field } from 'features/defi/components/Deposit/Deposit'
 import type {

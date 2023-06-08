@@ -1,5 +1,5 @@
 import type { Step } from '@lifi/sdk'
-import type { AssetId, ChainId } from '@xblackfury/caip'
+import type { AssetId, ChainId } from '@shapeshiftoss/caip'
 import { isEvmChainId } from '@xblackfury/chain-adapters'
 import type { Asset } from 'lib/asset-service'
 import { bn } from 'lib/bignumber/bignumber'

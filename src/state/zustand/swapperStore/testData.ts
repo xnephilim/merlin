@@ -1,4 +1,4 @@
-import type { ChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
 import { ETH, MERLIN } from 'test/constants'
 import { TradeAmountInputField } from 'components/Trade/types'
 import type { Swapper } from 'lib/swapper/api'

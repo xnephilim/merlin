@@ -1,7 +1,7 @@
 import { useToast } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
-import { toAssetId } from '@xblackfury/caip'
-import { WithdrawType } from '@shapeshiftoss/types'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { toAssetId } from '@shapeshiftoss/caip'
+import { WithdrawType } from '@xblackfury/types'
 import type { WithdrawValues } from 'features/defi/components/Withdraw/Withdraw'
 import { Field, Withdraw as ReusableWithdraw } from 'features/defi/components/Withdraw/Withdraw'
 import type {

@@ -1,6 +1,6 @@
 import type { SkipToken } from '@reduxjs/toolkit/query'
 import { skipToken } from '@reduxjs/toolkit/query'
-import { fromAssetId } from '@xblackfury/caip'
+import { fromAssetId } from '@shapeshiftoss/caip'
 import { useEffect, useState } from 'react'
 import { getTradeQuoteArgs } from 'components/Trade/hooks/useSwapper/getTradeQuoteArgs'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'

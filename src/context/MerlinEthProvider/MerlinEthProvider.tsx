@@ -1,5 +1,5 @@
-import type { AccountId } from '@xblackfury/caip'
-import { ethAssetId, ethChainId, fromAccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { ethAssetId, ethChainId, fromAccountId } from '@shapeshiftoss/caip'
 import { TxStatus } from '@xblackfury/hightable-client'
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { opportunitiesApi } from 'state/slices/opportunitiesSlice/opportunitiesApiSlice'

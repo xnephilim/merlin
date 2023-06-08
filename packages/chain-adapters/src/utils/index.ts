@@ -1,6 +1,10 @@
-import type { AssetNamespace, ChainId } from '@xblackfury/caip'
-import { CHAIN_NAMESPACE, CHAIN_REFERENCE, fromChainId } from '@xblackfury/caip'
-import { BigNumber } from 'ethers'
+import {
+  AssetNamespace,
+  CHAIN_NAMESPACE,
+  CHAIN_REFERENCE,
+  ChainId,
+  fromChainId,
+} from '@xgridiron/caip'
 
 export * from './bignumber'
 export * from './bip44'
@@ -10,10 +14,8 @@ export * from './utxoUtils'
 export const getAssetNamespace = (type: string): AssetNamespace => {
   if (type === 'ERC20') return 'erc20'
   if (type === 'ERC721') return 'erc721'
-  if (type === 'ERC1155') return 'erc1155'
   if (type === 'BEP20') return 'bep20'
   if (type === 'BEP721') return 'bep721'
-  if (type === 'BEP1155') return 'bep1155'
   throw new Error(`Unknown asset namespace. type: ${type}`)
 }
 
@@ -44,8 +46,6 @@ export const chainIdToChainLabel = (chainId: ChainId): string => {
         case CHAIN_REFERENCE.AvalancheCChain:
         case CHAIN_REFERENCE.OptimismMainnet:
         case CHAIN_REFERENCE.BnbSmartChainMainnet:
-        case CHAIN_REFERENCE.PolygonMainnet:
-        case CHAIN_REFERENCE.GnosisMainnet:
           return 'ethereum' // all evm chains use the same validator (https://github.com/christsim/multicoin-address-validator/blob/master/src/ethereum_validator.js)
         default:
           throw new Error(
@@ -71,5 +71,3 @@ export const chainIdToChainLabel = (chainId: ChainId): string => {
       throw new Error(`chainNamespace ${chainNamespace} not supported.`)
   }
 }
-
-export const convertNumberToHex = (value: string): string => BigNumber.from(value).toHexString()

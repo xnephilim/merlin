@@ -1,10 +1,8 @@
 import invertBy from 'lodash/invertBy'
 import toLower from 'lodash/toLower'
 
-import type { AssetId } from '../../assetId/assetId'
-import { fromAssetId } from '../../assetId/assetId'
-import type { ChainId } from '../../chainId/chainId'
-import { fromChainId, toChainId } from '../../chainId/chainId'
+import { AssetId, fromAssetId } from '../../assetId/assetId'
+import { ChainId, fromChainId, toChainId } from '../../chainId/chainId'
 import { CHAIN_NAMESPACE, CHAIN_REFERENCE } from '../../constants'
 import * as adapters from './generated'
 
@@ -13,8 +11,6 @@ export enum CoingeckoAssetPlatform {
   Ethereum = 'ethereum',
   Cosmos = 'cosmos',
   Osmosis = 'osmosis',
-  Polygon = 'polygon-pos',
-  Gnosis = 'xdai',
   Avalanche = 'avalanche',
   Thorchain = 'thorchain',
   Optimism = 'optimistic-ethereum',
@@ -23,11 +19,9 @@ export enum CoingeckoAssetPlatform {
 
 type CoinGeckoId = string
 
-// markets.xnephilim.com is a coingecko proxy maintained by the merlin foundation
-export const coingeckoBaseUrl = 'https://markets.xnephilim.com/api/v3'
-// export const coingeckoBaseUrl = 'http://localhost:1137/api/v3'
-export const coingeckoProBaseUrl = coingeckoBaseUrl
-export const coingeckoUrl = `${coingeckoBaseUrl}/coins/list?include_platform=true`
+export const coingeckoBaseUrl = 'https://api.coingecko.com/api/v3'
+export const coingeckoProBaseUrl = 'https://pro-api.coingecko.com/api/v3'
+export const coingeckoUrl = 'https://api.coingecko.com/api/v3/coins/list?include_platform=true'
 
 const assetIdToCoinGeckoIdMapByChain: Record<AssetId, CoinGeckoId>[] = Object.values(adapters)
 
@@ -60,10 +54,6 @@ export const chainIdToCoingeckoAssetPlatform = (chainId: ChainId): string => {
           return CoingeckoAssetPlatform.Optimism
         case CHAIN_REFERENCE.BnbSmartChainMainnet:
           return CoingeckoAssetPlatform.BnbSmartChain
-        case CHAIN_REFERENCE.PolygonMainnet:
-          return CoingeckoAssetPlatform.Polygon
-        case CHAIN_REFERENCE.GnosisMainnet:
-          return CoingeckoAssetPlatform.Gnosis
         default:
           throw new Error(
             `chainNamespace ${chainNamespace}, chainReference ${chainReference} not supported.`,
@@ -89,9 +79,20 @@ export const chainIdToCoingeckoAssetPlatform = (chainId: ChainId): string => {
   }
 }
 
-export const makeCoingeckoAssetUrl = (assetId: AssetId): string | undefined => {
+export const makeCoingeckoUrlParts = (
+  apiKey?: string,
+): { baseUrl: string; maybeApiKeyQueryParam: string } => {
+  const baseUrl = apiKey ? coingeckoProBaseUrl : coingeckoBaseUrl
+  const maybeApiKeyQueryParam = apiKey ? `&x_cg_pro_api_key=${apiKey}` : ''
+
+  return { baseUrl, maybeApiKeyQueryParam }
+}
+
+export const makeCoingeckoAssetUrl = (assetId: AssetId, apiKey?: string): string | undefined => {
   const id = assetIdToCoingecko(assetId)
   if (!id) return
+
+  const { baseUrl, maybeApiKeyQueryParam } = makeCoingeckoUrlParts(apiKey)
 
   const { chainNamespace, chainReference, assetNamespace, assetReference } = fromAssetId(assetId)
 
@@ -100,8 +101,8 @@ export const makeCoingeckoAssetUrl = (assetId: AssetId): string | undefined => {
       toChainId({ chainNamespace, chainReference }),
     )
 
-    return `${coingeckoProBaseUrl}/coins/${assetPlatform}/contract/${assetReference}`
+    return `${baseUrl}/coins/${assetPlatform}/contract/${assetReference}?${maybeApiKeyQueryParam}`
   }
 
-  return `${coingeckoProBaseUrl}/coins/${id}`
+  return `${baseUrl}/coins/${id}?${maybeApiKeyQueryParam}`
 }

@@ -1,5 +1,5 @@
 import { toAssetId } from './assetId/assetId'
-import type { ChainNamespace, ChainReference } from './chainId/chainId'
+import { ChainNamespace, ChainReference } from './chainId/chainId'
 import {
   ASSET_NAMESPACE,
   ASSET_REFERENCE,

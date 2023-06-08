@@ -1,4 +1,4 @@
-import { adapters } from '@xblackfury/caip'
+import { adapters } from '@shapeshiftoss/caip'
 import type {
   FindAllMarketArgs,
   HistoryData,
@@ -6,8 +6,8 @@ import type {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@shapeshiftoss/types'
-import { HistoryTimeframe } from '@shapeshiftoss/types'
+} from '@xblackfury/types'
+import { HistoryTimeframe } from '@xblackfury/types'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import { bn, bnOrZero } from 'lib/bignumber/bignumber'

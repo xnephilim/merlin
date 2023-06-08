@@ -1,7 +1,7 @@
 import type { UtxoBaseAdapter, UtxoChainId } from '@xblackfury/chain-adapters'
 import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import { supportsETH } from '@shapeshiftoss/hdwallet-core'
-import type { UtxoAccountType } from '@shapeshiftoss/types'
+import type { UtxoAccountType } from '@xblackfury/types'
 import {
   isCosmosSdkSwap,
   isEvmSwap,

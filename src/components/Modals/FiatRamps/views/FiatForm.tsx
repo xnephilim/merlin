@@ -1,5 +1,5 @@
-import type { AccountId, AssetId } from '@xblackfury/caip'
-import { ethAssetId, fromAccountId } from '@xblackfury/caip'
+import type { AccountId, AssetId } from '@shapeshiftoss/caip'
+import { ethAssetId, fromAccountId } from '@shapeshiftoss/caip'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'

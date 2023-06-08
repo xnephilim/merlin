@@ -1,8 +1,7 @@
-import type { ChainId, ChainNamespace, ChainReference } from '../chainId/chainId'
-import { fromChainId, toChainId } from '../chainId/chainId'
+import { ChainId, ChainNamespace, ChainReference, fromChainId, toChainId } from '../chainId/chainId'
 import { CHAIN_NAMESPACE } from '../constants'
 import { assertIsChainId, assertIsChainNamespace, assertIsChainReference } from '../typeGuards'
-import type { Nominal } from '../utils'
+import { Nominal } from '../utils'
 
 export type AccountId = Nominal<string, 'AccountId'>
 
@@ -55,7 +54,7 @@ type FromAccountIdReturn = {
 
 type FromAccountId = (accountId: AccountId) => FromAccountIdReturn
 
-export const fromAccountId: FromAccountId = accountId => {
+export const fromAccountId: FromAccountId = (accountId) => {
   const parts = accountId.split(':')
 
   if (parts.length !== 3) {

@@ -1,5 +1,5 @@
-import type { ToAssetIdArgs } from '@xblackfury/caip'
-import { osmosisChainId, toAssetId } from '@xblackfury/caip'
+import type { ToAssetIdArgs } from '@shapeshiftoss/caip'
+import { osmosisChainId, toAssetId } from '@shapeshiftoss/caip'
 import { bn } from 'lib/bignumber/bignumber'
 import { selectAssetById } from 'state/slices/assetsSlice/selectors'
 import { selectFeatureFlags } from 'state/slices/preferencesSlice/selectors'

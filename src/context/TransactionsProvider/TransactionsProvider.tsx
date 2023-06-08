@@ -1,5 +1,5 @@
-import type { AccountId } from '@xblackfury/caip'
-import { ethChainId, merlinAssetId, merlinatarAssetId, fromAccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { ethChainId, merlinAssetId, merlinatarAssetId, fromAccountId } from '@shapeshiftoss/caip'
 import type { Transaction } from '@xblackfury/chain-adapters'
 import { TxStatus } from '@xblackfury/hightable-client'
 import { IDLE_PROXY_1_CONTRACT_ADDRESS, IDLE_PROXY_2_CONTRACT_ADDRESS } from 'contracts/constants'

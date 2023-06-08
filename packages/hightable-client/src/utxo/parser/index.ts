@@ -1,14 +1,12 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
 import type { utxo } from '@shapeshiftoss/common-api'
+import { AssetId, ChainId } from '@xgridiron/caip'
 import { BigNumber } from 'bignumber.js'
 
-import type { ParsedTx } from '../../types'
-import { TransferType, TxStatus } from '../../types'
+import { ParsedTx, TransferType, TxStatus } from '../../types'
 import { aggregateTransfer } from '../../utils'
 
 export interface BaseTransactionParserArgs {
   chainId: ChainId
-  assetId: AssetId
 }
 
 export class BaseTransactionParser<T extends utxo.Tx> {
@@ -17,10 +15,9 @@ export class BaseTransactionParser<T extends utxo.Tx> {
 
   constructor(args: BaseTransactionParserArgs) {
     this.chainId = args.chainId
-    this.assetId = args.assetId
   }
 
-  parse(tx: T, address: string): Promise<ParsedTx> {
+  async parse(tx: T, address: string): Promise<ParsedTx> {
     const parsedTx: ParsedTx = {
       address,
       blockHash: tx.blockHash,
@@ -33,19 +30,19 @@ export class BaseTransactionParser<T extends utxo.Tx> {
       txid: tx.txid,
     }
 
-    tx.vin.forEach(vin => {
+    tx.vin.forEach((vin) => {
       if (vin.addresses?.includes(address)) {
         // send amount
         const sendValue = new BigNumber(vin.value ?? 0)
         if (sendValue.gt(0)) {
-          parsedTx.transfers = aggregateTransfer({
-            assetId: this.assetId,
-            from: vin.addresses?.[0] ?? '',
-            to: tx.vout[0].addresses?.[0] ?? '',
-            transfers: parsedTx.transfers,
-            type: TransferType.Send,
-            value: sendValue.toString(10),
-          })
+          parsedTx.transfers = aggregateTransfer(
+            parsedTx.transfers,
+            TransferType.Send,
+            this.assetId,
+            vin.addresses?.[0] ?? '',
+            tx.vout[0].addresses?.[0] ?? '',
+            sendValue.toString(10),
+          )
         }
 
         // network fee
@@ -56,23 +53,23 @@ export class BaseTransactionParser<T extends utxo.Tx> {
       }
     })
 
-    tx.vout.forEach(vout => {
+    tx.vout.forEach((vout) => {
       if (vout.addresses?.includes(address)) {
         // receive amount
         const receiveValue = new BigNumber(vout.value ?? 0)
         if (receiveValue.gt(0)) {
-          parsedTx.transfers = aggregateTransfer({
-            assetId: this.assetId,
-            from: tx.vin[0].addresses?.[0] ?? '',
-            to: vout.addresses?.[0] ?? '',
-            transfers: parsedTx.transfers,
-            type: TransferType.Receive,
-            value: receiveValue.toString(10),
-          })
+          parsedTx.transfers = aggregateTransfer(
+            parsedTx.transfers,
+            TransferType.Receive,
+            this.assetId,
+            tx.vin[0].addresses?.[0] ?? '',
+            vout.addresses?.[0] ?? '',
+            receiveValue.toString(10),
+          )
         }
       }
     })
 
-    return Promise.resolve(parsedTx)
+    return parsedTx
   }
 }

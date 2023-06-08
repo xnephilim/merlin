@@ -1,7 +1,7 @@
-import { ethAssetId } from '@xblackfury/caip'
+import { ethAssetId } from '@shapeshiftoss/caip'
 import type { ChainAdapter, evm } from '@xblackfury/chain-adapters'
 import { FeeDataKey } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import Web3 from 'web3'
 import type { ThorchainSwapperDeps } from 'lib/swapper/swappers/ThorchainSwapper/types'
 

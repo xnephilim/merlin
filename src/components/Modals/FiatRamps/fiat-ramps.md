@@ -11,7 +11,7 @@ Generally to add a new fiat ramp provider, you should complement `SupportedFiatR
 - The new provider should have a `onSubmit` property for passing the data to the provider API.
 - `isImplemeted` field is used to show whether the provider is ready to use or a `coming soon` text should be shown instead.
 
-You will also need to add a two-way mapping from ShapeShift AssetId <> ramp ticker / ID in the `@xblackfury/caip` package, located in [lib](https://github.com/xnephilim/lib).
+You will also need to add a two-way mapping from ShapeShift AssetId <> ramp ticker / ID in the `@shapeshiftoss/caip` package, located in [lib](https://github.com/xnephilim/lib).
 Refer to the README in that repo to work with lib packages locally.
 
 This mapping serves two purposes:

@@ -1,5 +1,5 @@
-import type { AccountId, AssetId, ChainNamespace, ChainReference } from '@xblackfury/caip'
-import { toChainId } from '@xblackfury/caip'
+import type { AccountId, AssetId, ChainNamespace, ChainReference } from '@shapeshiftoss/caip'
+import { toChainId } from '@shapeshiftoss/caip'
 import { getMerlinPageRouteAssetId } from 'plugins/merlinPage/utils/getMerlinPageRouteAssetId'
 import { useMemo } from 'react'
 import { matchPath, useLocation } from 'react-router'

@@ -1,4 +1,4 @@
-import type { ChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
 import type { ChainAdapterManager, SignTx } from '@xblackfury/chain-adapters'
 import type Web3 from 'web3'
 import type { Trade } from 'lib/swapper/api'

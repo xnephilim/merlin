@@ -1,4 +1,4 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
+import type { AssetId, ChainId } from '@shapeshiftoss/caip'
 import type { CosmosSdkChainId, EvmChainId, UtxoChainId } from '@xblackfury/chain-adapters'
 import { createErrorClass } from '@xblackfury/errors'
 import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
@@ -7,7 +7,7 @@ import type {
   KnownChainIds,
   MarketData,
   UtxoAccountType,
-} from '@shapeshiftoss/types'
+} from '@xblackfury/types'
 import type { Result } from '@sniptt/monads'
 import type { Asset } from 'lib/asset-service'
 

@@ -1,4 +1,4 @@
-import { cosmosChainId, fromAccountId, osmosisChainId } from '@xblackfury/caip'
+import { cosmosChainId, fromAccountId, osmosisChainId } from '@shapeshiftoss/caip'
 import type { CosmosSdkBaseAdapter, CosmosSdkChainId } from '@xblackfury/chain-adapters'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import { bn, bnOrZero } from 'lib/bignumber/bignumber'

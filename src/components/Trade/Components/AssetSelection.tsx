@@ -6,7 +6,7 @@ import {
   Stack,
   useColorModeValue,
 } from '@chakra-ui/react'
-import type { AccountId, AssetId } from '@xblackfury/caip'
+import type { AccountId, AssetId } from '@shapeshiftoss/caip'
 import type { AccountDropdownProps } from 'components/AccountDropdown/AccountDropdown'
 import { AccountDropdown } from 'components/AccountDropdown/AccountDropdown'
 import { AssetIcon } from 'components/AssetIcon'

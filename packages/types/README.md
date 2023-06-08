@@ -1,13 +1,13 @@
-# @shapeshiftoss/types
+# @xblackfury/types
 
 ## Getting Started
 
 ```sh
-yarn add @shapeshiftoss/types
+yarn add @xblackfury/types
 ```
 
 ## Usage
 
 ```ts
-import { Asset, UtxoAccountType } from '@shapeshiftoss/types'
+import { Asset, UtxoAccountType } from '@xblackfury/types'
 ```

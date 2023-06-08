@@ -1,4 +1,4 @@
-import { fromAssetId } from '@xblackfury/caip'
+import { fromAssetId } from '@shapeshiftoss/caip'
 import type { EvmChainId } from '@xblackfury/chain-adapters'
 import type { ETHSignTx, HDWallet } from '@shapeshiftoss/hdwallet-core'
 import { supportsETH } from '@shapeshiftoss/hdwallet-core'

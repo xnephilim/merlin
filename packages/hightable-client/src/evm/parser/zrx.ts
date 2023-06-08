@@ -1,5 +1,4 @@
-import type { BaseTxMetadata } from '../../types'
-import { Dex, TradeType } from '../../types'
+import { BaseTxMetadata, Dex, TradeType } from '../../types'
 import type { SubParser, TxSpecific } from '.'
 import { txInteractsWithContract } from '.'
 import type { Tx } from './types'
@@ -23,7 +22,7 @@ export class Parser implements SubParser<Tx> {
     if (!txInteractsWithContract(tx, this.proxyContract)) return
     if (!(tx.tokenTransfers && tx.tokenTransfers.length)) return
 
-    return await Promise.resolve({
+    return {
       trade: {
         dexName: Dex.Zrx,
         type: TradeType.Trade,
@@ -32,6 +31,6 @@ export class Parser implements SubParser<Tx> {
         method: undefined, // TODO - add zrx ABI and decode
         parser: 'zrx',
       },
-    })
+    }
   }
 }

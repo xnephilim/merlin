@@ -5,7 +5,7 @@ import {
   ethChainId,
   thorchainAssetId,
   thorchainChainId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import type { ChainAdapterManager } from '@xblackfury/chain-adapters'
 import { Ok } from '@sniptt/monads'
 import type Web3 from 'web3'

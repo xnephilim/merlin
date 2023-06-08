@@ -1,5 +1,5 @@
-import type { ChainId } from '@xblackfury/caip'
-import { CHAIN_NAMESPACE, fromAssetId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { CHAIN_NAMESPACE, fromAssetId } from '@shapeshiftoss/caip'
 import type { CosmosSdkBaseAdapter, UtxoBaseAdapter } from '@xblackfury/chain-adapters'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'

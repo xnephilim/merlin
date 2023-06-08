@@ -1,9 +1,8 @@
 import axios from 'axios'
 import fs from 'fs'
 
-import type { AssetId } from '../../assetId/assetId'
-import { toAssetId } from '../../assetId/assetId'
-import type { ChainId } from '../../chainId/chainId'
+import { AssetId, toAssetId } from '../../assetId/assetId'
+import { ChainId } from '../../chainId/chainId'
 import {
   avalancheAssetId,
   avalancheChainId,
@@ -17,14 +16,10 @@ import {
   dogeChainId,
   ethAssetId,
   ethChainId,
-  gnosisAssetId,
-  gnosisChainId,
   ltcChainId,
   optimismAssetId,
   optimismChainId,
   osmosisChainId,
-  polygonAssetId,
-  polygonChainId,
   thorchainChainId,
 } from '../../constants'
 import {
@@ -40,6 +35,8 @@ import { CoingeckoAssetPlatform } from '.'
 
 export type CoingeckoCoin = {
   id: string
+  symbol: string
+  name: string
   platforms: Record<string, string>
 }
 
@@ -106,34 +103,6 @@ export const parseData = (coins: CoingeckoCoin[]): AssetMap => {
         }
       }
 
-      if (Object.keys(platforms).includes(CoingeckoAssetPlatform.Polygon)) {
-        try {
-          const assetId = toAssetId({
-            chainNamespace: CHAIN_NAMESPACE.Evm,
-            chainReference: CHAIN_REFERENCE.PolygonMainnet,
-            assetNamespace: 'erc20',
-            assetReference: platforms[CoingeckoAssetPlatform.Polygon],
-          })
-          prev[polygonChainId][assetId] = id
-        } catch (err) {
-          // unable to create assetId, skip token
-        }
-      }
-
-      if (Object.keys(platforms).includes(CoingeckoAssetPlatform.Gnosis)) {
-        try {
-          const assetId = toAssetId({
-            chainNamespace: CHAIN_NAMESPACE.Evm,
-            chainReference: CHAIN_REFERENCE.GnosisMainnet,
-            assetNamespace: 'erc20',
-            assetReference: platforms[CoingeckoAssetPlatform.Gnosis],
-          })
-          prev[gnosisChainId][assetId] = id
-        } catch (err) {
-          // unable to create assetId, skip token
-        }
-      }
-
       return prev
     },
     {
@@ -141,8 +110,6 @@ export const parseData = (coins: CoingeckoCoin[]): AssetMap => {
       [avalancheChainId]: { [avalancheAssetId]: 'avalanche-2' },
       [optimismChainId]: { [optimismAssetId]: 'ethereum' },
       [bscChainId]: { [bscAssetId]: 'binancecoin' },
-      [polygonChainId]: { [polygonAssetId]: 'matic-network' },
-      [gnosisChainId]: { [gnosisAssetId]: 'xdai' },
     },
   )
 
@@ -161,8 +128,8 @@ export const parseData = (coins: CoingeckoCoin[]): AssetMap => {
 export const writeFiles = async (data: AssetMap) => {
   await Promise.all(
     Object.entries(data).map(async ([chainId, assets]) => {
-      const dirPath = `./src/adapters/coingecko/generated/${chainId}`.replace(':', '_')
-      await fs.promises.writeFile(`${dirPath}/adapter.json`, JSON.stringify(assets))
+      const path = `./src/adapters/coingecko/generated/${chainId}/adapter.json`.replace(':', '_')
+      await fs.promises.writeFile(path, JSON.stringify(assets))
     }),
   )
   console.info('Generated CoinGecko AssetId adapter data.')

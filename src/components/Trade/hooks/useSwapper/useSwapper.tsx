@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { fromAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { fromAssetId } from '@shapeshiftoss/caip'
 import type { evm, UtxoBaseAdapter, UtxoChainId } from '@xblackfury/chain-adapters'
 import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import { useCallback, useEffect, useMemo, useState } from 'react'

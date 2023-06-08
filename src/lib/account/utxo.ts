@@ -1,4 +1,4 @@
-import { toAccountId } from '@xblackfury/caip'
+import { toAccountId } from '@shapeshiftoss/caip'
 import type { UtxoBaseAdapter, UtxoChainId } from '@xblackfury/chain-adapters'
 import {
   convertXpubVersion,

@@ -1,5 +1,5 @@
-import { fromAssetId } from '@xblackfury/caip'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { fromAssetId } from '@shapeshiftoss/caip'
+import { KnownChainIds } from '@xblackfury/types'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import type { Asset } from 'lib/asset-service'

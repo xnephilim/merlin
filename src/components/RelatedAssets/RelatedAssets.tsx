@@ -1,4 +1,4 @@
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import { useCallback, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 import type { Column, Row } from 'react-table'

@@ -1,5 +1,5 @@
-import type { ChainId } from '@xblackfury/caip'
-import { fromChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { fromChainId } from '@shapeshiftoss/caip'
 import { useEffect, useState } from 'react'
 import { getWeb3InstanceByChainId } from 'lib/web3-instance'
 

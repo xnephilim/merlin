@@ -1,6 +1,4 @@
-import invert from 'lodash/invert'
-
-import type { AssetId } from '../../assetId/assetId'
+import { AssetId } from '../../assetId/assetId'
 import {
   avalancheAssetId,
   bchAssetId,
@@ -10,7 +8,6 @@ import {
   dogeAssetId,
   ethAssetId,
   ltcAssetId,
-  thorchainAssetId,
 } from '../../constants'
 
 // derived from https://midgard.thorchain.info/v2/pools
@@ -68,8 +65,10 @@ const thorPoolIdAssetIdSymbolMap: Record<string, AssetId> = {
   'BNB.BNB': binanceAssetId,
   'AVAX.USDC-0XB97EF9EF8734C71904D8002F8B6BC66DD9C48A6E':
     'eip155:43114/erc20:0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e',
-  'THOR.RUNE': thorchainAssetId,
 }
+
+const invert = <T extends Record<string, string>>(data: T) =>
+  Object.entries(data).reduce((acc, [k, v]) => ((acc[v] = k), acc), {} as Record<string, string>)
 
 const assetIdToPoolAssetIdMap = invert(thorPoolIdAssetIdSymbolMap)
 

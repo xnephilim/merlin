@@ -4,7 +4,7 @@ import type {
   ChainId,
   ChainNamespace,
   ChainReference,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import {
   ASSET_REFERENCE,
   CHAIN_NAMESPACE,
@@ -13,7 +13,7 @@ import {
   fromChainId,
   isNft,
   toAssetId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import type { Transaction } from '@xblackfury/chain-adapters'
 import type { Asset } from 'lib/asset-service'
 

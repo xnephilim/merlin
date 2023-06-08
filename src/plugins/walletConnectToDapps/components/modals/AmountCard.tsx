@@ -1,5 +1,5 @@
 import { Box, HStack, Image, useColorModeValue } from '@chakra-ui/react'
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import { Amount } from 'components/Amount/Amount'
 import { Card } from 'components/Card/Card'
 import { selectAssetById } from 'state/slices/selectors'

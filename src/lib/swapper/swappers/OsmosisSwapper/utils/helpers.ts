@@ -1,4 +1,4 @@
-import { CHAIN_REFERENCE, fromChainId } from '@xblackfury/caip'
+import { CHAIN_REFERENCE, fromChainId } from '@shapeshiftoss/caip'
 import type { osmosis } from '@xblackfury/chain-adapters'
 import { toAddressNList } from '@xblackfury/chain-adapters'
 import type { HDWallet, Osmosis } from '@shapeshiftoss/hdwallet-core'

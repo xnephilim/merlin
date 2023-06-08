@@ -1,4 +1,4 @@
-import { btcAssetId, ethAssetId, merlinAssetId } from '@xblackfury/caip'
+import { btcAssetId, ethAssetId, merlinAssetId } from '@shapeshiftoss/caip'
 import { BtcSend, EthReceive, EthSend, MERLINSend, yearnVaultDeposit } from 'test/mocks/txs'
 
 import { getRelatedAssetIds } from './utils'

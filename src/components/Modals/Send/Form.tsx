@@ -1,4 +1,4 @@
-import type { AccountId, AssetId, ChainId } from '@xblackfury/caip'
+import type { AccountId, AssetId, ChainId } from '@shapeshiftoss/caip'
 import type { FeeDataEstimate } from '@xblackfury/chain-adapters'
 import { FeeDataKey } from '@xblackfury/chain-adapters'
 import { AnimatePresence } from 'framer-motion'

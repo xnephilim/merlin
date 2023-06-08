@@ -11,7 +11,7 @@ import {
   SimpleGrid,
   useRadioGroup,
 } from '@chakra-ui/react'
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import { matchSorter } from 'match-sorter'
 import { useCallback, useMemo, useState } from 'react'
 import { useTranslate } from 'react-polyglot'

@@ -1,4 +1,4 @@
-import { CHAIN_REFERENCE, fromChainId, toAccountId } from '@xblackfury/caip'
+import { CHAIN_REFERENCE, fromChainId, toAccountId } from '@shapeshiftoss/caip'
 import type { EvmChainId } from '@xblackfury/chain-adapters'
 import { evmChainIds } from '@xblackfury/chain-adapters'
 import {

@@ -1,4 +1,4 @@
-import { fromAccountId } from '@xblackfury/caip'
+import { fromAccountId } from '@shapeshiftoss/caip'
 import { useCallback, useEffect, useMemo } from 'react'
 import { getReceiveAddress } from 'components/Trade/hooks/useSwapper/utils'
 import { useWallet } from 'hooks/useWallet/useWallet'

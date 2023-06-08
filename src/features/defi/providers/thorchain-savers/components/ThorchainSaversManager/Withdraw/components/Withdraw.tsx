@@ -1,6 +1,6 @@
 import { Skeleton, useToast } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
-import { fromAccountId, toAssetId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { fromAccountId, toAssetId } from '@shapeshiftoss/caip'
 import type { UtxoBaseAdapter, UtxoChainId } from '@xblackfury/chain-adapters'
 import { getConfig } from 'config'
 import type { WithdrawValues } from 'features/defi/components/Withdraw/Withdraw'

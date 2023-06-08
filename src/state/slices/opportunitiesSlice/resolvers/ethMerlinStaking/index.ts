@@ -1,5 +1,5 @@
-import { merlinAssetId, fromAccountId, fromAssetId } from '@xblackfury/caip'
-import type { MarketData } from '@shapeshiftoss/types'
+import { merlinAssetId, fromAccountId, fromAssetId } from '@shapeshiftoss/caip'
+import type { MarketData } from '@xblackfury/types'
 import { ETH_MERLIN_POOL_CONTRACT_ADDRESS } from 'contracts/constants'
 import { fetchUniV2PairData, getOrCreateContractByAddress } from 'contracts/contractManager'
 import dayjs from 'dayjs'

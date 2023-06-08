@@ -1,4 +1,4 @@
-import { ethChainId, gnosisChainId } from '@xblackfury/caip'
+import { ethChainId, gnosisChainId } from '@shapeshiftoss/caip'
 import { Ok } from '@sniptt/monads'
 import type { AxiosStatic } from 'axios'
 

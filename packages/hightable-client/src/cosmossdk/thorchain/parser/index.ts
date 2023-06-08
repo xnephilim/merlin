@@ -1,4 +1,13 @@
-import type { Tx } from '../../../generated/thorchain'
-import { BaseTransactionParser } from '../../parser'
+import { thorchainAssetId } from '@xgridiron/caip'
 
-export class TransactionParser extends BaseTransactionParser<Tx> {}
+import { Tx } from '../../../generated/thorchain'
+import { BaseTransactionParser, BaseTransactionParserArgs } from '../../parser'
+
+export type TransactionParserArgs = BaseTransactionParserArgs
+
+export class TransactionParser extends BaseTransactionParser<Tx> {
+  constructor(args: TransactionParserArgs) {
+    super(args)
+    this.assetId = thorchainAssetId
+  }
+}

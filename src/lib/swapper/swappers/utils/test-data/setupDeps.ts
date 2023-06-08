@@ -1,4 +1,4 @@
-import { ethAssetId } from '@xblackfury/caip'
+import { ethAssetId } from '@shapeshiftoss/caip'
 import type { evm, EvmChainId, FeeDataEstimate } from '@xblackfury/chain-adapters'
 import { ethereum } from '@xblackfury/chain-adapters'
 import * as hightable from '@xblackfury/hightable-client'

@@ -1,6 +1,6 @@
 import type { ChainKey as LifiChainKey, EVMChain as LifiEVMChain } from '@lifi/sdk'
-import type { ChainId } from '@xblackfury/caip'
-import { CHAIN_NAMESPACE, isChainReference, toChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { CHAIN_NAMESPACE, isChainReference, toChainId } from '@shapeshiftoss/caip'
 import { SwapError, SwapErrorType } from 'lib/swapper/api'
 
 export const createLifiChainMap = (

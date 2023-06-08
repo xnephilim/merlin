@@ -1,32 +1,39 @@
 {
   "name": "@xblackfury/hightable-client",
-  "version": "10.14.0",
-  "repository": "https://github.com/xnephilim/web",
+  "version": "11.0.0",
   "license": "MIT",
   "main": "dist/index.js",
+  "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
-    "build": "yarn clean && yarn generate && yarn run -T tsc --build",
-    "clean": "rm -rf dist src/generated tsconfig.tsbuildinfo",
-    "dev": "yarn run -T tsc --build --watch",
-    "generate": "TS_POST_PROCESS_FILE=./generator/post_process.sh JAVA_OPTS='-Dlog.level=error' openapi-generator-cli generate"
+    "build": "yarn clean && yarn generate && tsc -p tsconfig.build.json",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist src/generated tsconfig.build.tsbuildinfo",
+    "generate": "TS_POST_PROCESS_FILE=./generator/post_process.sh JAVA_OPTS='-Dlog.level=error' openapi-generator-cli generate",
+    "type-check": "tsc --project ./tsconfig.build.json --noEmit"
   },
   "dependencies": {
-    "@xblackfury/caip": "workspace:^",
-    "@shapeshiftoss/common-api": "^9.3.0",
-    "@shapeshiftoss/types": "workspace:^",
     "@yfi/sdk": "^1.2.0",
+    "axios": "^0.26.1",
+    "bignumber.js": "^9.1.1",
+    "ethers": "^5.5.3",
     "isomorphic-ws": "^4.0.1",
     "ws": "^8.3.0"
   },
+  "peerDependencies": {
+    "@xblackfury/logger": "2.0.0",
+    "@xblackfury/types": "9.0.0",
+    "@xgridiron/caip": "9.0.0"
+  },
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.1",
-    "@types/ws": "^8.2.1"
+    "@shapeshiftoss/common-api": "^8.3.0",
+    "@xblackfury/logger": "2.0.0",
+    "@xblackfury/types": "9.0.0",
+    "@types/ws": "^8.2.1",
+    "@xgridiron/caip": "9.0.0"
   }
 }

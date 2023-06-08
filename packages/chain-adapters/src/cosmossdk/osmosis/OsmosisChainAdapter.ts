@@ -1,13 +1,10 @@
-import type { AssetId } from '@xblackfury/caip'
-import { ASSET_REFERENCE, osmosisAssetId } from '@xblackfury/caip'
-import type { OsmosisSignTx } from '@shapeshiftoss/hdwallet-core'
-import { supportsOsmosis } from '@shapeshiftoss/hdwallet-core'
-import type { BIP44Params } from '@shapeshiftoss/types'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { OsmosisSignTx, supportsOsmosis } from '@shapeshiftoss/hdwallet-core'
 import * as hightable from '@xblackfury/hightable-client'
+import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { ASSET_REFERENCE, AssetId, osmosisAssetId } from '@xgridiron/caip'
 
 import { ErrorHandler } from '../../error/ErrorHandler'
-import type {
+import {
   BuildClaimRewardsTxInput,
   BuildDelegateTxInput,
   BuildLPAddTxInput,
@@ -15,16 +12,20 @@ import type {
   BuildRedelegateTxInput,
   BuildSendTxInput,
   BuildUndelegateTxInput,
+  ChainAdapterDisplayName,
   FeeDataEstimate,
   GetAddressInput,
   GetFeeDataInput,
   SignTxInput,
 } from '../../types'
-import { ChainAdapterDisplayName } from '../../types'
-import { bn, calcFee, toAddressNList } from '../../utils'
-import type { ChainAdapterArgs } from '../CosmosSdkBaseAdapter'
-import { assertIsValidatorAddress, CosmosSdkBaseAdapter } from '../CosmosSdkBaseAdapter'
-import type { Message, ValidatorAction } from '../types'
+import { toAddressNList } from '../../utils'
+import { bn, calcFee } from '../../utils'
+import {
+  assertIsValidatorAddress,
+  ChainAdapterArgs,
+  CosmosSdkBaseAdapter,
+} from '../CosmosSdkBaseAdapter'
+import { Message, ValidatorAction } from '../types'
 
 export const MIN_FEE = '2500'
 
@@ -40,17 +41,15 @@ export class ChainAdapter extends CosmosSdkBaseAdapter<KnownChainIds.OsmosisMain
 
   constructor(args: ChainAdapterArgs) {
     super({
-      assetId: osmosisAssetId,
-      chainId: DEFAULT_CHAIN_ID,
-      defaultBIP44Params: ChainAdapter.defaultBIP44Params,
       denom: 'uosmo',
-      parser: new hightable.osmosis.TransactionParser({
-        assetId: osmosisAssetId,
-        chainId: args.chainId ?? DEFAULT_CHAIN_ID,
-      }),
+      chainId: DEFAULT_CHAIN_ID,
       supportedChainIds: SUPPORTED_CHAIN_IDS,
+      defaultBIP44Params: ChainAdapter.defaultBIP44Params,
       ...args,
     })
+
+    this.assetId = osmosisAssetId
+    this.parser = new hightable.osmosis.TransactionParser({ chainId: this.chainId })
   }
 
   getDisplayName() {
@@ -326,10 +325,13 @@ export class ChainAdapter extends CosmosSdkBaseAdapter<KnownChainIds.OsmosisMain
     }
   }
 
-  // eslint-disable-next-line require-await
-  async getFeeData(
-    _: Partial<GetFeeDataInput<KnownChainIds.OsmosisMainnet>>,
-  ): Promise<FeeDataEstimate<KnownChainIds.OsmosisMainnet>> {
+  // @ts-ignore - keep type signature with unimplemented state
+  async getFeeData({
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars -- Disable no-unused-vars lint rule for unimplemented variable */
+    sendMax,
+  }: Partial<GetFeeDataInput<KnownChainIds.OsmosisMainnet>>): Promise<
+    FeeDataEstimate<KnownChainIds.OsmosisMainnet>
+  > {
     const gasLimit = '300000'
     const scalars = { fast: bn(2), average: bn(1.5), slow: bn(1) }
 

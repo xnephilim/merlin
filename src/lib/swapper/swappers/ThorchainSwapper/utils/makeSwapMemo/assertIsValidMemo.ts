@@ -1,4 +1,4 @@
-import type { ChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
 import {
   avalancheChainId,
   bchChainId,
@@ -9,7 +9,7 @@ import {
   ethChainId,
   ltcChainId,
   thorchainChainId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import { chainIdToChainLabel } from '@xblackfury/chain-adapters'
 import WAValidator from 'multicoin-address-validator'
 import { bn } from 'lib/bignumber/bignumber'

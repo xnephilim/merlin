@@ -1,9 +1,7 @@
 // https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
 
-import type { ChainId, ChainNamespace, ChainReference } from '../chainId/chainId'
-import { fromChainId, toChainId } from '../chainId/chainId'
-import type { ASSET_NAMESPACE, ASSET_REFERENCE } from '../constants'
-import { VALID_ASSET_NAMESPACE } from '../constants'
+import { ChainId, ChainNamespace, ChainReference, fromChainId, toChainId } from '../chainId/chainId'
+import { ASSET_NAMESPACE, ASSET_REFERENCE, VALID_ASSET_NAMESPACE } from '../constants'
 import {
   assertIsAssetNamespace,
   assertIsChainNamespace,
@@ -12,8 +10,7 @@ import {
   isAssetId,
   isAssetNamespace,
 } from '../typeGuards'
-import type { Nominal } from '../utils'
-import { parseAssetIdRegExp } from '../utils'
+import { Nominal, parseAssetIdRegExp } from '../utils'
 
 export type AssetId = Nominal<string, 'AssetId'>
 
@@ -79,6 +76,10 @@ export const toAssetId: ToAssetId = (args: ToAssetIdArgs): AssetId => {
       }
   })()
 
+  const isContractAddress = Array<AssetNamespace>('erc20', 'erc721', 'bep20', 'bep721').includes(
+    assetNamespace,
+  )
+
   assertIsChainNamespace(chainNamespace)
   assertIsChainReference(chainReference)
   assertValidChainPartsPair(chainNamespace, chainReference)
@@ -95,37 +96,21 @@ export const toAssetId: ToAssetId = (args: ToAssetIdArgs): AssetId => {
     throw new Error(`Invalid reference for namespace slip44`)
   }
 
-  const assetReferenceNormalized = (() => {
-    const assertContractAddress = (address: string) => {
-      if (!address.startsWith('0x'))
-        throw new Error(`toAssetId: assetReference must start with 0x: ${assetReference}`)
+  if (isContractAddress) {
+    if (!assetReference.startsWith('0x'))
+      throw new Error(`toAssetId: assetReference must start with 0x: ${assetReference}`)
+    if (assetReference.length !== 42)
+      throw new Error(
+        `toAssetId: assetReference length must be 42, length: ${assetReference.length}`,
+      )
+  }
 
-      if (address.length !== 42)
-        throw new Error(
-          `toAssetId: assetReference length must be 42, length: ${assetReference.length}, ${assetReference}`,
-        )
-    }
+  // We make Eth contract addresses lower case to simplify comparisons
+  const assetReferenceCaseCorrected = isContractAddress
+    ? assetReference.toLowerCase()
+    : assetReference
 
-    switch (assetNamespace) {
-      case 'erc20':
-      case 'bep20':
-        assertContractAddress(assetReference)
-        return assetReference.toLowerCase()
-      case 'erc721':
-      case 'erc1155':
-      case 'bep721':
-      case 'bep1155':
-        // caip-22 (https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-22.md)
-        // caip-29 (https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-29.md)
-        const [address] = assetReference.split('/')
-        assertContractAddress(address)
-        return assetReference.toLowerCase()
-      default:
-        return assetReference
-    }
-  })()
-
-  return `${chainId}/${assetNamespace}:${assetReferenceNormalized}`
+  return `${chainId}/${assetNamespace}:${assetReferenceCaseCorrected}`
 }
 
 type FromAssetIdReturn = {
@@ -138,7 +123,7 @@ type FromAssetIdReturn = {
 
 export type FromAssetId = (assetId: AssetId) => FromAssetIdReturn
 
-export const fromAssetId: FromAssetId = assetId => {
+export const fromAssetId: FromAssetId = (assetId) => {
   if (!isAssetId(assetId)) throw new Error(`fromAssetId: invalid AssetId: ${assetId}`)
   const matches = parseAssetIdRegExp.exec(assetId)
   if (!matches) throw new Error(`fromAssetId: could not parse AssetId: ${assetId}`)
@@ -152,46 +137,19 @@ export const fromAssetId: FromAssetId = assetId => {
 
   const chainId = toChainId({ chainNamespace, chainReference })
 
-  const assetReferenceNormalized = (() => {
-    switch (assetNamespace) {
-      case 'erc20':
-      case 'bep20':
-      case 'erc721':
-      case 'erc1155':
-      case 'bep721':
-      case 'bep1155':
-        return assetReference.toLowerCase()
-      default:
-        return assetReference
+  if (assetNamespace && assetReference && chainId) {
+    return {
+      chainId,
+      chainReference,
+      chainNamespace,
+      assetNamespace,
+      assetReference: ['erc20', 'erc721', 'bep20', 'bep721'].includes(assetNamespace)
+        ? assetReference.toLowerCase()
+        : assetReference,
     }
-  })()
-
-  return {
-    chainId,
-    chainReference,
-    chainNamespace,
-    assetNamespace,
-    assetReference: assetReferenceNormalized,
+  } else {
+    throw new Error(`fromAssetId: invalid AssetId: ${assetId}`)
   }
-}
-
-export const isNft = (assetId: AssetId): boolean => {
-  switch (fromAssetId(assetId).assetNamespace) {
-    case 'erc721':
-    case 'erc1155':
-    case 'bep721':
-    case 'bep1155':
-      return true
-    default:
-      return false
-  }
-}
-
-export const deserializeNftAssetReference = (
-  assetReference: string,
-): [address: string, id: string] => {
-  const [address, id] = assetReference.split('/')
-  return [address, id]
 }
 
 export const toCAIP19 = toAssetId

@@ -1,8 +1,7 @@
-import { osmosisAssetId, osmosisChainId } from '@xblackfury/caip'
+import { osmosisAssetId, osmosisChainId } from '@xgridiron/caip'
 
-import type { Fee } from '../../../../types'
-import { Dex, TradeType, TransferType, TxStatus } from '../../../../types'
-import type { ParsedTx } from '../../../parser'
+import { Dex, Fee, TradeType, TransferType, TxStatus } from '../../../../types'
+import { ParsedTx } from '../../../parser'
 import { TransactionParser } from '../index'
 import delegate from './mockData/delegate'
 import exit_pool from './mockData/exit_pool'
@@ -15,7 +14,7 @@ import standard from './mockData/standard'
 import swap_exact_amount_in from './mockData/swap_exact_amount_in'
 import undelegate from './mockData/undelegate'
 
-const txParser = new TransactionParser({ chainId: osmosisChainId, assetId: osmosisAssetId })
+const txParser = new TransactionParser({ chainId: osmosisChainId })
 
 describe('parseTx', () => {
   it('should be able to parse a standard send tx', async () => {

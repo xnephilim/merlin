@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { fromAssetId, toAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { fromAssetId, toAssetId } from '@shapeshiftoss/caip'
 import type { Token } from '@uniswap/sdk'
 import { Fetcher } from '@uniswap/sdk'
 import { ethers } from 'ethers'

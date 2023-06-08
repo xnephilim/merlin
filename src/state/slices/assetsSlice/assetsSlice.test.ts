@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { ASSET_NAMESPACE, ethChainId, toAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { ASSET_NAMESPACE, ethChainId, toAssetId } from '@shapeshiftoss/caip'
 import { ethereum } from 'test/mocks/assets'
 import { mockChainAdapters } from 'test/mocks/portfolio'
 

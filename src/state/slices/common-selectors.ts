@@ -1,4 +1,4 @@
-import type { AccountId, AssetId } from '@xblackfury/caip'
+import type { AccountId, AssetId } from '@shapeshiftoss/caip'
 import orderBy from 'lodash/orderBy'
 import pickBy from 'lodash/pickBy'
 import createCachedSelector from 're-reselect'

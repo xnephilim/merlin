@@ -1,6 +1,6 @@
 import type { Step } from '@lifi/sdk'
-import type { ChainId } from '@xblackfury/caip'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { KnownChainIds } from '@xblackfury/types'
 import type { AbiItem } from 'web3-utils'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import { bn, bnOrZero } from 'lib/bignumber/bignumber'

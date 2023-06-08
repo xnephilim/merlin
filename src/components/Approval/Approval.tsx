@@ -12,7 +12,7 @@ import {
   Text as CText,
   Tooltip,
 } from '@chakra-ui/react'
-import { ethAssetId } from '@xblackfury/caip'
+import { ethAssetId } from '@shapeshiftoss/caip'
 import type { evm, EvmChainId } from '@xblackfury/chain-adapters'
 import { bnOrZero } from '@xblackfury/chain-adapters'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'

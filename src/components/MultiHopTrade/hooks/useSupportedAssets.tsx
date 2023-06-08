@@ -1,4 +1,4 @@
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import { useMemo } from 'react'
 import { useFeatureFlag } from 'hooks/useFeatureFlag/useFeatureFlag'
 import { LifiSwapper } from 'lib/swapper/swappers/LifiSwapper/LifiSwapper'

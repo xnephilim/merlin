@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { ethAssetId, merlinAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { ethAssetId, merlinAssetId } from '@shapeshiftoss/caip'
 import { mockStore } from 'test/mocks/store'
 import type {
   OpportunitiesState,

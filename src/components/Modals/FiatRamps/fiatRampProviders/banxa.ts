@@ -1,4 +1,4 @@
-import { adapters } from '@xblackfury/caip'
+import { adapters } from '@shapeshiftoss/caip'
 
 import type { CommonFiatCurrencies } from '../config'
 import { FiatRampAction } from '../FiatRampsCommon'

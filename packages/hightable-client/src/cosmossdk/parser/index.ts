@@ -1,16 +1,15 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
+import { AssetId, ChainId } from '@xgridiron/caip'
 import { BigNumber } from 'bignumber.js'
 
 import { TransferType, TxStatus } from '../../types'
 import { aggregateTransfer } from '../../utils'
-import type { ParsedTx, Tx } from './types'
+import { ParsedTx, Tx } from './types'
 import { getAssetIdByDenom, metaData } from './utils'
 
 export * from './types'
 
 export interface BaseTransactionParserArgs {
   chainId: ChainId
-  assetId: AssetId
 }
 
 export class BaseTransactionParser<T extends Tx> {
@@ -19,10 +18,9 @@ export class BaseTransactionParser<T extends Tx> {
 
   constructor(args: BaseTransactionParserArgs) {
     this.chainId = args.chainId
-    this.assetId = args.assetId
   }
 
-  parse(tx: T, address: string): Promise<ParsedTx> {
+  async parse(tx: T, address: string): Promise<ParsedTx> {
     const parsedTx: ParsedTx = {
       address,
       blockHash: tx.blockHash,
@@ -55,29 +53,29 @@ export class BaseTransactionParser<T extends Tx> {
       const amount = new BigNumber(value?.amount ?? 0)
 
       if (from === address && amount.gt(0)) {
-        parsedTx.transfers = aggregateTransfer({
+        parsedTx.transfers = aggregateTransfer(
+          parsedTx.transfers,
+          TransferType.Send,
           assetId,
           from,
           to,
-          transfers: parsedTx.transfers,
-          type: TransferType.Send,
-          value: amount.toString(10),
-        })
+          amount.toString(10),
+        )
       }
 
       if (to === address && amount.gt(0)) {
-        parsedTx.transfers = aggregateTransfer({
+        parsedTx.transfers = aggregateTransfer(
+          parsedTx.transfers,
+          TransferType.Receive,
           assetId,
           from,
           to,
-          transfers: parsedTx.transfers,
-          type: TransferType.Receive,
-          value: amount.toString(10),
-        })
+          amount.toString(10),
+        )
       }
     })
 
-    return Promise.resolve(parsedTx)
+    return parsedTx
   }
 
   private getStatus(tx: T): TxStatus {

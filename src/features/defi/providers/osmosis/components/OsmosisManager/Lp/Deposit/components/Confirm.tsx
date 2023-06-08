@@ -1,6 +1,6 @@
 import { Alert, AlertIcon, Box, Stack, useToast } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
-import { fromAssetId, osmosisAssetId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { fromAssetId, osmosisAssetId } from '@shapeshiftoss/caip'
 import type { CosmosSdkChainId, FeeData, osmosis } from '@xblackfury/chain-adapters'
 import { supportsOsmosis } from '@shapeshiftoss/hdwallet-core'
 import { Confirm as ReusableConfirm } from 'features/defi/components/Confirm/Confirm'

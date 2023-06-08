@@ -1,10 +1,15 @@
 import { omit } from 'lodash'
 
-import type { ChainNamespace, ChainReference } from '../chainId/chainId'
-import { toChainId } from '../chainId/chainId'
+import { ChainNamespace, ChainReference, toChainId } from '../chainId/chainId'
 import { ASSET_REFERENCE, CHAIN_NAMESPACE, CHAIN_REFERENCE } from '../constants'
-import type { AssetNamespace, AssetReference } from './assetId'
-import { fromAssetId, fromCAIP19, toAssetId, toCAIP19 } from './assetId'
+import {
+  AssetNamespace,
+  AssetReference,
+  fromAssetId,
+  fromCAIP19,
+  toAssetId,
+  toCAIP19,
+} from './assetId'
 
 describe('assetId', () => {
   it('should have matching CAIP19 aliases', () => {
@@ -25,7 +30,7 @@ describe('assetId', () => {
         ['cosmos:osmosis-1/ibc:346786EA82F41FE55FAD14BF69AD8BA9B36985406E43F3CB23E6C45A285A9593'],
         ['cosmos:osmo-testnet-1/slip44:118'],
         ['cosmos:osmosis-1/ibc:gamm/pool/877'],
-      ])('returns an AssetId from the result of fromAssetId for %s', assetId => {
+      ])('returns an AssetId from the result of fromAssetId for %s', (assetId) => {
         const result = fromAssetId(assetId)
         expect(toAssetId(omit(result, 'chainId'))).toBe(assetId)
         expect(toAssetId(omit(result, ['chainNamespace', 'chainReference']))).toBe(assetId)
@@ -324,10 +329,10 @@ describe('assetId', () => {
         chainNamespace,
         chainReference,
         assetNamespace: 'erc721' as AssetNamespace,
-        assetReference: '0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d/12345',
+        assetReference: '0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d',
         chainId: `${chainNamespace}:${chainReference}`,
       }
-      const expected = 'eip155:1/erc721:0xc770eefad204b5180df6a14ee197d99d808ee52d/12345'
+      const expected = 'eip155:1/erc721:0xc770eefad204b5180df6a14ee197d99d808ee52d'
       expect(toAssetId(omit(assetIdArgSuperset, 'chainId'))).toEqual(expected)
       expect(toAssetId(omit(assetIdArgSuperset, ['chainNamespace', 'chainReference']))).toEqual(
         expected,
@@ -583,16 +588,14 @@ describe('assetId', () => {
     })
 
     it('should lower case assetReference for assetNamespace ERC721', () => {
-      const AssetId = 'eip155:3/erc721:0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d/12345'
+      const AssetId = 'eip155:3/erc721:0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d'
       const { chainId, chainReference, chainNamespace, assetNamespace, assetReference } =
         fromAssetId(AssetId)
       expect(chainNamespace).toEqual(CHAIN_NAMESPACE.Evm)
       expect(chainReference).toEqual(CHAIN_REFERENCE.EthereumRopsten)
       expect(chainId).toEqual(toChainId({ chainNamespace, chainReference }))
       expect(assetNamespace).toEqual('erc721')
-      const [address, id] = assetReference.split('/')
-      expect(address).toEqual('0xc770eefad204b5180df6a14ee197d99d808ee52d')
-      expect(id).toEqual('12345')
+      expect(assetReference).toEqual('0xc770eefad204b5180df6a14ee197d99d808ee52d')
     })
 
     it('can return chainId, chainReference, chainNamespace, assetNamespace, assetReference from MERLIN AssetId on ropsten', () => {

@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { merlinAssetId, merlinxAssetId, fromAccountId, fromAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { merlinAssetId, merlinxAssetId, fromAccountId, fromAssetId } from '@shapeshiftoss/caip'
 import { useMemo } from 'react'
 import { bnOrZero } from 'lib/bignumber/bignumber'
 import { merlinxAddresses } from 'lib/investor/investor-merlinx'

@@ -1,5 +1,5 @@
-import type { AssetId, AssetNamespace } from './assetId/assetId'
-import type { ChainId, ChainNamespace, ChainReference } from './chainId/chainId'
+import { AssetId, AssetNamespace } from './assetId/assetId'
+import { ChainId, ChainNamespace, ChainReference } from './chainId/chainId'
 
 export const btcAssetId: AssetId = 'bip122:000000000019d6689c085ae165831e93/slip44:0'
 export const bchAssetId: AssetId = 'bip122:000000000000000000651ef99cb9fcbe/slip44:145'
@@ -9,14 +9,9 @@ export const ltcAssetId: AssetId = 'bip122:12a765e31ffd4059bada1e25190f6e98/slip
 export const ethAssetId: AssetId = 'eip155:1/slip44:60'
 export const avalancheAssetId: AssetId = 'eip155:43114/slip44:60'
 export const optimismAssetId: AssetId = 'eip155:10/slip44:60'
+export const blackfuryAssetId: AssetId = 'eip155:710/slip44:60'
 export const bscAssetId: AssetId = 'eip155:56/slip44:60'
-export const polygonAssetId: AssetId = 'eip155:137/slip44:60'
-export const gnosisAssetId: AssetId = 'eip155:100/slip44:60'
-export const merlinOnGnosisAssetId: AssetId =
-  'eip155:100/erc20:0x21a42669643f45bc0e086b8fc2ed70c23d67509d'
 export const merlinAssetId: AssetId = 'eip155:1/erc20:0xc770eefad204b5180df6a14ee197d99d808ee52d'
-export const merlinatarAssetId: AssetId =
-  'eip155:137/erc721:0x2e727c425a11ce6b8819b3004db332c12d2af2a2'
 export const merlinxAssetId: AssetId = 'eip155:1/erc20:0xdc49108ce5c57bc3408c3a5e95f3d864ec386ed3'
 
 export const cosmosAssetId: AssetId = 'cosmos:cosmoshub-4/slip44:118'
@@ -35,9 +30,8 @@ export const ltcChainId: ChainId = 'bip122:12a765e31ffd4059bada1e25190f6e98'
 export const ethChainId: ChainId = 'eip155:1'
 export const avalancheChainId: ChainId = 'eip155:43114'
 export const optimismChainId: ChainId = 'eip155:10'
+export const blackfuryChainId: ChainId = 'eip155:710'
 export const bscChainId: ChainId = 'eip155:56'
-export const polygonChainId: ChainId = 'eip155:137'
-export const gnosisChainId: ChainId = 'eip155:100'
 
 export const cosmosChainId: ChainId = 'cosmos:cosmoshub-4'
 export const osmosisChainId: ChainId = 'cosmos:osmosis-1'
@@ -84,9 +78,8 @@ export const CHAIN_REFERENCE = {
   SecretMainnet: 'secret-4', // https://docs.scrt.network/secret-network-documentation/development/api-endpoints
   SecretTestnet: 'pulsar-2', // https://docs.scrt.network/secret-network-documentation/development/api-endpoints
   OptimismMainnet: '10', //https://community.optimism.io/docs/useful-tools/networks/#optimism-mainnet
+  BlackfuryMainnet: '10', //https://community.blackfury.xyz/docs/useful-tools/networks/#blackfury-mainnet
   BnbSmartChainMainnet: '56', // https://docs.bnbchain.org/docs/wallet_api/#chain-ids
-  PolygonMainnet: '137', // https://wiki.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/
-  GnosisMainnet: '100', // https://docs.gnosischain.com/tools/wallets/metamask/
 } as const
 
 export const ASSET_NAMESPACE = {
@@ -94,10 +87,8 @@ export const ASSET_NAMESPACE = {
   cw721: 'cw721',
   erc20: 'erc20',
   erc721: 'erc721',
-  erc1155: 'erc1155',
   bep20: 'bep20',
   bep721: 'bep721',
-  bep1155: 'bep1155',
   slip44: 'slip44',
   native: 'native',
   ibc: 'ibc',
@@ -118,9 +109,8 @@ export const ASSET_REFERENCE = {
   Terra: '330',
   Secret: '529',
   Optimism: '60', // evm chain which uses ethereum derivation path as common practice
+  Blackfury: '60', // evm chain which uses ethereum derivation path as common practice
   BnbSmartChain: '60', // evm chain which uses ethereum derivation path as common practice
-  Polygon: '60', // evm chain which uses ethereum derivation path as common practice
-  Gnosis: '60', // evm chain which uses ethereum derivation path as common practice
 } as const
 
 export const VALID_CHAIN_IDS: ValidChainMap = Object.freeze({
@@ -137,9 +127,8 @@ export const VALID_CHAIN_IDS: ValidChainMap = Object.freeze({
     CHAIN_REFERENCE.EthereumRinkeby,
     CHAIN_REFERENCE.AvalancheCChain,
     CHAIN_REFERENCE.OptimismMainnet,
+    CHAIN_REFERENCE.BlackfuryMainnet,
     CHAIN_REFERENCE.BnbSmartChainMainnet,
-    CHAIN_REFERENCE.PolygonMainnet,
-    CHAIN_REFERENCE.GnosisMainnet,
   ],
   [CHAIN_NAMESPACE.CosmosSdk]: [
     CHAIN_REFERENCE.CosmosHubMainnet,
@@ -164,10 +153,8 @@ export const VALID_ASSET_NAMESPACE: ValidAssetNamespace = Object.freeze({
     ASSET_NAMESPACE.slip44,
     ASSET_NAMESPACE.erc20,
     ASSET_NAMESPACE.erc721,
-    ASSET_NAMESPACE.erc1155,
     ASSET_NAMESPACE.bep20,
     ASSET_NAMESPACE.bep721,
-    ASSET_NAMESPACE.bep1155,
   ],
   [CHAIN_NAMESPACE.CosmosSdk]: [
     ASSET_NAMESPACE.cw20,

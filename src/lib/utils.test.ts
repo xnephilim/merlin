@@ -1,4 +1,4 @@
-import type { ChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
 import {
   ASSET_REFERENCE,
   cosmosAssetId,
@@ -8,7 +8,7 @@ import {
   merlinxAssetId,
   osmosisAssetId,
   osmosisChainId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 
 import { fauxmesAccountId } from '../state/slices/opportunitiesSlice/mocks'
 import type {

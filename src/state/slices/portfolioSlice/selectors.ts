@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit'
-import type { AccountId, AssetId, ChainId } from '@xblackfury/caip'
+import type { AccountId, AssetId, ChainId } from '@shapeshiftoss/caip'
 import {
   avalancheAssetId,
   bchAssetId,
@@ -17,8 +17,8 @@ import {
   osmosisAssetId,
   polygonAssetId,
   thorchainAssetId,
-} from '@xblackfury/caip'
-import type { BIP44Params } from '@shapeshiftoss/types'
+} from '@shapeshiftoss/caip'
+import type { BIP44Params } from '@xblackfury/types'
 import cloneDeep from 'lodash/cloneDeep'
 import entries from 'lodash/entries'
 import keys from 'lodash/keys'

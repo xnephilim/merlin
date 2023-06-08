@@ -6,20 +6,20 @@
  * @group unit
  */
 
-import { bchAssetId, bchChainId } from '@xblackfury/caip'
-import type { BTCSignTx, BTCWallet, HDWallet } from '@shapeshiftoss/hdwallet-core'
 import {
   BTCInputScriptType,
   BTCOutputAddressType,
   BTCOutputScriptType,
+  BTCSignTx,
+  BTCWallet,
+  HDWallet,
 } from '@shapeshiftoss/hdwallet-core'
-import type { NativeAdapterArgs } from '@shapeshiftoss/hdwallet-native'
-import { NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
-import type { BIP44Params } from '@shapeshiftoss/types'
-import { KnownChainIds, UtxoAccountType } from '@shapeshiftoss/types'
+import { NativeAdapterArgs, NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
+import { BIP44Params, KnownChainIds, UtxoAccountType } from '@xblackfury/types'
+import { bchAssetId, bchChainId } from '@xgridiron/caip'
 
-import type { Account, BuildSendTxInput } from '../../types'
-import type { ChainAdapterArgs } from '../UtxoBaseAdapter'
+import { Account, BuildSendTxInput } from '../../types'
+import { ChainAdapterArgs } from '../UtxoBaseAdapter'
 import * as bitcoincash from './BitcoinCashChainAdapter'
 
 const testMnemonic = 'alcohol woman abuse must during monitor noble actual mixed trade anger aisle'
@@ -167,7 +167,7 @@ describe('BitcoinCashChainAdapter', () => {
   })
 
   describe('getType', () => {
-    it('should return KnownChainIds.BitcoinCashMainnet', () => {
+    it('should return KnownChainIds.BitcoinCashMainnet', async () => {
       const adapter = new bitcoincash.ChainAdapter(args)
       const type = adapter.getType()
       expect(type).toEqual(KnownChainIds.BitcoinCashMainnet)
@@ -461,18 +461,18 @@ describe('BitcoinCashChainAdapter', () => {
   describe('getBIP44Params', () => {
     const expectedCoinType = 145
     const adapter = new bitcoincash.ChainAdapter(args)
-    it('should throw for undefined accountType', () => {
+    it('should throw for undefined accountType', async () => {
       expect(() => {
         adapter.getBIP44Params({ accountNumber: 0, accountType: undefined })
       }).toThrow('not a supported accountType undefined')
     })
-    it('should always be coinType 3', () => {
+    it('should always be coinType 3', async () => {
       for (const accountType of adapter.getSupportedAccountTypes()) {
         const r = adapter.getBIP44Params({ accountNumber: 0, accountType })
         expect(r.coinType).toStrictEqual(expectedCoinType)
       }
     })
-    it('should properly map account types to purposes', () => {
+    it('should properly map account types to purposes', async () => {
       const expected: BIP44Params[] = [
         {
           purpose: 44,
@@ -488,7 +488,7 @@ describe('BitcoinCashChainAdapter', () => {
         expect(r).toStrictEqual(expected[i])
       })
     })
-    it('should respect accountNumber', () => {
+    it('should respect accountNumber', async () => {
       const accountTypes = adapter.getSupportedAccountTypes()
       const expected: BIP44Params[] = [
         {
@@ -504,7 +504,7 @@ describe('BitcoinCashChainAdapter', () => {
         expect(r).toStrictEqual(expected[accountNumber])
       })
     })
-    it('should throw for negative accountNumber', () => {
+    it('should throw for negative accountNumber', async () => {
       expect(() => {
         adapter.getBIP44Params({ accountNumber: -1, accountType: UtxoAccountType.P2pkh })
       }).toThrow('accountNumber must be >= 0')

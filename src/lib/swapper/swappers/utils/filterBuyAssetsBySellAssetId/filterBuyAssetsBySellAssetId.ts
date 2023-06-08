@@ -1,5 +1,5 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
-import { isNft } from '@xblackfury/caip'
+import type { AssetId, ChainId } from '@shapeshiftoss/caip'
+import { isNft } from '@shapeshiftoss/caip'
 import { isEvmChainId } from '@xblackfury/chain-adapters'
 import type { BuyAssetBySellIdInput } from 'lib/swapper/api'
 import { selectAssets } from 'state/slices/selectors'

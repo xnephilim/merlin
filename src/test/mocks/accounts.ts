@@ -5,9 +5,9 @@ import {
   ethAssetId,
   ethChainId,
   merlinAssetId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import { type Account } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import merge from 'lodash/merge'
 import toLower from 'lodash/toLower'
 

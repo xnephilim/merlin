@@ -46,7 +46,6 @@ export interface Transfer {
   totalValue: string
   components: { value: string }[]
   token?: Token
-  id?: string
 }
 
 // these are user facing values, and should be rendered as such

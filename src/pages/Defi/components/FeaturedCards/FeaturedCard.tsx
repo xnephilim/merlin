@@ -1,5 +1,5 @@
 import { Box, Button, Tag, useColorModeValue } from '@chakra-ui/react'
-import { fromAssetId } from '@xblackfury/caip'
+import { fromAssetId } from '@shapeshiftoss/caip'
 import { PairIcons } from 'features/defi/components/PairIcons/PairIcons'
 import qs from 'qs'
 import { useCallback, useMemo } from 'react'

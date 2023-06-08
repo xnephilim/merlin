@@ -1,4 +1,4 @@
-import type { AccountId, AssetId } from '@xblackfury/caip'
+import type { AccountId, AssetId } from '@shapeshiftoss/caip'
 import { createSelector } from 'reselect'
 import type { ReduxState } from 'state/reducer'
 import { selectWalletId } from 'state/slices/common-selectors'

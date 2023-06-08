@@ -1,5 +1,5 @@
 import { Button, Stack } from '@chakra-ui/react'
-import { fromAssetId } from '@xblackfury/caip'
+import { fromAssetId } from '@shapeshiftoss/caip'
 import { FeeDataKey } from '@xblackfury/chain-adapters'
 import axios from 'axios'
 import { Summary } from 'features/defi/components/Summary'

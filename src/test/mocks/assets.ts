@@ -1,4 +1,4 @@
-import { btcAssetId, btcChainId, ethAssetId, ethChainId, merlinAssetId } from '@xblackfury/caip'
+import { btcAssetId, btcChainId, ethAssetId, ethChainId, merlinAssetId } from '@shapeshiftoss/caip'
 import merge from 'lodash/merge'
 import type { Asset } from 'lib/asset-service'
 

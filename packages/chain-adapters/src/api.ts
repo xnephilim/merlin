@@ -1,7 +1,7 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
-import type { BIP44Params, UtxoAccountType } from '@shapeshiftoss/types'
+import { BIP44Params, UtxoAccountType } from '@xblackfury/types'
+import { AssetId, ChainId } from '@xgridiron/caip'
 
-import type {
+import {
   Account,
   BuildSendTxInput,
   FeeDataEstimate,

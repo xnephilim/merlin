@@ -1,5 +1,5 @@
 import type { ChainKey } from '@lifi/sdk'
-import type { ChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
 import type { Result } from '@sniptt/monads'
 import { Err } from '@sniptt/monads'
 import type { BuildTradeInput, SwapErrorRight } from 'lib/swapper/api'

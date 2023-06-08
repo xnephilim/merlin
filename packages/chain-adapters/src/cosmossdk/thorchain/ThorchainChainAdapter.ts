@@ -1,26 +1,22 @@
-import type { AssetId } from '@xblackfury/caip'
-import { ASSET_REFERENCE, thorchainAssetId } from '@xblackfury/caip'
-import type { ThorchainSignTx } from '@shapeshiftoss/hdwallet-core'
-import { supportsThorchain } from '@shapeshiftoss/hdwallet-core'
-import type { BIP44Params } from '@shapeshiftoss/types'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { supportsThorchain, ThorchainSignTx } from '@shapeshiftoss/hdwallet-core'
 import * as hightable from '@xblackfury/hightable-client'
+import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { ASSET_REFERENCE, AssetId, thorchainAssetId } from '@xgridiron/caip'
 
 import { ErrorHandler } from '../../error/ErrorHandler'
-import type {
+import {
   BuildDepositTxInput,
   BuildSendTxInput,
+  ChainAdapterDisplayName,
   FeeDataEstimate,
   GetAddressInput,
   GetFeeDataInput,
   SignTxInput,
 } from '../../types'
-import { ChainAdapterDisplayName } from '../../types'
 import { toAddressNList } from '../../utils'
 import { bnOrZero } from '../../utils/bignumber'
-import type { ChainAdapterArgs } from '../CosmosSdkBaseAdapter'
-import { CosmosSdkBaseAdapter } from '../CosmosSdkBaseAdapter'
-import type { Message } from '../types'
+import { ChainAdapterArgs, CosmosSdkBaseAdapter } from '../CosmosSdkBaseAdapter'
+import { Message } from '../types'
 
 // https://dev.thorchain.org/thorchain-dev/interface-guide/fees#thorchain-native-rune
 // static automatic outbound fee as defined by: https://thornode.ninerealms.com/thorchain/constants
@@ -45,17 +41,15 @@ export class ChainAdapter extends CosmosSdkBaseAdapter<KnownChainIds.ThorchainMa
 
   constructor(args: ChainAdapterArgs) {
     super({
-      assetId: thorchainAssetId,
-      chainId: DEFAULT_CHAIN_ID,
-      defaultBIP44Params: ChainAdapter.defaultBIP44Params,
       denom: 'rune',
-      parser: new hightable.thorchain.TransactionParser({
-        assetId: thorchainAssetId,
-        chainId: args.chainId ?? DEFAULT_CHAIN_ID,
-      }),
+      chainId: DEFAULT_CHAIN_ID,
       supportedChainIds: SUPPORTED_CHAIN_IDS,
+      defaultBIP44Params: ChainAdapter.defaultBIP44Params,
       ...args,
     })
+
+    this.assetId = thorchainAssetId
+    this.parser = new hightable.thorchain.TransactionParser({ chainId: this.chainId })
   }
 
   getDisplayName() {
@@ -178,10 +172,13 @@ export class ChainAdapter extends CosmosSdkBaseAdapter<KnownChainIds.ThorchainMa
     }
   }
 
-  // eslint-disable-next-line require-await
-  async getFeeData(
-    _: Partial<GetFeeDataInput<KnownChainIds.ThorchainMainnet>>,
-  ): Promise<FeeDataEstimate<KnownChainIds.ThorchainMainnet>> {
+  // @ts-ignore - keep type signature with unimplemented state
+  async getFeeData({
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    sendMax,
+  }: Partial<GetFeeDataInput<KnownChainIds.ThorchainMainnet>>): Promise<
+    FeeDataEstimate<KnownChainIds.ThorchainMainnet>
+  > {
     return {
       fast: { txFee: OUTBOUND_FEE, chainSpecific: { gasLimit: '500000000' } },
       average: { txFee: OUTBOUND_FEE, chainSpecific: { gasLimit: '500000000' } },

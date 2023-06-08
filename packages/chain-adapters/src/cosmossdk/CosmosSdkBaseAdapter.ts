@@ -1,13 +1,11 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
-import { fromChainId, generateAssetIdFromOsmosisDenom } from '@xblackfury/caip'
-import type { BIP44Params } from '@shapeshiftoss/types'
-import { KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
+import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { AssetId, ChainId, fromChainId, generateAssetIdFromOsmosisDenom } from '@xgridiron/caip'
 import { bech32 } from 'bech32'
 
-import type { ChainAdapter as IChainAdapter } from '../api'
+import { ChainAdapter as IChainAdapter } from '../api'
 import { ErrorHandler } from '../error/ErrorHandler'
-import type {
+import {
   Account,
   BuildSendTxInput,
   FeeDataEstimate,
@@ -22,12 +20,12 @@ import type {
   TxHistoryInput,
   TxHistoryResponse,
   ValidAddressResult,
+  ValidAddressResultType,
 } from '../types'
-import { ValidAddressResultType } from '../types'
 import { toAddressNList, toRootDerivationPath } from '../utils'
 import { bnOrZero } from '../utils/bignumber'
-import type { cosmos, osmosis, thorchain } from './'
-import type {
+import { cosmos, osmosis, thorchain } from './'
+import {
   BuildTransactionInput,
   CosmosSDKToken,
   Delegation,
@@ -69,7 +67,7 @@ const transformValidator = (validator: hightable.cosmossdk.types.Validator): Val
 
 const parsedTxToTransaction = (parsedTx: hightable.cosmossdk.ParsedTx): Transaction => ({
   ...parsedTx,
-  transfers: parsedTx.transfers.map(transfer => ({
+  transfers: parsedTx.transfers.map((transfer) => ({
     assetId: transfer.assetId,
     from: transfer.from,
     to: transfer.to,
@@ -103,11 +101,9 @@ export interface ChainAdapterArgs {
 }
 
 export interface CosmosSdkBaseAdapterArgs extends ChainAdapterArgs {
-  assetId: AssetId
   chainId: CosmosSdkChainId
-  defaultBIP44Params: BIP44Params
   denom: Denom
-  parser: hightable.cosmossdk.BaseTransactionParser<hightable.cosmossdk.Tx>
+  defaultBIP44Params: BIP44Params
   supportedChainIds: ChainId[]
 }
 
@@ -126,14 +122,12 @@ export abstract class CosmosSdkBaseAdapter<T extends CosmosSdkChainId> implement
   protected parser: hightable.cosmossdk.BaseTransactionParser<hightable.cosmossdk.Tx>
 
   protected constructor(args: CosmosSdkBaseAdapterArgs) {
-    this.assetId = args.assetId
     this.chainId = args.chainId
     this.coinName = args.coinName
-    this.defaultBIP44Params = args.defaultBIP44Params
     this.denom = args.denom
-    this.parser = args.parser
-    this.providers = args.providers
+    this.defaultBIP44Params = args.defaultBIP44Params
     this.supportedChainIds = args.supportedChainIds
+    this.providers = args.providers
 
     if (!this.supportedChainIds.includes(this.chainId)) {
       throw new Error(`${this.chainId} not supported. (supported: ${this.supportedChainIds})`)
@@ -171,40 +165,40 @@ export abstract class CosmosSdkBaseAdapter<T extends CosmosSdkChainId> implement
 
         const data = await this.providers.http.getAccount({ pubkey })
 
-        const delegations = data.delegations.map<Delegation>(delegation => ({
+        const delegations = data.delegations.map<Delegation>((delegation) => ({
           assetId: this.assetId,
           amount: delegation.balance.amount,
           validator: transformValidator(delegation.validator),
         }))
 
-        const redelegations = data.redelegations.map<Redelegation>(redelegation => ({
+        const redelegations = data.redelegations.map<Redelegation>((redelegation) => ({
           destinationValidator: transformValidator(redelegation.destinationValidator),
           sourceValidator: transformValidator(redelegation.sourceValidator),
-          entries: redelegation.entries.map<RedelegationEntry>(entry => ({
+          entries: redelegation.entries.map<RedelegationEntry>((entry) => ({
             assetId: this.assetId,
             completionTime: Number(entry.completionTime),
             amount: entry.balance,
           })),
         }))
 
-        const undelegations = data.unbondings.map<Undelegation>(undelegation => ({
+        const undelegations = data.unbondings.map<Undelegation>((undelegation) => ({
           validator: transformValidator(undelegation.validator),
-          entries: undelegation.entries.map<UndelegationEntry>(entry => ({
+          entries: undelegation.entries.map<UndelegationEntry>((entry) => ({
             assetId: this.assetId,
             completionTime: Number(entry.completionTime),
             amount: entry.balance.amount,
           })),
         }))
 
-        const rewards = data.rewards.map<ValidatorReward>(validatorReward => ({
+        const rewards = data.rewards.map<ValidatorReward>((validatorReward) => ({
           validator: transformValidator(validatorReward.validator),
-          rewards: validatorReward.rewards.map<Reward>(reward => ({
+          rewards: validatorReward.rewards.map<Reward>((reward) => ({
             assetId: this.assetId,
             amount: reward.amount,
           })),
         }))
 
-        const assets = data.assets.map<CosmosSDKToken>(asset => ({
+        const assets = data.assets.map<CosmosSDKToken>((asset) => ({
           amount: asset.amount,
           assetId: generateAssetIdFromOsmosisDenom(asset.denom),
         }))
@@ -242,7 +236,7 @@ export abstract class CosmosSdkBaseAdapter<T extends CosmosSdkChainId> implement
       })
 
       const txs = await Promise.all(
-        data.txs.map(async tx => {
+        data.txs.map(async (tx) => {
           const parsedTx = await this.parser.parse(tx, input.pubkey)
           return parsedTxToTransaction(parsedTx)
         }),
@@ -279,7 +273,7 @@ export abstract class CosmosSdkBaseAdapter<T extends CosmosSdkChainId> implement
         case 'redelegate':
           return bnOrZero(
             account.chainSpecific.delegations.find(
-              delegation => delegation.validator.address === validatorAction.address,
+              (delegation) => delegation.validator.address === validatorAction.address,
             )?.amount,
           )
         default:
@@ -296,9 +290,9 @@ export abstract class CosmosSdkBaseAdapter<T extends CosmosSdkChainId> implement
     return availableBalance.toString()
   }
 
-  protected buildTransaction<U extends CosmosSdkChainId>(
+  protected async buildTransaction<U extends CosmosSdkChainId>(
     tx: BuildTransactionInput<CosmosSdkChainId>,
-  ): { txToSign: SignTx<U> } {
+  ): Promise<{ txToSign: SignTx<U> }> {
     const {
       account,
       accountNumber,
@@ -327,7 +321,7 @@ export abstract class CosmosSdkBaseAdapter<T extends CosmosSdkChainId> implement
     return { txToSign }
   }
 
-  broadcastTransaction(hex: string): Promise<string> {
+  async broadcastTransaction(hex: string): Promise<string> {
     try {
       return this.providers.http.sendTx({ body: { rawTx: hex } })
     } catch (err) {
@@ -335,7 +329,6 @@ export abstract class CosmosSdkBaseAdapter<T extends CosmosSdkChainId> implement
     }
   }
 
-  // eslint-disable-next-line require-await
   async validateAddress(address: string): Promise<ValidAddressResult> {
     const chain = this.getType()
     try {
@@ -350,6 +343,7 @@ export abstract class CosmosSdkBaseAdapter<T extends CosmosSdkChainId> implement
         result: ValidAddressResultType.Valid,
       }
     } catch (err) {
+      console.error(err)
       return { valid: false, result: ValidAddressResultType.Invalid }
     }
   }
@@ -368,11 +362,11 @@ export abstract class CosmosSdkBaseAdapter<T extends CosmosSdkChainId> implement
     await this.providers.ws.subscribeTxs(
       subscriptionId,
       { topic: 'txs', addresses: [address] },
-      async msg => {
+      async (msg) => {
         const parsedTx = await this.parser.parse(msg.data, msg.address)
         onMessage(parsedTxToTransaction(parsedTx))
       },
-      err => onError({ message: err.message }),
+      (err) => onError({ message: err.message }),
     )
   }
 
@@ -395,7 +389,7 @@ export abstract class CosmosSdkBaseAdapter<T extends CosmosSdkChainId> implement
 
     try {
       const data = await this.providers.http.getValidators()
-      return data.validators.map<Validator>(validator => transformValidator(validator))
+      return data.validators.map<Validator>((validator) => transformValidator(validator))
     } catch (err) {
       return ErrorHandler(err)
     }

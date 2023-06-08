@@ -1,4 +1,4 @@
-import { ethAssetId } from '@xblackfury/caip'
+import { ethAssetId } from '@shapeshiftoss/caip'
 import { ethereum } from 'test/mocks/assets'
 import { mockChainAdapters } from 'test/mocks/portfolio'
 import type { Asset } from 'lib/asset-service'

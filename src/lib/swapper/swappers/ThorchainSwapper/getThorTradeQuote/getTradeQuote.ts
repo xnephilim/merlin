@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { CHAIN_NAMESPACE, fromAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { CHAIN_NAMESPACE, fromAssetId } from '@shapeshiftoss/caip'
 import type {
   CosmosSdkBaseAdapter,
   EvmBaseAdapter,

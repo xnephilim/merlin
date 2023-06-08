@@ -1,5 +1,5 @@
-import type { AssetNamespace, ChainId } from '@xblackfury/caip'
-import { polygonChainId, toAssetId } from '@xblackfury/caip'
+import type { AssetNamespace, ChainId } from '@shapeshiftoss/caip'
+import { polygonChainId, toAssetId } from '@shapeshiftoss/caip'
 import type { TokenType } from '@xblackfury/hightable-client/src/evm/ethereum'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'

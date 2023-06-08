@@ -1,5 +1,5 @@
-import { ethAssetId, fromAssetId, toAssetId } from '@xblackfury/caip'
-import type { MarketData } from '@shapeshiftoss/types'
+import { ethAssetId, fromAssetId, toAssetId } from '@shapeshiftoss/caip'
+import type { MarketData } from '@xblackfury/types'
 import type { TokenAmount } from '@uniswap/sdk'
 import { WETH_TOKEN_CONTRACT_ADDRESS } from 'contracts/constants'
 import { fetchUniV2PairData, getOrCreateContractByType } from 'contracts/contractManager'

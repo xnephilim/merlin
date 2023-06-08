@@ -1,5 +1,5 @@
-import type { AccountId, AssetId, ChainNamespace } from '@xblackfury/caip'
-import { CHAIN_NAMESPACE, fromAssetId } from '@xblackfury/caip'
+import type { AccountId, AssetId, ChainNamespace } from '@shapeshiftoss/caip'
+import { CHAIN_NAMESPACE, fromAssetId } from '@shapeshiftoss/caip'
 import { Text } from 'components/Text'
 import { selectPortfolioAssetIdsByAccountIdExcludeFeeAsset } from 'state/slices/selectors'
 import { useAppSelector } from 'state/store'

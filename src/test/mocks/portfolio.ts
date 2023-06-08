@@ -7,9 +7,9 @@ import {
   optimismAssetId,
   osmosisAssetId,
   polygonAssetId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import type { Account } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import { accountToPortfolio } from 'state/slices/portfolioSlice/utils'
 
 type MockChainIds =

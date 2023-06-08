@@ -1,12 +1,11 @@
-import { thorchainAssetId, thorchainChainId } from '@xblackfury/caip'
+import { thorchainAssetId, thorchainChainId } from '@xgridiron/caip'
 
-import type { Fee } from '../../../../types'
-import { TransferType, TxStatus } from '../../../../types'
-import type { ParsedTx } from '../../../parser'
+import { Fee, TransferType, TxStatus } from '../../../../types'
+import { ParsedTx } from '../../../parser'
 import { TransactionParser } from '../index'
 import standard from './mockData/standard'
 
-const txParser = new TransactionParser({ chainId: thorchainChainId, assetId: thorchainAssetId })
+const txParser = new TransactionParser({ chainId: thorchainChainId })
 
 describe('parseTx', () => {
   it('should be able to parse a standard send tx', async () => {

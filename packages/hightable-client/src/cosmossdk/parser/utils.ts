@@ -1,15 +1,21 @@
-import type { AssetId } from '@xblackfury/caip'
+import { Logger } from '@xblackfury/logger'
 import {
   ASSET_NAMESPACE,
+  AssetId,
   cosmosAssetId,
   fromAssetId,
   osmosisAssetId,
   thorchainAssetId,
   toAssetId,
-} from '@xblackfury/caip'
+} from '@xgridiron/caip'
 
-import type { Message } from '../types'
-import type { TxMetadata } from './types'
+import { Message } from '../types'
+import { TxMetadata } from './types'
+
+const logger = new Logger({
+  namespace: ['hightable-client', 'cosmossdk', 'parser', 'utils'],
+  level: process.env.LOG_LEVEL,
+})
 
 const assetIdByDenom = new Map<string, AssetId>([
   ['uatom', cosmosAssetId],
@@ -30,7 +36,7 @@ export const getAssetIdByDenom = (denom: string, assetId: string): AssetId | und
     return toAssetId({ chainId, assetNamespace, assetReference })
   }
 
-  console.warn(`unknown denom: ${denom}`)
+  logger.warn(`unknown denom: ${denom}`)
 
   return
 }
@@ -131,7 +137,7 @@ export const metaData = (
       // known message types with no applicable metadata
       return
     default:
-      console.warn(`unsupported message type: ${msg.type}`)
+      logger.warn(`unsupported message type: ${msg.type}`)
       return
   }
 }

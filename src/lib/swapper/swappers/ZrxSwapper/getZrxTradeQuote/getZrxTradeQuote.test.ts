@@ -1,4 +1,4 @@
-import { btcChainId, ethChainId } from '@xblackfury/caip'
+import { btcChainId, ethChainId } from '@shapeshiftoss/caip'
 import type { ethereum } from '@xblackfury/chain-adapters'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
@@ -33,7 +33,7 @@ jest.mock('state/zustand/swapperStore/amountSelectors', () => ({
   selectSellAssetUsdRate: jest.fn(() => '1'),
 }))
 jest.mock('@xblackfury/chain-adapters', () => {
-  const { KnownChainIds } = require('@shapeshiftoss/types')
+  const { KnownChainIds } = require('@xblackfury/types')
   return {
     isEvmChainId: jest.fn(() => true),
     evmChainIds: [KnownChainIds.EthereumMainnet],
@@ -43,7 +43,7 @@ jest.mock('@xblackfury/chain-adapters', () => {
   }
 })
 jest.mock('context/PluginProvider/chainAdapterSingleton', () => {
-  const { KnownChainIds } = require('@shapeshiftoss/types')
+  const { KnownChainIds } = require('@xblackfury/types')
   const { gasFeeData } = require('../../utils/test-data/setupDeps')
   return {
     getChainAdapterManager: jest.fn(

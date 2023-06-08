@@ -1,4 +1,4 @@
-import { ethChainId } from '@xblackfury/caip'
+import { ethChainId } from '@shapeshiftoss/caip'
 import { providers } from 'ethers'
 import { getWeb3InstanceByChainId } from 'lib/web3-instance'
 let maybeEthersProvider: providers.Web3Provider | undefined

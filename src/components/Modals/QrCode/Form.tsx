@@ -1,5 +1,5 @@
-import type { AccountId, AssetId } from '@xblackfury/caip'
-import { ethAssetId } from '@xblackfury/caip'
+import type { AccountId, AssetId } from '@shapeshiftoss/caip'
+import { ethAssetId } from '@shapeshiftoss/caip'
 import { FeeDataKey } from '@xblackfury/chain-adapters'
 import { AnimatePresence } from 'framer-motion'
 import { ConnectModal } from 'plugins/walletConnectToDapps/components/modals/connect/Connect'

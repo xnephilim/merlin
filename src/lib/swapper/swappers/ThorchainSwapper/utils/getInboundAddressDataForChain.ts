@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { adapters } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { adapters } from '@shapeshiftoss/caip'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import type { SwapErrorRight } from 'lib/swapper/api'

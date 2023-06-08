@@ -1,22 +1,15 @@
-import type { AssetId } from '@xblackfury/caip'
-import { ASSET_REFERENCE, optimismAssetId } from '@xblackfury/caip'
-import type { BIP44Params } from '@shapeshiftoss/types'
-import { KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
+import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { ASSET_REFERENCE, AssetId, optimismAssetId } from '@xgridiron/caip'
 
-import type { FeeDataEstimate, GetFeeDataInput } from '../../types'
 import { ChainAdapterDisplayName } from '../../types'
+import { FeeDataEstimate, GetFeeDataInput } from '../../types'
 import { bn, bnOrZero, calcFee } from '../../utils'
-import type { ChainAdapterArgs } from '../EvmBaseAdapter'
-import { EvmBaseAdapter } from '../EvmBaseAdapter'
-import type { GasFeeDataEstimate } from '../types'
+import { ChainAdapterArgs, EvmBaseAdapter } from '../EvmBaseAdapter'
+import { GasFeeDataEstimate } from '../types'
 
 const SUPPORTED_CHAIN_IDS = [KnownChainIds.OptimismMainnet]
 const DEFAULT_CHAIN_ID = KnownChainIds.OptimismMainnet
-
-export const isOptimismChainAdapter = (adapter: unknown): adapter is ChainAdapter => {
-  return (adapter as ChainAdapter).getType() === KnownChainIds.OptimismMainnet
-}
 
 export class ChainAdapter extends EvmBaseAdapter<KnownChainIds.OptimismMainnet> {
   public static readonly defaultBIP44Params: BIP44Params = {
@@ -29,20 +22,18 @@ export class ChainAdapter extends EvmBaseAdapter<KnownChainIds.OptimismMainnet> 
 
   constructor(args: ChainAdapterArgs<hightable.optimism.V1Api>) {
     super({
-      assetId: optimismAssetId,
       chainId: DEFAULT_CHAIN_ID,
-      defaultBIP44Params: ChainAdapter.defaultBIP44Params,
-      parser: new hightable.optimism.TransactionParser({
-        assetId: optimismAssetId,
-        chainId: args.chainId ?? DEFAULT_CHAIN_ID,
-        rpcUrl: args.rpcUrl,
-        api: args.providers.http,
-      }),
       supportedChainIds: SUPPORTED_CHAIN_IDS,
+      defaultBIP44Params: ChainAdapter.defaultBIP44Params,
       ...args,
     })
 
     this.api = args.providers.http
+    this.assetId = optimismAssetId
+    this.parser = new hightable.optimism.TransactionParser({
+      chainId: this.chainId,
+      rpcUrl: this.rpcUrl,
+    })
   }
 
   getDisplayName() {
@@ -79,31 +70,31 @@ export class ChainAdapter extends EvmBaseAdapter<KnownChainIds.OptimismMainnet> 
 
   async getFeeData(
     input: GetFeeDataInput<KnownChainIds.OptimismMainnet>,
-  ): Promise<
-    FeeDataEstimate<KnownChainIds.OptimismMainnet> & { l1GasPrice: string; l1GasLimit: string }
-  > {
+  ): Promise<FeeDataEstimate<KnownChainIds.OptimismMainnet>> {
     const req = await this.buildEstimateGasRequest(input)
 
     const { gasLimit, l1GasLimit } = await this.api.estimateGas(req)
     const { fast, average, slow, l1GasPrice } = await this.getGasFeeData()
 
-    const l1Fee = bn(l1GasPrice).times(l1GasLimit)
-
     return {
       fast: {
-        txFee: bnOrZero(bn(fast.gasPrice).times(gasLimit).plus(l1Fee)).toFixed(0),
+        txFee: bnOrZero(
+          bn(fast.gasPrice).times(gasLimit).plus(bn(l1GasPrice).times(l1GasLimit)),
+        ).toPrecision(),
         chainSpecific: { gasLimit, ...fast },
       },
       average: {
-        txFee: bnOrZero(bn(average.gasPrice).times(gasLimit).plus(l1Fee)).toFixed(0),
+        txFee: bnOrZero(
+          bn(average.gasPrice).times(gasLimit).plus(bn(l1GasPrice).times(l1GasLimit)),
+        ).toPrecision(),
         chainSpecific: { gasLimit, ...average },
       },
       slow: {
-        txFee: bnOrZero(bn(slow.gasPrice).times(gasLimit).plus(l1Fee)).toFixed(0),
+        txFee: bnOrZero(
+          bn(slow.gasPrice).times(gasLimit).plus(bn(l1GasPrice).times(l1GasLimit)),
+        ).toPrecision(),
         chainSpecific: { gasLimit, ...slow },
       },
-      l1GasPrice,
-      l1GasLimit,
     }
   }
 }

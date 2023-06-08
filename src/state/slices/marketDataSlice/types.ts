@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import type { HistoryData, HistoryTimeframe, MarketData } from '@shapeshiftoss/types'
+import type { AssetId } from '@shapeshiftoss/caip'
+import type { HistoryData, HistoryTimeframe, MarketData } from '@xblackfury/types'
 import type { SupportedFiatCurrencies } from 'lib/market-service'
 import type { PartialRecord } from 'lib/utils'
 

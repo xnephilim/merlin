@@ -1,4 +1,4 @@
-import type { AccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
 import { useEffect, useState } from 'react'
 import type { Asset } from 'lib/asset-service'
 import { selectHighestFiatBalanceAccountByAssetId } from 'state/slices/portfolioSlice/selectors'

@@ -1,4 +1,4 @@
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import {
   avalancheAssetId,
   bscAssetId,
@@ -7,12 +7,12 @@ import {
   gnosisAssetId,
   optimismAssetId,
   polygonAssetId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import type { evm, EvmChainAdapter, EvmChainId } from '@xblackfury/chain-adapters'
 import { optimism } from '@xblackfury/chain-adapters'
 import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import { supportsETH } from '@shapeshiftoss/hdwallet-core'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import type Web3 from 'web3'
 import type { AbiItem } from 'web3-utils'
 import type { BigNumber } from 'lib/bignumber/bignumber'

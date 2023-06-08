@@ -1,8 +1,8 @@
-import type { ChainId } from '@xblackfury/caip'
-import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
-import type * as hightable from '@xblackfury/hightable-client'
+import { HDWallet } from '@shapeshiftoss/hdwallet-core'
+import * as hightable from '@xblackfury/hightable-client'
+import { ChainId } from '@xgridiron/caip'
 
-import type * as common from '../types'
+import * as common from '../types'
 
 export type Account = {
   nonce: number

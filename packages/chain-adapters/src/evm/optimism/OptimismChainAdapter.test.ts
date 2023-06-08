@@ -4,21 +4,23 @@
  * Test OptimismChainAdapter
  * @group unit
  */
-import { ASSET_REFERENCE, fromChainId, optimismAssetId, optimismChainId } from '@xblackfury/caip'
-import type { ETHSignMessage, ETHSignTx, ETHWallet } from '@shapeshiftoss/hdwallet-core'
-import type { NativeAdapterArgs } from '@shapeshiftoss/hdwallet-native'
-import { NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
-import type { BIP44Params } from '@shapeshiftoss/types'
-import { KnownChainIds } from '@shapeshiftoss/types'
-import type * as hightable from '@xblackfury/hightable-client'
+import { ETHSignMessage, ETHSignTx, ETHWallet } from '@shapeshiftoss/hdwallet-core'
+import { NativeAdapterArgs, NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
+import hightable from '@xblackfury/hightable-client'
+import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { ASSET_REFERENCE, fromChainId, optimismAssetId, optimismChainId } from '@xgridiron/caip'
 import { merge } from 'lodash'
 import { numberToHex } from 'web3-utils'
 
-import type { BuildSendTxInput, SignMessageInput, SignTxInput } from '../../types'
-import { ValidAddressResultType } from '../../types'
+import {
+  BuildSendTxInput,
+  SignMessageInput,
+  SignTxInput,
+  ValidAddressResultType,
+} from '../../types'
 import { toAddressNList } from '../../utils'
 import { bn } from '../../utils/bignumber'
-import type { ChainAdapterArgs, EvmChainId } from '../EvmBaseAdapter'
+import { ChainAdapterArgs, EvmChainId } from '../EvmBaseAdapter'
 import * as optimism from './OptimismChainAdapter'
 
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
@@ -292,7 +294,7 @@ describe('OptimismChainAdapter', () => {
       const adapter = new optimism.ChainAdapter(makeChainAdapterArgs())
       const wallet = await getWallet()
 
-      wallet.ethSendTx = async () => await Promise.resolve(null)
+      wallet.ethSendTx = async () => null
 
       const tx = { wallet, txToSign: {} } as unknown as SignTxInput<ETHSignTx>
 
@@ -305,10 +307,9 @@ describe('OptimismChainAdapter', () => {
       const adapter = new optimism.ChainAdapter(makeChainAdapterArgs())
       const wallet = await getWallet()
 
-      wallet.ethSendTx = async () =>
-        await Promise.resolve({
-          hash: '0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331',
-        })
+      wallet.ethSendTx = async () => ({
+        hash: '0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331',
+      })
 
       const tx = { wallet, txToSign: {} } as unknown as SignTxInput<ETHSignTx>
 
@@ -340,7 +341,7 @@ describe('OptimismChainAdapter', () => {
       const adapter = new optimism.ChainAdapter(makeChainAdapterArgs())
       const wallet = await getWallet()
 
-      wallet.ethSignMessage = async () => await Promise.resolve(null)
+      wallet.ethSignMessage = async () => null
 
       const message: SignMessageInput<ETHSignMessage> = {
         wallet,
@@ -419,7 +420,7 @@ describe('OptimismChainAdapter', () => {
       const adapter = new optimism.ChainAdapter(args)
 
       const wallet = await getWallet()
-      wallet.ethGetAddress = async () => await Promise.resolve(ZERO_ADDRESS)
+      wallet.ethGetAddress = async () => ZERO_ADDRESS
 
       const tx = {
         wallet,
@@ -610,25 +611,25 @@ describe('OptimismChainAdapter', () => {
   describe('getBIP44Params', () => {
     const adapter = new optimism.ChainAdapter(makeChainAdapterArgs())
 
-    it('should return the correct coinType', () => {
+    it('should return the correct coinType', async () => {
       const result = adapter.getBIP44Params({ accountNumber: 0 })
       expect(result.coinType).toStrictEqual(Number(ASSET_REFERENCE.Optimism))
     })
 
-    it('should respect accountNumber', () => {
+    it('should respect accountNumber', async () => {
       const testCases: BIP44Params[] = [
         { purpose: 44, coinType: Number(ASSET_REFERENCE.Optimism), accountNumber: 0 },
         { purpose: 44, coinType: Number(ASSET_REFERENCE.Optimism), accountNumber: 1 },
         { purpose: 44, coinType: Number(ASSET_REFERENCE.Optimism), accountNumber: 2 },
       ]
 
-      testCases.forEach(expected => {
+      testCases.forEach((expected) => {
         const result = adapter.getBIP44Params({ accountNumber: expected.accountNumber })
         expect(result).toStrictEqual(expected)
       })
     })
 
-    it('should throw for negative accountNumber', () => {
+    it('should throw for negative accountNumber', async () => {
       expect(() => {
         adapter.getBIP44Params({ accountNumber: -1 })
       }).toThrow('accountNumber must be >= 0')

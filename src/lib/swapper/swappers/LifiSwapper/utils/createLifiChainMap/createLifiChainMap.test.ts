@@ -1,5 +1,5 @@
 import { ChainId as LifiChainId, ChainKey as LifiChainKey } from '@lifi/types'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 
 import { createLifiChainMap } from './createLifiChainMap'
 

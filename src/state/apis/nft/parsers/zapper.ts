@@ -1,6 +1,6 @@
-import type { ChainId } from '@xblackfury/caip'
-import { toAssetId } from '@xblackfury/caip'
-import type { AssetNamespace } from '@xblackfury/caip/src/assetId/assetId'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { toAssetId } from '@shapeshiftoss/caip'
+import type { AssetNamespace } from '@shapeshiftoss/caip/src/assetId/assetId'
 import type { V2NftUserItem } from 'state/apis/zapper/validators'
 
 import type { NftCollectionType, NftItemWithCollection } from '../types'

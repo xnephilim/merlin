@@ -1,4 +1,4 @@
-import type { AccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
 import type { OsmosisToken } from 'state/slices/opportunitiesSlice/resolvers/osmosis/utils'
 import type { LpEarnOpportunityType } from 'state/slices/opportunitiesSlice/types'
 

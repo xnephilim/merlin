@@ -1,8 +1,8 @@
-import type { AssetId } from '@xblackfury/caip'
-import type * as hightable from '@xblackfury/hightable-client'
+import * as hightable from '@xblackfury/hightable-client'
+import { AssetId } from '@xgridiron/caip'
 
-import type * as types from '../types'
-import type { CosmosSdkChainId } from './CosmosSdkBaseAdapter'
+import * as types from '../types'
+import { CosmosSdkChainId } from './CosmosSdkBaseAdapter'
 
 export type Account = {
   sequence: string

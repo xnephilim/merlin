@@ -1,7 +1,7 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Box, Flex } from '@chakra-ui/layout'
 import { Button, Link, Skeleton, Text as CText, useColorModeValue } from '@chakra-ui/react'
-import { ASSET_NAMESPACE, ethChainId, fromAssetId } from '@xblackfury/caip'
+import { ASSET_NAMESPACE, ethChainId, fromAssetId } from '@shapeshiftoss/caip'
 import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import qs from 'qs'
 import { useCallback, useMemo } from 'react'

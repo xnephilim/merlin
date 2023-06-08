@@ -1,5 +1,5 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
-import { cosmosAssetId, cosmosChainId, osmosisAssetId, osmosisChainId } from '@xblackfury/caip'
+import type { AssetId, ChainId } from '@shapeshiftoss/caip'
+import { cosmosAssetId, cosmosChainId, osmosisAssetId, osmosisChainId } from '@shapeshiftoss/caip'
 import type { cosmos, osmosis } from '@xblackfury/chain-adapters'
 import { bnOrZero } from 'lib/bignumber/bignumber'
 

@@ -1,4 +1,4 @@
-import type { HistoryData, HistoryTimeframe, MarketData } from '@shapeshiftoss/types'
+import type { HistoryData, HistoryTimeframe, MarketData } from '@xblackfury/types'
 
 /**
  * stackedQ: We need the list in the frontend,

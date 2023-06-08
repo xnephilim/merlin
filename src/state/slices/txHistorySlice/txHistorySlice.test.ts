@@ -1,5 +1,5 @@
-import { btcAssetId, ethAssetId } from '@xblackfury/caip'
-import { UtxoAccountType } from '@shapeshiftoss/types'
+import { btcAssetId, ethAssetId } from '@shapeshiftoss/caip'
+import { UtxoAccountType } from '@xblackfury/types'
 import { TxStatus } from '@xblackfury/hightable-client'
 import { map, reverse } from 'lodash'
 import { mockStore } from 'test/mocks/store'

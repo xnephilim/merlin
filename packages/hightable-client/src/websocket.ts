@@ -1,5 +1,11 @@
 import type { ErrorResponse, RequestPayload, Topics, TxsTopicData } from '@shapeshiftoss/common-api'
+import { Logger } from '@xblackfury/logger'
 import WebSocket from 'isomorphic-ws'
+
+const logger = new Logger({
+  namespace: ['hightable-client', 'websocket'],
+  level: process.env.LOG_LEVEL,
+})
 
 const NORMAL_CLOSURE_CODE = 1000
 
@@ -50,9 +56,9 @@ export class Client<T> {
       setTimeout(() => reject(new Error('timeout while trying to connect')), 5000)
 
       ws.onopen = ({ target }) => this.onOpen(target, resolve, reject)
-      ws.onclose = event => this.onClose(event, resolve, reject)
-      ws.onerror = event => this.onError(event)
-      ws.onmessage = event => this.onMessage(event)
+      ws.onclose = (event) => this.onClose(event, resolve, reject)
+      ws.onerror = (event) => this.onError(event)
+      ws.onmessage = (event) => this.onMessage(event)
     })
   }
 
@@ -95,7 +101,7 @@ export class Client<T> {
     resolve: (value: boolean) => void,
     reject: (reason?: unknown) => void,
   ): void {
-    console.warn(
+    logger.warn(
       { fn: 'onClose', code: event.code, reason: event.reason, type: event.type },
       'websocket closed',
     )
@@ -119,7 +125,7 @@ export class Client<T> {
   private onError(event: WebSocket.ErrorEvent): void {
     if (!event.message) return
 
-    console.error(
+    logger.error(
       { fn: 'onError', err: event.error, message: event.message, type: event.type },
       'websocket error',
     )
@@ -151,7 +157,7 @@ export class Client<T> {
       // forward the transaction message to the correct onMessage handler
       this.txs[message.subscriptionId || subscriptionId]?.onMessage?.(message)
     } catch (err) {
-      console.error(err)
+      logger.warn(`failed to handle onmessage event: ${JSON.stringify(event)}: ${err}`)
     }
   }
 
@@ -161,7 +167,7 @@ export class Client<T> {
 
     connection.pingTimeout && clearTimeout(connection.pingTimeout)
     connection.pingTimeout = setTimeout(() => {
-      console.warn({ fn: 'pingTimeout' }, `${topic} heartbeat failed`)
+      logger.warn({ fn: 'pingTimeout' }, `${topic} heartbeat failed`)
       connection.ws?.close()
     }, this.pingInterval + 5000)
   }
@@ -198,7 +204,7 @@ export class Client<T> {
 
     // initialize websocket connection if one does not already exist
     if (!this.connections.txs?.ws) {
-      return await this.initialize()
+      return this.initialize()
     }
 
     // subscribe if connection exists and is ready
@@ -231,7 +237,7 @@ export class Client<T> {
       // unsubscribe addresses from the current subscribed address set if addresses provided
       if (data?.addresses?.length) {
         this.txs[subscriptionId].data.addresses = this.txs[subscriptionId].data.addresses.filter(
-          address => !data.addresses.includes(address),
+          (address) => !data.addresses.includes(address),
         )
       } else {
         // delete subscription if no addresses provided
@@ -272,7 +278,7 @@ export class Client<T> {
         closeTxs()
         break
       default:
-        console.warn(`topic: ${topic} not supported`)
+        logger.warn(`topic: ${topic} not supported`)
     }
   }
 }

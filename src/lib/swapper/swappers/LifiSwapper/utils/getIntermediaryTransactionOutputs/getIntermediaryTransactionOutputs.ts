@@ -1,4 +1,4 @@
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import type { Asset } from 'lib/asset-service'
 import type { AmountDisplayMeta } from 'lib/swapper/api'
 import { isSome } from 'lib/utils'

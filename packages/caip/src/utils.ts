@@ -1,8 +1,6 @@
-import type { AccountId } from './accountId/accountId'
-import { fromAccountId } from './accountId/accountId'
-import type { AssetId } from './assetId/assetId'
-import { toAssetId } from './assetId/assetId'
-import type { ChainId, ChainNamespace, ChainReference } from './chainId/chainId'
+import { AccountId, fromAccountId } from './accountId/accountId'
+import { AssetId, toAssetId } from './assetId/assetId'
+import { ChainId, ChainNamespace, ChainReference } from './chainId/chainId'
 import * as constants from './constants'
 
 // https://regex101.com/r/xqVzV2/1

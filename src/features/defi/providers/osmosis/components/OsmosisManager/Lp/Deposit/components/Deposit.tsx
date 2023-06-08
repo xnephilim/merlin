@@ -1,12 +1,12 @@
 import { useToast } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
 import {
   ASSET_NAMESPACE,
   ASSET_REFERENCE,
   fromAccountId,
   fromAssetId,
   toAssetId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import type { CosmosSdkBaseAdapter, CosmosSdkChainId } from '@xblackfury/chain-adapters'
 import type { DepositValues } from 'features/defi/components/Deposit/PairDeposit'
 import { PairDepositWithAllocation } from 'features/defi/components/Deposit/PairDepositWithAllocation'

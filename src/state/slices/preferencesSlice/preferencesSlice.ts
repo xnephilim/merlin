@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { HistoryTimeframe } from '@shapeshiftoss/types'
+import type { HistoryTimeframe } from '@xblackfury/types'
 import { getConfig } from 'config'
 import { DEFAULT_HISTORY_TIMEFRAME } from 'constants/Config'
 import dayjs from 'dayjs'

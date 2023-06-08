@@ -1,5 +1,5 @@
 import type { ChainAdapter } from '@xblackfury/chain-adapters'
-import type { KnownChainIds } from '@shapeshiftoss/types'
+import type { KnownChainIds } from '@xblackfury/types'
 import { type ChainId, type VaultMetadata, Yearn } from '@yfi/sdk'
 import { ethers } from 'ethers'
 import { find } from 'lodash'

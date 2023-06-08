@@ -12,8 +12,8 @@ import {
   Stack,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { fromAssetId } from '@xblackfury/caip/dist/assetId/assetId'
-import { CHAIN_NAMESPACE } from '@xblackfury/caip/dist/constants'
+import { fromAssetId } from '@shapeshiftoss/caip/dist/assetId/assetId'
+import { CHAIN_NAMESPACE } from '@shapeshiftoss/caip/dist/constants'
 import type { FeeDataKey } from '@xblackfury/chain-adapters'
 import { useMemo } from 'react'
 import { useFormContext, useWatch } from 'react-hook-form'

@@ -1,4 +1,4 @@
-import type { AccountId, AssetId, ChainId } from '@xblackfury/caip'
+import type { AccountId, AssetId, ChainId } from '@shapeshiftoss/caip'
 import {
   accountIdToChainId,
   avalancheChainId,
@@ -20,7 +20,7 @@ import {
   polygonChainId,
   thorchainChainId,
   toAccountId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import type { Account } from '@xblackfury/chain-adapters'
 import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import {
@@ -34,7 +34,7 @@ import {
   supportsPolygon,
   supportsThorchain,
 } from '@shapeshiftoss/hdwallet-core'
-import type { KnownChainIds } from '@shapeshiftoss/types'
+import type { KnownChainIds } from '@xblackfury/types'
 import cloneDeep from 'lodash/cloneDeep'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import type { BigNumber } from 'lib/bignumber/bignumber'

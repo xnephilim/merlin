@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-import type { AccountId } from '@xblackfury/caip'
-import { fromAccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { fromAccountId } from '@shapeshiftoss/caip'
 import { BASE_RTK_CREATE_API_CONFIG } from 'state/apis/const'
 
 import {

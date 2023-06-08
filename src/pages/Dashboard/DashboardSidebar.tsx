@@ -1,5 +1,5 @@
 import { Flex, Image } from '@chakra-ui/react'
-import { btcAssetId, dogeAssetId, merlinAssetId } from '@xblackfury/caip'
+import { btcAssetId, dogeAssetId, merlinAssetId } from '@shapeshiftoss/caip'
 import OnRamperLogo from 'assets/on-ramper.png'
 import SaversVaultTop from 'assets/savers-vault-top.png'
 import { AssetIcon } from 'components/AssetIcon'

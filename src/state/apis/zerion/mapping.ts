@@ -1,4 +1,4 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
+import type { AssetId, ChainId } from '@shapeshiftoss/caip'
 import {
   ASSET_NAMESPACE,
   avalancheChainId,
@@ -7,7 +7,7 @@ import {
   optimismChainId,
   polygonChainId,
   toAssetId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 
 import type { ZerionImplementation } from './validators/fungible'
 

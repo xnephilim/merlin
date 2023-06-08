@@ -1,4 +1,4 @@
-import type { AssetId } from '@xblackfury/caip'
-import { thorchainAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { thorchainAssetId } from '@shapeshiftoss/caip'
 
 export const isRune = (assetId: AssetId) => assetId === thorchainAssetId

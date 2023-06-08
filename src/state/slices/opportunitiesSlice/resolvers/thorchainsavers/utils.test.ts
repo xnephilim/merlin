@@ -1,4 +1,4 @@
-import { btcAssetId, osmosisAssetId } from '@xblackfury/caip'
+import { btcAssetId, osmosisAssetId } from '@shapeshiftoss/caip'
 import axios from 'axios'
 import type { Asset } from 'lib/asset-service'
 import { AssetService } from 'lib/asset-service'

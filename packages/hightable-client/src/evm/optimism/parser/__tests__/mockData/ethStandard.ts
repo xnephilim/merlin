@@ -1,4 +1,4 @@
-import type { Tx } from '../../../../../generated/optimism'
+import { Tx } from '../../../../../generated/optimism'
 import { mempoolMock } from './mempoolMock'
 
 const ethStandard: Tx = {

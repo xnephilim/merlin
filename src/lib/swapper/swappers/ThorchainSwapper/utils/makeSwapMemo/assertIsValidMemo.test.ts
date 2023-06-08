@@ -1,4 +1,4 @@
-import { bchChainId, ethChainId, thorchainChainId } from '@xblackfury/caip'
+import { bchChainId, ethChainId, thorchainChainId } from '@shapeshiftoss/caip'
 
 import { assertIsValidMemo, isValidMemoAddress } from './assertIsValidMemo'
 

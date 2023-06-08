@@ -1,5 +1,5 @@
-import { btcAssetId, ethAssetId, merlinAssetId } from '@xblackfury/caip'
-import type { BIP44Params } from '@shapeshiftoss/types'
+import { btcAssetId, ethAssetId, merlinAssetId } from '@shapeshiftoss/caip'
+import type { BIP44Params } from '@xblackfury/types'
 import {
   assetIds,
   btcAddresses,

@@ -1,4 +1,4 @@
-import type { Tx } from '../../../../../generated/avalanche'
+import { Tx } from '../../../../../generated/avalanche'
 import { mempoolMock } from './mempoolMock'
 
 const avaxStandard: Tx = {

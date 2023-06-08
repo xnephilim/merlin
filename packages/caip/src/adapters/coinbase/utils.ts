@@ -2,7 +2,7 @@ import axios from 'axios'
 import fs from 'fs'
 import toLower from 'lodash/toLower'
 
-import type { AssetId } from '../../index'
+import { AssetId } from '../../index'
 
 type CoinbaseCurrency = {
   id: string

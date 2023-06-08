@@ -1,4 +1,4 @@
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import type Mixpanel from 'mixpanel-browser'
 import type {
   LpEarnOpportunityType,

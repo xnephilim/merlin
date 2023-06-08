@@ -5,7 +5,7 @@ import type {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@shapeshiftoss/types'
+} from '@xblackfury/types'
 import * as hightable from '@xblackfury/hightable-client'
 import { merlinxAddresses, MerlinxApi } from 'lib/investor/investor-merlinx'
 

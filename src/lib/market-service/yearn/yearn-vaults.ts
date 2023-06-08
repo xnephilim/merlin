@@ -1,4 +1,4 @@
-import { adapters, CHAIN_NAMESPACE, CHAIN_REFERENCE, toAssetId } from '@xblackfury/caip'
+import { adapters, CHAIN_NAMESPACE, CHAIN_REFERENCE, toAssetId } from '@shapeshiftoss/caip'
 import type {
   FindAllMarketArgs,
   HistoryData,
@@ -6,8 +6,8 @@ import type {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@shapeshiftoss/types'
-import { HistoryTimeframe } from '@shapeshiftoss/types'
+} from '@xblackfury/types'
+import { HistoryTimeframe } from '@xblackfury/types'
 import type { ChainId, Yearn } from '@yfi/sdk'
 import head from 'lodash/head'
 import { bn, bnOrZero } from 'lib/bignumber/bignumber'

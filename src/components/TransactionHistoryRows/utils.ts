@@ -1,6 +1,6 @@
 import { MaxUint256 } from '@ethersproject/constants'
 import type { TransferType, TxMetadata } from '@xblackfury/chain-adapters'
-import type { MarketData } from '@shapeshiftoss/types'
+import type { MarketData } from '@xblackfury/types'
 import { memoize } from 'lodash'
 import type { Transfer } from 'hooks/useTxDetails/useTxDetails'
 import type { Asset } from 'lib/asset-service'

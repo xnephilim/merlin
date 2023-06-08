@@ -1,4 +1,4 @@
-import type { AccountId, ChainId } from '@xblackfury/caip'
+import type { AccountId, ChainId } from '@shapeshiftoss/caip'
 import type WalletConnect from '@walletconnect/client'
 import type { IClientMeta } from '@walletconnect/legacy-types'
 import type { WalletConnectCallRequest } from 'plugins/walletConnectToDapps/v1/bridge/types'

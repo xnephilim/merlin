@@ -1,5 +1,5 @@
-import type { ToAssetIdArgs } from '@xblackfury/caip'
-import { fromAssetId, toAssetId } from '@xblackfury/caip'
+import type { ToAssetIdArgs } from '@shapeshiftoss/caip'
+import { fromAssetId, toAssetId } from '@shapeshiftoss/caip'
 import { USDC_PRECISION } from 'constants/constants'
 import { getYearnInvestor } from 'features/defi/contexts/YearnProvider/yearnInvestorSingleton'
 import { bnOrZero } from 'lib/bignumber/bignumber'

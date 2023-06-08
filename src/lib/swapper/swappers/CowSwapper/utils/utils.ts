@@ -1,5 +1,5 @@
-import type { ChainId } from '@xblackfury/caip'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { KnownChainIds } from '@xblackfury/types'
 
 import type { CowChainId } from '../types'
 

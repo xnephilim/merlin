@@ -1,6 +1,6 @@
 import { Button, Stack, useColorModeValue } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip/dist/accountId/accountId'
-import type { MarketData } from '@shapeshiftoss/types'
+import type { AccountId } from '@shapeshiftoss/caip/dist/accountId/accountId'
+import type { MarketData } from '@xblackfury/types'
 import get from 'lodash/get'
 import { calculateYearlyYield } from 'plugins/cosmos/components/modals/Staking/StakingCommon'
 import { useCallback } from 'react'

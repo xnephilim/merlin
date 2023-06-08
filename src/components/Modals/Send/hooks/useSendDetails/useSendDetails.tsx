@@ -1,5 +1,5 @@
-import type { ChainId } from '@xblackfury/caip'
-import { CHAIN_NAMESPACE, fromAccountId, fromAssetId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { CHAIN_NAMESPACE, fromAccountId, fromAssetId } from '@shapeshiftoss/caip'
 import type {
   EvmBaseAdapter,
   EvmChainId,

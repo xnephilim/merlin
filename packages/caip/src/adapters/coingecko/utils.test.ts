@@ -6,6 +6,7 @@ import { parseData, writeFiles } from './utils'
 const makeEthMockCoingeckoResponse = () => ({
   id: 'ethereum',
   symbol: 'eth',
+  name: 'Ethereum',
   platforms: {},
 })
 
@@ -18,20 +19,20 @@ const makeWethMockCoingeckoResponse = () => ({
     'optimistic-ethereum': '0x4200000000000000000000000000000000000006',
     avalanche: '0x49d5c2bdffac6ce2bfdb6640f4f80f226bc10bab',
     'binance-smart-chain': '0x2170ed0880ac9a755fd29b2688956bd959f933f8',
-    'polygon-pos': '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
-    xdai: '0x6a023ccd1ff6f2045c3309768ead9e68f978f6e1',
   },
 })
 
 const makeAvalancheMockCoingeckoResponse = () => ({
   id: 'avalanche-2',
   symbol: 'avax',
+  name: 'Avalanche',
   platforms: {},
 })
 
 const makeMerlinMockCoingeckoResponse = () => ({
   id: 'xnephilim-merlin-token',
   symbol: 'merlin',
+  name: 'ShapeShift MERLIN Token',
   platforms: {
     ethereum: '0xc770eefad204b5180df6a14ee197d99d808ee52d',
   },
@@ -40,12 +41,14 @@ const makeMerlinMockCoingeckoResponse = () => ({
 const makeBtcMockCoingeckoResponse = () => ({
   id: 'bitcoin',
   symbol: 'btc',
+  name: 'Bitcoin',
   platforms: {},
 })
 
 const makeCosmosMockCoingeckoResponse = () => ({
   id: 'cosmos',
   symbol: 'atom',
+  name: 'Cosmos',
   platforms: {
     osmosis: 'IBC/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2',
   },
@@ -54,24 +57,14 @@ const makeCosmosMockCoingeckoResponse = () => ({
 const makeOsmosisMockCoingeckoResponse = () => ({
   id: 'osmosis',
   symbol: 'osmo',
-  platforms: {},
-})
-
-const makePolygonMockCoingeckoResponse = () => ({
-  id: 'polygon-pos',
-  symbol: 'matic',
-  platforms: {},
-})
-
-const makeGnosisMockCoingeckoResponse = () => ({
-  id: 'gnosis',
-  symbol: 'xDai',
+  name: 'osmosis',
   platforms: {},
 })
 
 const makeThorchainMockCoingeckoResponse = () => ({
   id: 'thorchain',
   symbol: 'rune',
+  name: 'THORChain',
   platforms: {
     thorchain: '',
   },
@@ -79,25 +72,25 @@ const makeThorchainMockCoingeckoResponse = () => ({
 
 jest.mock('fs', () => ({
   promises: {
-    writeFile: jest.fn(() => undefined),
+    writeFile: jest.fn(async () => undefined),
   },
 }))
 
 describe('adapters:coingecko:utils', () => {
   describe('makeData', () => {
-    it('can make btc data', () => {
+    it('can make btc data', async () => {
       const result = bitcoinAssetMap
       const expected = { 'bip122:000000000019d6689c085ae165831e93/slip44:0': 'bitcoin' }
       expect(result).toEqual(expected)
     })
 
-    it('can make cosmos data', () => {
+    it('can make cosmos data', async () => {
       const result = cosmosAssetMap
       const expected = { 'cosmos:cosmoshub-4/slip44:118': 'cosmos' }
       expect(result).toEqual(expected)
     })
 
-    it('can make osmosis data', () => {
+    it('can make osmosis data', async () => {
       const result = osmosisAssetMap
       const expected = { 'cosmos:osmosis-1/slip44:118': 'osmosis' }
       expect(result).toEqual(expected)
@@ -105,7 +98,7 @@ describe('adapters:coingecko:utils', () => {
   })
 
   describe('parseData', () => {
-    it('can parse all data', () => {
+    it('can parse all data', async () => {
       const result = parseData([
         makeEthMockCoingeckoResponse(),
         makeWethMockCoingeckoResponse(),
@@ -115,8 +108,6 @@ describe('adapters:coingecko:utils', () => {
         makeOsmosisMockCoingeckoResponse(),
         makeThorchainMockCoingeckoResponse(),
         makeAvalancheMockCoingeckoResponse(),
-        makePolygonMockCoingeckoResponse(),
-        makeGnosisMockCoingeckoResponse(),
       ])
       const expected = {
         'bip122:000000000019d6689c085ae165831e93': {
@@ -156,14 +147,6 @@ describe('adapters:coingecko:utils', () => {
         'eip155:10': {
           'eip155:10/slip44:60': 'ethereum',
           'eip155:10/erc20:0x4200000000000000000000000000000000000006': 'weth',
-        },
-        'eip155:137': {
-          'eip155:137/slip44:60': 'matic-network',
-          'eip155:137/erc20:0x7ceb23fd6bc0add59e62ac25578270cff1b9f619': 'weth',
-        },
-        'eip155:100': {
-          'eip155:100/slip44:60': 'xdai',
-          'eip155:100/erc20:0x6a023ccd1ff6f2045c3309768ead9e68f978f6e1': 'weth',
         },
       }
       expect(result).toEqual(expected)

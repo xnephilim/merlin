@@ -1,5 +1,5 @@
 import type { ChainKey as LifiChainKey, GetStatusRequest } from '@lifi/sdk'
-import type { AssetId, ChainId } from '@xblackfury/caip'
+import type { AssetId, ChainId } from '@shapeshiftoss/caip'
 import type { EvmChainId } from '@xblackfury/chain-adapters'
 import type { Result } from '@sniptt/monads'
 import { Ok } from '@sniptt/monads'

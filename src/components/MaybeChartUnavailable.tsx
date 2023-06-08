@@ -1,5 +1,5 @@
 import { Alert, AlertIcon } from '@chakra-ui/react'
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import { useTranslate } from 'react-polyglot'
 import { useUnavailableBalanceChartDataAssetNames } from 'hooks/useBalanceChartData/utils'
 

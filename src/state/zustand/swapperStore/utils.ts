@@ -1,6 +1,6 @@
 // Helper function to convert basis points to percentage
-import type { AssetId } from '@xblackfury/caip'
-import type { MarketData } from '@shapeshiftoss/types'
+import type { AssetId } from '@shapeshiftoss/caip'
+import type { MarketData } from '@xblackfury/types'
 import { BigNumber, bn, bnOrZero, convertPrecision } from 'lib/bignumber/bignumber'
 import type { ProtocolFee } from 'lib/swapper/api'
 

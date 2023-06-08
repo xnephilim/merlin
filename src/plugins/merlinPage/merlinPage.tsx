@@ -15,8 +15,8 @@ import {
   useColorModeValue,
   useMediaQuery,
 } from '@chakra-ui/react'
-import type { AssetId, ToAssetIdArgs } from '@xblackfury/caip'
-import { ethChainId, merlinAssetId, merlinxAssetId } from '@xblackfury/caip'
+import type { AssetId, ToAssetIdArgs } from '@shapeshiftoss/caip'
+import { ethChainId, merlinAssetId, merlinxAssetId } from '@shapeshiftoss/caip'
 import { supportsETH } from '@shapeshiftoss/hdwallet-core'
 import qs from 'qs'
 import { useCallback, useMemo } from 'react'

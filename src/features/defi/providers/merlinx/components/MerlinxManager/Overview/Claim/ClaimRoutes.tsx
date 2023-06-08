@@ -1,4 +1,4 @@
-import type { AccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
 import { useMerlinxQuery } from 'features/defi/providers/merlinx/components/MerlinxManager/useMerlinxQuery'
 import { AnimatePresence } from 'framer-motion'
 import { useMemo } from 'react'

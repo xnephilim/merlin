@@ -1,5 +1,4 @@
-import type { ChainId } from '@xblackfury/caip'
-import type {
+import {
   BTCSignTx,
   CosmosSignTx,
   ETHSignTx,
@@ -7,8 +6,9 @@ import type {
   OsmosisSignTx,
   ThorchainSignTx,
 } from '@shapeshiftoss/hdwallet-core'
-import type { ChainSpecific, KnownChainIds, UtxoAccountType } from '@shapeshiftoss/types'
-import type * as hightable from '@xblackfury/hightable-client'
+import * as hightable from '@xblackfury/hightable-client'
+import { ChainSpecific, KnownChainIds, UtxoAccountType } from '@xblackfury/types'
+import { ChainId } from '@xgridiron/caip'
 
 import * as cosmossdk from './cosmossdk/types'
 import * as evm from './evm/types'
@@ -23,8 +23,6 @@ type ChainSpecificAccount<T> = ChainSpecific<
     [KnownChainIds.AvalancheMainnet]: evm.Account
     [KnownChainIds.OptimismMainnet]: evm.Account
     [KnownChainIds.BnbSmartChainMainnet]: evm.Account
-    [KnownChainIds.PolygonMainnet]: evm.Account
-    [KnownChainIds.GnosisMainnet]: evm.Account
     [KnownChainIds.BitcoinMainnet]: utxo.Account
     [KnownChainIds.BitcoinCashMainnet]: utxo.Account
     [KnownChainIds.DogecoinMainnet]: utxo.Account
@@ -61,8 +59,6 @@ type ChainSpecificFeeData<T> = ChainSpecific<
     [KnownChainIds.AvalancheMainnet]: evm.FeeData
     [KnownChainIds.OptimismMainnet]: evm.FeeData
     [KnownChainIds.BnbSmartChainMainnet]: evm.FeeData
-    [KnownChainIds.PolygonMainnet]: evm.FeeData
-    [KnownChainIds.GnosisMainnet]: evm.FeeData
     [KnownChainIds.BitcoinMainnet]: utxo.FeeData
     [KnownChainIds.BitcoinCashMainnet]: utxo.FeeData
     [KnownChainIds.DogecoinMainnet]: utxo.FeeData
@@ -106,7 +102,7 @@ export type Transaction = Omit<hightable.StandardTx, 'transfers'> & {
   data?: TxMetadata
 }
 
-export type TxTransfer = Omit<hightable.Transfer, 'components' | 'totalValue'> & {
+export type TxTransfer = Omit<hightable.Transfer, 'components' | 'totalValue' | 'token'> & {
   value: string
 }
 
@@ -125,8 +121,6 @@ type ChainSignTx = {
   [KnownChainIds.AvalancheMainnet]: ETHSignTx
   [KnownChainIds.OptimismMainnet]: ETHSignTx
   [KnownChainIds.BnbSmartChainMainnet]: ETHSignTx
-  [KnownChainIds.PolygonMainnet]: ETHSignTx
-  [KnownChainIds.GnosisMainnet]: ETHSignTx
   [KnownChainIds.BitcoinMainnet]: BTCSignTx
   [KnownChainIds.BitcoinCashMainnet]: BTCSignTx
   [KnownChainIds.DogecoinMainnet]: BTCSignTx
@@ -154,8 +148,6 @@ export type ChainSpecificBuildTxData<T> = ChainSpecific<
     [KnownChainIds.AvalancheMainnet]: evm.BuildTxInput
     [KnownChainIds.OptimismMainnet]: evm.BuildTxInput
     [KnownChainIds.BnbSmartChainMainnet]: evm.BuildTxInput
-    [KnownChainIds.PolygonMainnet]: evm.BuildTxInput
-    [KnownChainIds.GnosisMainnet]: evm.BuildTxInput
     [KnownChainIds.BitcoinMainnet]: utxo.BuildTxInput
     [KnownChainIds.BitcoinCashMainnet]: utxo.BuildTxInput
     [KnownChainIds.DogecoinMainnet]: utxo.BuildTxInput
@@ -209,11 +201,6 @@ export type SignMessageInput<MessageType> = {
   wallet: HDWallet
 }
 
-export type SignTypedDataInput<TypedDataType> = {
-  typedDataToSign: TypedDataType
-  wallet: HDWallet
-}
-
 export interface TxHistoryInput {
   readonly cursor?: string
   readonly pubkey: string
@@ -240,8 +227,6 @@ type ChainSpecificGetFeeDataInput<T> = ChainSpecific<
     [KnownChainIds.AvalancheMainnet]: evm.GetFeeDataInput
     [KnownChainIds.OptimismMainnet]: evm.GetFeeDataInput
     [KnownChainIds.BnbSmartChainMainnet]: evm.GetFeeDataInput
-    [KnownChainIds.PolygonMainnet]: evm.GetFeeDataInput
-    [KnownChainIds.GnosisMainnet]: evm.GetFeeDataInput
     [KnownChainIds.BitcoinMainnet]: utxo.GetFeeDataInput
     [KnownChainIds.BitcoinCashMainnet]: utxo.GetFeeDataInput
     [KnownChainIds.DogecoinMainnet]: utxo.GetFeeDataInput
@@ -298,8 +283,6 @@ export enum ChainAdapterDisplayName {
   Avalanche = 'Avalanche C-Chain',
   Optimism = 'Optimism',
   BnbSmartChain = 'BNB Smart Chain',
-  Polygon = 'Polygon',
-  Gnosis = 'Gnosis',
   Cosmos = 'Cosmos',
   Bitcoin = 'Bitcoin',
   BitcoinCash = 'Bitcoin Cash',

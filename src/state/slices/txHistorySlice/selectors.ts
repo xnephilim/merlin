@@ -1,5 +1,5 @@
-import type { AccountId, AssetId } from '@xblackfury/caip'
-import { fromAccountId } from '@xblackfury/caip'
+import type { AccountId, AssetId } from '@shapeshiftoss/caip'
+import { fromAccountId } from '@shapeshiftoss/caip'
 import type { TxTransfer } from '@xblackfury/chain-adapters'
 import intersection from 'lodash/intersection'
 import isEmpty from 'lodash/isEmpty'

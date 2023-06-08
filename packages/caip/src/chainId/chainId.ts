@@ -1,13 +1,13 @@
 // https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 
-import type { CHAIN_NAMESPACE, CHAIN_REFERENCE } from '../constants'
+import { CHAIN_NAMESPACE, CHAIN_REFERENCE } from '../constants'
 import {
   assertIsChainId,
   assertIsChainNamespace,
   assertIsChainReference,
   assertValidChainPartsPair,
 } from '../typeGuards'
-import type { Nominal } from '../utils'
+import { Nominal } from '../utils'
 
 export type ChainId = Nominal<string, 'ChainId'>
 
@@ -33,7 +33,7 @@ type FromChainIdReturn = {
 
 type FromChainId = (chainId: string) => FromChainIdReturn
 
-export const fromChainId: FromChainId = chainId => {
+export const fromChainId: FromChainId = (chainId) => {
   const [chainNamespace, chainReference] = chainId.split(':')
   assertIsChainNamespace(chainNamespace)
   assertIsChainReference(chainReference)

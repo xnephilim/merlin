@@ -16,9 +16,9 @@ import {
   Tooltip,
   usePrevious,
 } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
-import { fromAssetId } from '@xblackfury/caip'
-import { CHAIN_NAMESPACE } from '@xblackfury/caip/dist/constants'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { fromAssetId } from '@shapeshiftoss/caip'
+import { CHAIN_NAMESPACE } from '@shapeshiftoss/caip/dist/constants'
 import isNil from 'lodash/isNil'
 import { useCallback, useEffect, useMemo } from 'react'
 import { Controller, useFormContext, useWatch } from 'react-hook-form'

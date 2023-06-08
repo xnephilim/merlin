@@ -4,21 +4,23 @@
  * Test EthereumChainAdapter
  * @group unit
  */
-import { ASSET_REFERENCE, CHAIN_REFERENCE, ethAssetId, ethChainId } from '@xblackfury/caip'
-import type { ETHSignMessage, ETHSignTx, ETHWallet } from '@shapeshiftoss/hdwallet-core'
-import type { NativeAdapterArgs } from '@shapeshiftoss/hdwallet-native'
-import { NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
-import type { BIP44Params } from '@shapeshiftoss/types'
-import { KnownChainIds } from '@shapeshiftoss/types'
-import type * as hightable from '@xblackfury/hightable-client'
+import { ETHSignMessage, ETHSignTx, ETHWallet } from '@shapeshiftoss/hdwallet-core'
+import { NativeAdapterArgs, NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
+import hightable from '@xblackfury/hightable-client'
+import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { ASSET_REFERENCE, CHAIN_REFERENCE, ethAssetId, ethChainId } from '@xgridiron/caip'
 import { merge } from 'lodash'
 import { numberToHex } from 'web3-utils'
 
-import type { BuildSendTxInput, SignMessageInput, SignTxInput } from '../../types'
-import { ValidAddressResultType } from '../../types'
+import {
+  BuildSendTxInput,
+  SignMessageInput,
+  SignTxInput,
+  ValidAddressResultType,
+} from '../../types'
 import { toAddressNList } from '../../utils'
 import { bn } from '../../utils/bignumber'
-import type { ChainAdapterArgs, EvmChainId } from '../EvmBaseAdapter'
+import { ChainAdapterArgs, EvmChainId } from '../EvmBaseAdapter'
 import * as ethereum from './EthereumChainAdapter'
 
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
@@ -38,6 +40,25 @@ const getWallet = async (): Promise<ETHWallet> => {
   return wallet
 }
 
+jest.mock('axios', () => ({
+  get: jest.fn(() =>
+    Promise.resolve({
+      data: {
+        result: [
+          {
+            source: 'MEDIAN',
+            timestamp: 1639978534,
+            instant: 55477500000,
+            fast: 50180000000,
+            standard: 45000000000,
+            low: 41000000000,
+          },
+        ],
+      },
+    }),
+  ),
+}))
+
 describe('EthereumChainAdapter', () => {
   const gasPrice = '42'
   const gasLimit = '42000'
@@ -55,16 +76,14 @@ describe('EthereumChainAdapter', () => {
 
   const makeGetGasFeesMockedResponse = (overrideArgs?: {
     gasPrice?: string
-    slow: { gasPrice?: string; maxFeePerGas?: string; maxPriorityFeePerGas?: string }
-    average: { gasPrice?: string; maxFeePerGas?: string; maxPriorityFeePerGas?: string }
-    fast: { gasPrice?: string; maxFeePerGas?: string; maxPriorityFeePerGas?: string }
+    maxFeePerGas?: string
+    maxPriorityFeePerGas?: string
   }) =>
     merge(
       {
         gasPrice: '1',
-        slow: { gasPrice: '1', maxFeePerGas: '274', maxPriorityFeePerGas: '10' },
-        average: { gasPrice: '1', maxFeePerGas: '300', maxPriorityFeePerGas: '10' },
-        fast: { gasPrice: '1', maxFeePerGas: '335', maxPriorityFeePerGas: '12' },
+        maxFeePerGas: '300',
+        maxPriorityFeePerGas: '10',
       },
       overrideArgs,
     )
@@ -151,29 +170,29 @@ describe('EthereumChainAdapter', () => {
           average: {
             chainSpecific: {
               gasLimit: '21000',
-              gasPrice: '300',
+              gasPrice: '45000000000',
               maxFeePerGas: '300',
               maxPriorityFeePerGas: '10',
             },
-            txFee: '6300000',
+            txFee: '945000000000000',
           },
           fast: {
             chainSpecific: {
               gasLimit: '21000',
-              gasPrice: '335',
+              gasPrice: '50180000000',
               maxFeePerGas: '335',
               maxPriorityFeePerGas: '12',
             },
-            txFee: '7035000',
+            txFee: '1053780000000000',
           },
           slow: {
             chainSpecific: {
               gasLimit: '21000',
-              gasPrice: '274',
+              gasPrice: '41000000000',
               maxFeePerGas: '274',
               maxPriorityFeePerGas: '10',
             },
-            txFee: '5754000',
+            txFee: '861000000000000',
           },
         }),
       )
@@ -194,17 +213,17 @@ describe('EthereumChainAdapter', () => {
       expect(data).toEqual(
         expect.objectContaining({
           average: {
-            gasPrice: '300',
+            gasPrice: '45000000000',
             maxFeePerGas: '300',
             maxPriorityFeePerGas: '10',
           },
           fast: {
-            gasPrice: '335',
+            gasPrice: '50180000000',
             maxFeePerGas: '335',
             maxPriorityFeePerGas: '12',
           },
           slow: {
-            gasPrice: '274',
+            gasPrice: '41000000000',
             maxFeePerGas: '274',
             maxPriorityFeePerGas: '10',
           },
@@ -243,15 +262,9 @@ describe('EthereumChainAdapter', () => {
   const invalidAddressTuple = { valid: false, result: ValidAddressResultType.Invalid }
 
   describe('validateAddress', () => {
-    it('should return true for a valid checksummed address', async () => {
+    it('should return true for a valid address', async () => {
       const adapter = new ethereum.ChainAdapter(makeChainAdapterArgs())
       const res = await adapter.validateAddress('0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045')
-      expect(res).toMatchObject(validAddressTuple)
-    })
-
-    it('should return true for a valid lowercased address', async () => {
-      const adapter = new ethereum.ChainAdapter(makeChainAdapterArgs())
-      const res = await adapter.validateAddress('0xd8da6bf26964af9d7eed9e03e53415d37aa96045')
       expect(res).toMatchObject(validAddressTuple)
     })
 
@@ -362,7 +375,7 @@ describe('EthereumChainAdapter', () => {
       const adapter = new ethereum.ChainAdapter(makeChainAdapterArgs())
       const wallet = await getWallet()
 
-      wallet.ethSendTx = async () => await Promise.resolve(null)
+      wallet.ethSendTx = async () => null
 
       const tx = { wallet, txToSign: {} } as unknown as SignTxInput<ETHSignTx>
 
@@ -375,10 +388,9 @@ describe('EthereumChainAdapter', () => {
       const adapter = new ethereum.ChainAdapter(makeChainAdapterArgs())
       const wallet = await getWallet()
 
-      wallet.ethSendTx = async () =>
-        await Promise.resolve({
-          hash: '0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331',
-        })
+      wallet.ethSendTx = async () => ({
+        hash: '0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331',
+      })
 
       const tx = { wallet, txToSign: {} } as unknown as SignTxInput<ETHSignTx>
 
@@ -410,7 +422,7 @@ describe('EthereumChainAdapter', () => {
       const adapter = new ethereum.ChainAdapter(makeChainAdapterArgs())
       const wallet = await getWallet()
 
-      wallet.ethSignMessage = async () => await Promise.resolve(null)
+      wallet.ethSignMessage = async () => null
 
       const message: SignMessageInput<ETHSignMessage> = {
         wallet,
@@ -729,7 +741,7 @@ describe('EthereumChainAdapter', () => {
       const expectedOutput = {
         txToSign: {
           addressNList: toAddressNList(adapter.getBIP44Params({ accountNumber: 0 })),
-          value: '0x7b',
+          value: '123',
           to: '0x47CB53752e5dc0A972440dA127DCA9FBA6C2Ab6F',
           chainId: Number(CHAIN_REFERENCE.EthereumMainnet),
           data: '0x420',
@@ -770,7 +782,7 @@ describe('EthereumChainAdapter', () => {
       const expectedOutput = {
         txToSign: {
           addressNList: toAddressNList(adapter.getBIP44Params({ accountNumber: 0 })),
-          value: '0x7b',
+          value: '123',
           to: '0x47CB53752e5dc0A972440dA127DCA9FBA6C2Ab6F',
           chainId: Number(CHAIN_REFERENCE.EthereumMainnet),
           data: '0x420',
@@ -788,25 +800,25 @@ describe('EthereumChainAdapter', () => {
   describe('getBIP44Params', () => {
     const adapter = new ethereum.ChainAdapter(makeChainAdapterArgs())
 
-    it('should return the correct coinType', () => {
+    it('should return the correct coinType', async () => {
       const result = adapter.getBIP44Params({ accountNumber: 0 })
       expect(result.coinType).toStrictEqual(Number(ASSET_REFERENCE.Ethereum))
     })
 
-    it('should respect accountNumber', () => {
+    it('should respect accountNumber', async () => {
       const testCases: BIP44Params[] = [
         { purpose: 44, coinType: Number(ASSET_REFERENCE.Ethereum), accountNumber: 0 },
         { purpose: 44, coinType: Number(ASSET_REFERENCE.Ethereum), accountNumber: 1 },
         { purpose: 44, coinType: Number(ASSET_REFERENCE.Ethereum), accountNumber: 2 },
       ]
 
-      testCases.forEach(expected => {
+      testCases.forEach((expected) => {
         const result = adapter.getBIP44Params({ accountNumber: expected.accountNumber })
         expect(result).toStrictEqual(expected)
       })
     })
 
-    it('should throw for negative accountNumber', () => {
+    it('should throw for negative accountNumber', async () => {
       expect(() => {
         adapter.getBIP44Params({ accountNumber: -1 })
       }).toThrow('accountNumber must be >= 0')

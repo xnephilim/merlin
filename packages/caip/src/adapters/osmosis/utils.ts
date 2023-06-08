@@ -1,8 +1,7 @@
 import axios from 'axios'
 import fs from 'fs'
 
-import type { AssetNamespace, AssetReference } from '../../assetId/assetId'
-import { toAssetId } from '../../assetId/assetId'
+import { AssetNamespace, AssetReference, toAssetId } from '../../assetId/assetId'
 import { toChainId } from '../../chainId/chainId'
 import { ASSET_REFERENCE, CHAIN_NAMESPACE, CHAIN_REFERENCE } from '../../constants'
 

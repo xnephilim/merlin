@@ -1,6 +1,6 @@
 import { Button, Flex } from '@chakra-ui/react'
 import { Tag } from '@chakra-ui/tag'
-import { fromAssetId } from '@xblackfury/caip'
+import { fromAssetId } from '@shapeshiftoss/caip'
 import { DefiAction } from 'features/defi/contexts/DefiManagerProvider/DefiCommon'
 import qs from 'qs'
 import { useCallback, useMemo } from 'react'

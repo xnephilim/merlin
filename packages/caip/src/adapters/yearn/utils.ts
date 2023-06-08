@@ -1,6 +1,5 @@
-import type { Token, Vault } from '@yfi/sdk'
-import { Yearn } from '@yfi/sdk'
-import { ethers } from 'ethers'
+import { JsonRpcProvider } from '@ethersproject/providers'
+import { Token, Vault, Yearn } from '@yfi/sdk'
 import fs from 'fs'
 import toLower from 'lodash/toLower'
 import uniqBy from 'lodash/uniqBy'
@@ -10,7 +9,7 @@ import { toChainId } from '../../chainId/chainId'
 import { CHAIN_NAMESPACE, CHAIN_REFERENCE } from '../../constants'
 
 const network = 1 // 1 for mainnet
-const provider = new ethers.providers.JsonRpcBatchProvider(process.env.REACT_APP_ETHEREUM_NODE_URL)
+const provider = new JsonRpcProvider(process.env.REACT_APP_ETHEREUM_NODE_URL)
 const yearnSdk = new Yearn(network, { provider })
 
 export const writeFiles = async (data: Record<string, Record<string, string>>) => {

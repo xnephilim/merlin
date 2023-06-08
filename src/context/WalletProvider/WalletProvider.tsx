@@ -1,6 +1,6 @@
 import type { ComponentWithAs, IconProps } from '@chakra-ui/react'
 import detectEthereumProvider from '@metamask/detect-provider'
-import { CHAIN_REFERENCE } from '@xblackfury/caip'
+import { CHAIN_REFERENCE } from '@shapeshiftoss/caip'
 import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import { Keyring } from '@shapeshiftoss/hdwallet-core'
 import type { MetaMaskHDWallet } from '@shapeshiftoss/hdwallet-metamask'

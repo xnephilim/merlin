@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice, prepareAutoBatched } from '@reduxjs/toolkit'
 import { createApi } from '@reduxjs/toolkit/dist/query/react'
-import type { AccountId, AssetId } from '@xblackfury/caip'
+import type { AccountId, AssetId } from '@shapeshiftoss/caip'
 import { PURGE } from 'redux-persist'
 import type { PartialRecord } from 'lib/utils'
 import { isRejected, isSome } from 'lib/utils'

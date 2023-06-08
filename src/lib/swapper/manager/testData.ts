@@ -1,5 +1,5 @@
 import type { ChainAdapterManager } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import type Web3 from 'web3'
 import { CowSwapper } from 'lib/swapper/swappers/CowSwapper/CowSwapper'
 import type { ThorchainSwapperDeps } from 'lib/swapper/swappers/ThorchainSwapper/ThorchainSwapper'

@@ -1,4 +1,4 @@
-import { fromChainId } from '@xblackfury/caip'
+import { fromChainId } from '@shapeshiftoss/caip'
 import type { EvmChainId } from '@xblackfury/chain-adapters'
 import type { Result } from '@sniptt/monads'
 import { Ok } from '@sniptt/monads'

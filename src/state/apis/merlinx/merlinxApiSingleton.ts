@@ -1,5 +1,5 @@
 import type { EvmBaseAdapter } from '@xblackfury/chain-adapters'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import { getConfig } from 'config'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import { merlinxAddresses, MerlinxApi } from 'lib/investor/investor-merlinx'

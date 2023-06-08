@@ -1,4 +1,4 @@
-import { fromAssetId } from '@xblackfury/caip'
+import { fromAssetId } from '@shapeshiftoss/caip'
 import type { FeeDataKey } from '@xblackfury/chain-adapters'
 import { useEffect, useState } from 'react'
 import { useFormContext, useWatch } from 'react-hook-form'

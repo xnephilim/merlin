@@ -1,5 +1,5 @@
 import { useToast } from '@chakra-ui/react'
-import type { AccountId, ChainId, ChainReference } from '@xblackfury/caip'
+import type { AccountId, ChainId, ChainReference } from '@shapeshiftoss/caip'
 import {
   assertIsChainReference,
   CHAIN_NAMESPACE,
@@ -9,7 +9,7 @@ import {
   fromChainId,
   toAccountId,
   toChainId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import type { EvmChainId } from '@xblackfury/chain-adapters'
 import { evmChainIds } from '@xblackfury/chain-adapters'
 import { WalletConnectHDWallet } from '@shapeshiftoss/hdwallet-walletconnect'

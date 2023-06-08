@@ -1,4 +1,4 @@
-import { isNft } from '@xblackfury/caip'
+import { isNft } from '@shapeshiftoss/caip'
 import type {
   FindAllMarketArgs,
   HistoryData,
@@ -6,7 +6,7 @@ import type {
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@shapeshiftoss/types'
+} from '@xblackfury/types'
 
 // import { Yearn } from '@yfi/sdk'
 import type { MarketService } from './api'

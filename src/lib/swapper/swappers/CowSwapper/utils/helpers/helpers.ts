@@ -1,6 +1,6 @@
 import type { TypedDataDomain, TypedDataField } from '@ethersproject/abstract-signer'
-import type { ChainId } from '@xblackfury/caip'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { KnownChainIds } from '@xblackfury/types'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import { ethers } from 'ethers'

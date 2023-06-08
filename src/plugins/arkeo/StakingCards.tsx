@@ -1,4 +1,4 @@
-import { cosmosAssetId, cosmosChainId, fromAssetId, osmosisChainId } from '@xblackfury/caip'
+import { cosmosAssetId, cosmosChainId, fromAssetId, osmosisChainId } from '@shapeshiftoss/caip'
 import qs from 'qs'
 import { useCallback, useMemo } from 'react'
 import { useHistory, useLocation } from 'react-router'

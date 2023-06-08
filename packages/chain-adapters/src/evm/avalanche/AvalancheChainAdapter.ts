@@ -1,15 +1,12 @@
-import type { AssetId } from '@xblackfury/caip'
-import { ASSET_REFERENCE, avalancheAssetId } from '@xblackfury/caip'
-import type { BIP44Params } from '@shapeshiftoss/types'
-import { KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
+import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { ASSET_REFERENCE, AssetId, avalancheAssetId } from '@xgridiron/caip'
 
-import type { FeeDataEstimate, GetFeeDataInput } from '../../types'
 import { ChainAdapterDisplayName } from '../../types'
-import { bn, bnOrZero } from '../../utils'
-import type { ChainAdapterArgs } from '../EvmBaseAdapter'
-import { EvmBaseAdapter } from '../EvmBaseAdapter'
-import type { GasFeeDataEstimate } from '../types'
+import { FeeDataEstimate, GetFeeDataInput } from '../../types'
+import { bn, bnOrZero, calcFee } from '../../utils'
+import { ChainAdapterArgs, EvmBaseAdapter } from '../EvmBaseAdapter'
+import { GasFeeDataEstimate } from '../types'
 
 const SUPPORTED_CHAIN_IDS = [KnownChainIds.AvalancheMainnet]
 const DEFAULT_CHAIN_ID = KnownChainIds.AvalancheMainnet
@@ -25,20 +22,18 @@ export class ChainAdapter extends EvmBaseAdapter<KnownChainIds.AvalancheMainnet>
 
   constructor(args: ChainAdapterArgs<hightable.avalanche.V1Api>) {
     super({
-      assetId: avalancheAssetId,
       chainId: DEFAULT_CHAIN_ID,
-      defaultBIP44Params: ChainAdapter.defaultBIP44Params,
-      parser: new hightable.avalanche.TransactionParser({
-        assetId: avalancheAssetId,
-        chainId: args.chainId ?? DEFAULT_CHAIN_ID,
-        rpcUrl: args.rpcUrl,
-        api: args.providers.http,
-      }),
       supportedChainIds: SUPPORTED_CHAIN_IDS,
+      defaultBIP44Params: ChainAdapter.defaultBIP44Params,
       ...args,
     })
 
     this.api = args.providers.http
+    this.assetId = avalancheAssetId
+    this.parser = new hightable.avalanche.TransactionParser({
+      chainId: this.chainId,
+      rpcUrl: this.rpcUrl,
+    })
   }
 
   getDisplayName() {
@@ -61,23 +56,34 @@ export class ChainAdapter extends EvmBaseAdapter<KnownChainIds.AvalancheMainnet>
   }
 
   async getGasFeeData(): Promise<GasFeeDataEstimate> {
-    const { fast, average, slow } = await this.api.getGasFees()
+    const { gasPrice, maxFeePerGas, maxPriorityFeePerGas } = await this.api.getGasFees()
+
+    const scalars = { fast: bn(1.2), average: bn(1), slow: bn(0.8) }
 
     return {
       fast: {
-        gasPrice: fast.maxFeePerGas ?? '0',
-        maxFeePerGas: fast.maxFeePerGas,
-        maxPriorityFeePerGas: fast.maxPriorityFeePerGas,
+        gasPrice: calcFee(gasPrice, 'fast', scalars),
+        ...(maxFeePerGas &&
+          maxPriorityFeePerGas && {
+            maxFeePerGas: calcFee(maxFeePerGas, 'fast', scalars),
+            maxPriorityFeePerGas: calcFee(maxPriorityFeePerGas, 'fast', scalars),
+          }),
       },
       average: {
-        gasPrice: average.maxFeePerGas ?? '0',
-        maxFeePerGas: average.maxFeePerGas,
-        maxPriorityFeePerGas: average.maxPriorityFeePerGas,
+        gasPrice: calcFee(gasPrice, 'average', scalars),
+        ...(maxFeePerGas &&
+          maxPriorityFeePerGas && {
+            maxFeePerGas: calcFee(maxFeePerGas, 'average', scalars),
+            maxPriorityFeePerGas: calcFee(maxPriorityFeePerGas, 'average', scalars),
+          }),
       },
       slow: {
-        gasPrice: slow.maxFeePerGas ?? '0',
-        maxFeePerGas: slow.maxFeePerGas,
-        maxPriorityFeePerGas: slow.maxPriorityFeePerGas,
+        gasPrice: calcFee(gasPrice, 'slow', scalars),
+        ...(maxFeePerGas &&
+          maxPriorityFeePerGas && {
+            maxFeePerGas: calcFee(maxFeePerGas, 'slow', scalars),
+            maxPriorityFeePerGas: calcFee(maxPriorityFeePerGas, 'slow', scalars),
+          }),
       },
     }
   }
@@ -92,15 +98,15 @@ export class ChainAdapter extends EvmBaseAdapter<KnownChainIds.AvalancheMainnet>
 
     return {
       fast: {
-        txFee: bnOrZero(bn(fast.gasPrice).times(gasLimit)).toFixed(0),
+        txFee: bnOrZero(bn(fast.gasPrice).times(gasLimit)).toPrecision(),
         chainSpecific: { gasLimit, ...fast },
       },
       average: {
-        txFee: bnOrZero(bn(average.gasPrice).times(gasLimit)).toFixed(0),
+        txFee: bnOrZero(bn(average.gasPrice).times(gasLimit)).toPrecision(),
         chainSpecific: { gasLimit, ...average },
       },
       slow: {
-        txFee: bnOrZero(bn(slow.gasPrice).times(gasLimit)).toFixed(0),
+        txFee: bnOrZero(bn(slow.gasPrice).times(gasLimit)).toPrecision(),
         chainSpecific: { gasLimit, ...slow },
       },
     }

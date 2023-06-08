@@ -1,5 +1,5 @@
 import { Button, Stack, useColorModeValue } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
 import dayjs from 'dayjs'
 import type {
   DefiParams,

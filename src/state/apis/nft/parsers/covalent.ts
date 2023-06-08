@@ -1,6 +1,6 @@
-import type { ChainId } from '@xblackfury/caip'
-import { toAssetId } from '@xblackfury/caip'
-import type { AssetNamespace } from '@xblackfury/caip/src/assetId/assetId'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { toAssetId } from '@shapeshiftoss/caip'
+import type { AssetNamespace } from '@shapeshiftoss/caip/src/assetId/assetId'
 import { isSome } from 'lib/utils'
 import type { CovalentNftItemSchemaType } from 'state/apis/covalent/validators'
 

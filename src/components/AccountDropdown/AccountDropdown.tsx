@@ -22,8 +22,8 @@ import {
   fromAccountId,
   fromAssetId,
   fromChainId,
-} from '@xblackfury/caip'
-import { UtxoAccountType } from '@shapeshiftoss/types'
+} from '@shapeshiftoss/caip'
+import { UtxoAccountType } from '@xblackfury/types'
 import { chain } from 'lodash'
 import isEmpty from 'lodash/isEmpty'
 import sortBy from 'lodash/sortBy'

@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { adapters } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { adapters } from '@shapeshiftoss/caip'
 import axios from 'axios'
 import { getConfig } from 'config'
 

@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { adapters, bchAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { adapters, bchAssetId } from '@shapeshiftoss/caip'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import qs from 'qs'

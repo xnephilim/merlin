@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { ethAssetId, merlinAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { ethAssetId, merlinAssetId } from '@shapeshiftoss/caip'
 import {
   ETH_MERLIN_STAKING_CONTRACT_ADDRESS_V1,
   ETH_MERLIN_STAKING_CONTRACT_ADDRESS_V2,

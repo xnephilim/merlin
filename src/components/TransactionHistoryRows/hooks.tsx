@@ -1,4 +1,4 @@
-import { HistoryTimeframe } from '@shapeshiftoss/types'
+import { HistoryTimeframe } from '@xblackfury/types'
 import { Dex, TransferType } from '@xblackfury/hightable-client'
 import dayjs from 'dayjs'
 import { useEffect, useMemo, useState } from 'react'

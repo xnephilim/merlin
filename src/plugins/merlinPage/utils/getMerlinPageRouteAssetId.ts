@@ -1,4 +1,4 @@
-import { merlinAssetId, merlinxAssetId } from '@xblackfury/caip'
+import { merlinAssetId, merlinxAssetId } from '@shapeshiftoss/caip'
 import { matchPath } from 'react-router'
 
 const MERLIN_PAGE_DEFAULT_ASSET = 'merlin'

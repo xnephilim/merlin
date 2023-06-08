@@ -1,5 +1,5 @@
-import type { ChainId } from '@xblackfury/caip'
-import { CHAIN_NAMESPACE, fromChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { CHAIN_NAMESPACE, fromChainId } from '@shapeshiftoss/caip'
 import type { CosmosSdkChainId, EvmChainId, UtxoChainId } from '@xblackfury/chain-adapters'
 
 export const isUtxoSwap = (chainId: ChainId): chainId is UtxoChainId => {

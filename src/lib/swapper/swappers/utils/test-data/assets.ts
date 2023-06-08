@@ -13,7 +13,7 @@ import {
   optimismChainId,
   thorchainAssetId,
   thorchainChainId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import type { Asset } from 'lib/asset-service'
 
 export const BTC: Asset = {

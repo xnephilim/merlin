@@ -1,6 +1,6 @@
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import type { TxTransfer } from '@xblackfury/chain-adapters'
-import type { MarketData } from '@shapeshiftoss/types'
+import type { MarketData } from '@xblackfury/types'
 import type * as hightable from '@xblackfury/hightable-client'
 import { useMemo } from 'react'
 import type { Asset } from 'lib/asset-service'

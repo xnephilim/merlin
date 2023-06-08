@@ -1,4 +1,4 @@
-import type { BIP44Params } from '@shapeshiftoss/types'
+import { BIP44Params } from '@xblackfury/types'
 
 import { fromAddressNList, fromPath, toAddressNList, toPath } from './utils'
 

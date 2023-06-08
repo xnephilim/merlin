@@ -1,5 +1,5 @@
 import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import { getDefaultSlippagePercentageForSwapper } from 'constants/constants'
 import type { Asset } from 'lib/asset-service'
 import type { BuildTradeInput, GetTradeQuoteInput, TradeQuote } from 'lib/swapper/api'

@@ -58,7 +58,7 @@
         }
       },
       "cosmos": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/go/coinstacks/cosmos/api/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/go/coinstacks/cosmos/api/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/cosmos",
         "enablePostProcessFile": true,
@@ -109,19 +109,6 @@
           "useSingleRequestParameter": true
         }
       },
-      "blackfury": {
-        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/blackfury/api/src/swagger.json",
-        "generatorName": "typescript-fetch",
-        "output": "#{cwd}/src/generated/blackfury",
-        "enablePostProcessFile": true,
-        "reservedWordsMappings": {
-          "in": "in"
-        },
-        "additionalProperties": {
-          "supportsES6": "true",
-          "useSingleRequestParameter": true
-        }
-      },
       "optimism": {
         "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/optimism/api/src/swagger.json",
         "generatorName": "typescript-fetch",
@@ -135,23 +122,10 @@
           "useSingleRequestParameter": true
         }
       },
-      "polygon": {
-        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/polygon/api/src/swagger.json",
+      "blackfury": {
+        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/node/coinstacks/blackfury/api/src/swagger.json",
         "generatorName": "typescript-fetch",
-        "output": "#{cwd}/src/generated/polygon",
-        "enablePostProcessFile": true,
-        "reservedWordsMappings": {
-          "in": "in"
-        },
-        "additionalProperties": {
-          "supportsES6": "true",
-          "useSingleRequestParameter": true
-        }
-      },
-      "gnosis": {
-        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/gnosis/api/src/swagger.json",
-        "generatorName": "typescript-fetch",
-        "output": "#{cwd}/src/generated/gnosis",
+        "output": "#{cwd}/src/generated/blackfury",
         "enablePostProcessFile": true,
         "reservedWordsMappings": {
           "in": "in"
@@ -162,7 +136,7 @@
         }
       },
       "osmosis": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/go/coinstacks/osmosis/api/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/go/coinstacks/osmosis/api/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/osmosis",
         "enablePostProcessFile": true,
@@ -175,7 +149,7 @@
         }
       },
       "thorchain": {
-        "inputSpec": "https://raw.githubusercontent.com/xnephilim/hightable/develop/go/coinstacks/thorchain/api/swagger.json",
+        "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/go/coinstacks/thorchain/api/swagger.json",
         "generatorName": "typescript-fetch",
         "output": "#{cwd}/src/generated/thorchain",
         "enablePostProcessFile": true,

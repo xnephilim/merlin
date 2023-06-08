@@ -1,4 +1,4 @@
-import { ASSET_REFERENCE, fromAssetId, toAssetId } from '@xblackfury/caip'
+import { ASSET_REFERENCE, fromAssetId, toAssetId } from '@shapeshiftoss/caip'
 import type {
   DefiParams,
   DefiQueryParams,

@@ -1,4 +1,4 @@
-import { fromAssetId, fromChainId } from '@xblackfury/caip'
+import { fromAssetId, fromChainId } from '@shapeshiftoss/caip'
 import type { SignMessageInput } from '@xblackfury/chain-adapters'
 import { toAddressNList } from '@xblackfury/chain-adapters'
 import type { ETHSignMessage } from '@shapeshiftoss/hdwallet-core'

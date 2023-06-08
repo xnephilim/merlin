@@ -1,12 +1,12 @@
-import { adapters, fromAssetId } from '@xblackfury/caip'
+import { adapters, fromAssetId } from '@shapeshiftoss/caip'
 import type {
   HistoryData,
   MarketCapResult,
   MarketData,
   MarketDataArgs,
   PriceHistoryArgs,
-} from '@shapeshiftoss/types'
-import { HistoryTimeframe } from '@shapeshiftoss/types'
+} from '@xblackfury/types'
+import { HistoryTimeframe } from '@xblackfury/types'
 import axios from 'axios'
 import { bn, bnOrZero } from 'lib/bignumber/bignumber'
 

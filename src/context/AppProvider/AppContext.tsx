@@ -1,5 +1,5 @@
 import { useToast } from '@chakra-ui/react'
-import type { AccountId, AssetId, ChainId } from '@xblackfury/caip'
+import type { AccountId, AssetId, ChainId } from '@shapeshiftoss/caip'
 import {
   avalancheChainId,
   bchChainId,
@@ -10,7 +10,7 @@ import {
   fromAccountId,
   ltcChainId,
   osmosisChainId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import { DEFAULT_HISTORY_TIMEFRAME } from 'constants/Config'
 import difference from 'lodash/difference'
 import pull from 'lodash/pull'

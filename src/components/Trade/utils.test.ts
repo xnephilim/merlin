@@ -1,4 +1,4 @@
-import { btcAssetId } from '@xblackfury/caip'
+import { btcAssetId } from '@shapeshiftoss/caip'
 import { Err, Ok } from '@sniptt/monads'
 import { isTradingActive } from 'components/Trade/utils'
 import { SwapperName } from 'lib/swapper/api'

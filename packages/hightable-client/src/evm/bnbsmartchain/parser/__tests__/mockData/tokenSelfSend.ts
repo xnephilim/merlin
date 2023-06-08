@@ -1,4 +1,4 @@
-import type { Tx } from '../../../../../generated/bnbsmartchain'
+import { Tx } from '../../../../../generated/bnbsmartchain'
 import { mempoolMock } from './mempoolMock'
 
 export const tokenSelfSend: Tx = {

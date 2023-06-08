@@ -1,5 +1,5 @@
 import { MaxUint256 } from '@ethersproject/constants'
-import { ethAssetId, fromAccountId } from '@xblackfury/caip'
+import { ethAssetId, fromAccountId } from '@shapeshiftoss/caip'
 import type { ethereum } from '@xblackfury/chain-adapters'
 import {
   ETH_MERLIN_POOL_CONTRACT_ADDRESS,

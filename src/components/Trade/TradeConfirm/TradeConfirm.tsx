@@ -15,8 +15,8 @@ import {
   StackDivider,
   useColorModeValue,
 } from '@chakra-ui/react'
-import type { ChainId } from '@xblackfury/caip'
-import { fromAccountId, thorchainAssetId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { fromAccountId, thorchainAssetId } from '@shapeshiftoss/caip'
 import { TxStatus } from '@xblackfury/hightable-client'
 import { Err } from '@sniptt/monads'
 import { useCallback, useEffect, useMemo, useState } from 'react'

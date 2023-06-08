@@ -1,4 +1,4 @@
-import type { ChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
 import type { Asset } from 'lib/asset-service'
 
 import type { TradeQuote } from '../api'

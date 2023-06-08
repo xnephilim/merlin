@@ -1,6 +1,6 @@
 import { ArrowDownIcon, ArrowUpIcon, WarningTwoIcon } from '@chakra-ui/icons'
 import { Box, Button, Flex, SimpleGrid, Stack, Tag, useColorModeValue } from '@chakra-ui/react'
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import { TradeType, TransferType, TxStatus } from '@xblackfury/hightable-client'
 import React, { useMemo } from 'react'
 import { FaArrowRight, FaExchangeAlt, FaStickyNote, FaThumbsUp } from 'react-icons/fa'

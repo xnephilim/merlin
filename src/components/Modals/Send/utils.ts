@@ -1,11 +1,11 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
+import type { AssetId, ChainId } from '@shapeshiftoss/caip'
 import {
   ASSET_NAMESPACE,
   CHAIN_NAMESPACE,
   fromAccountId,
   fromAssetId,
   fromChainId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import type {
   CosmosSdkBaseAdapter,
   CosmosSdkChainId,
@@ -22,7 +22,7 @@ import {
 } from '@xblackfury/chain-adapters'
 import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
 import { supportsETH } from '@shapeshiftoss/hdwallet-core'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import { getChainAdapterManager } from 'context/PluginProvider/chainAdapterSingleton'
 import { getSupportedEvmChainIds } from 'hooks/useEvm/useEvm'
 import { bn, bnOrZero } from 'lib/bignumber/bignumber'

@@ -1,4 +1,4 @@
-import type { Vault } from '@yfi/sdk'
+import { Vault } from '@yfi/sdk'
 import realFs from 'fs'
 import toLower from 'lodash/toLower'
 
@@ -187,13 +187,13 @@ const vault3: Vault = {
 
 jest.mock('fs', () => ({
   promises: {
-    writeFile: jest.fn(() => undefined),
+    writeFile: jest.fn(async () => undefined),
   },
 }))
 
 describe('adapters:yearn:utils', () => {
   describe('yearn: parseEthData', () => {
-    it('can parse eth data', () => {
+    it('can parse eth data', async () => {
       const result = parseEthData([vault1, vault2, vault3])
       const expected = {
         [`eip155:1/erc20:${toLower(vault1.address)}`]: vault1.address,

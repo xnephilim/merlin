@@ -1,6 +1,6 @@
 import { Center } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import type { AccountId } from '@shapeshiftoss/caip'
+import { KnownChainIds } from '@xblackfury/types'
 import { ethers } from 'ethers'
 import { DefiModalContent } from 'features/defi/components/DefiModal/DefiModalContent'
 import { DefiModalHeader } from 'features/defi/components/DefiModal/DefiModalHeader'

@@ -1,6 +1,6 @@
-import { ethChainId } from '@xblackfury/caip'
+import { ethChainId } from '@shapeshiftoss/caip'
 import type { HDWallet } from '@shapeshiftoss/hdwallet-core'
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import {
   BTC,
   ETH,

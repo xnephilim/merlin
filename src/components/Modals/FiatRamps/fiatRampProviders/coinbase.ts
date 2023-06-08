@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { merlinAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { merlinAssetId } from '@shapeshiftoss/caip'
 
 import type { CreateUrlProps } from '../types'
 

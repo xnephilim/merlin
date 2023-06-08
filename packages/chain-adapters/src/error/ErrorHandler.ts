@@ -1,4 +1,4 @@
-import type { AxiosError } from 'axios'
+import { AxiosError } from 'axios'
 
 export const ErrorHandler = async (err: unknown): Promise<never> => {
   if ((err as AxiosError).isAxiosError) {

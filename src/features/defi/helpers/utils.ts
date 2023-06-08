@@ -1,5 +1,5 @@
-import type { AccountId, ChainId } from '@xblackfury/caip'
-import { cosmosChainId, osmosisChainId } from '@xblackfury/caip'
+import type { AccountId, ChainId } from '@shapeshiftoss/caip'
+import { cosmosChainId, osmosisChainId } from '@shapeshiftoss/caip'
 import type {
   evm,
   EvmChainAdapter,

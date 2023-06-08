@@ -12,8 +12,8 @@ import {
   Tabs,
   Text as CText,
 } from '@chakra-ui/react'
-import type { AssetId } from '@xblackfury/caip'
-import { merlinAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { merlinAssetId } from '@shapeshiftoss/caip'
 import { supportsETH } from '@shapeshiftoss/hdwallet-core/dist/wallet'
 import isEqual from 'lodash/isEqual'
 import qs from 'qs'

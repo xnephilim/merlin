@@ -1,4 +1,4 @@
-import { ethAssetId, ethChainId, merlinAssetId } from '@xblackfury/caip'
+import { ethAssetId, ethChainId, merlinAssetId } from '@shapeshiftoss/caip'
 import type { Asset } from 'lib/asset-service'
 
 export const WETH: Asset = {

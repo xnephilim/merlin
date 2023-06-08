@@ -1,5 +1,5 @@
-import type { AssetId, ToAssetIdArgs } from '@xblackfury/caip'
-import { adapters, fromAssetId } from '@xblackfury/caip'
+import type { AssetId, ToAssetIdArgs } from '@shapeshiftoss/caip'
+import { adapters, fromAssetId } from '@shapeshiftoss/caip'
 import { bn, bnOrZero } from 'lib/bignumber/bignumber'
 import { selectAssetById } from 'state/slices/assetsSlice/selectors'
 import { selectMarketDataById } from 'state/slices/marketDataSlice/selectors'

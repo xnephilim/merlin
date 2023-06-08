@@ -11,8 +11,8 @@ import {
   PopoverTrigger,
   Stack,
 } from '@chakra-ui/react'
-import type { AccountId } from '@xblackfury/caip'
-import type { MarketData } from '@shapeshiftoss/types'
+import type { AccountId } from '@shapeshiftoss/caip'
+import type { MarketData } from '@xblackfury/types'
 import type { PropsWithChildren, ReactNode } from 'react'
 import React from 'react'
 import type { ControllerProps, FieldValues } from 'react-hook-form'

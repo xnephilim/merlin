@@ -1,4 +1,4 @@
-import { fromAssetId } from '@xblackfury/caip'
+import { fromAssetId } from '@shapeshiftoss/caip'
 import type { Asset } from 'lib/asset-service'
 
 import { filterAssetsBySearchTerm } from './filterAssetsBySearchTerm'

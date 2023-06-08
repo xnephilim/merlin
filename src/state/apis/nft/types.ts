@@ -1,4 +1,4 @@
-import type { AssetId, ChainId } from '@xblackfury/caip'
+import type { AssetId, ChainId } from '@shapeshiftoss/caip'
 
 import type { MediaUrl } from '../zapper/validators'
 

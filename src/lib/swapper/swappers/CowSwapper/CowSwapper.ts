@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { isNft } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { isNft } from '@shapeshiftoss/caip'
 import type { Result } from '@sniptt/monads'
 import type {
   BuildTradeInput,

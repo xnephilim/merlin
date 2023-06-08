@@ -1,4 +1,4 @@
-import { HistoryTimeframe } from '@shapeshiftoss/types'
+import { HistoryTimeframe } from '@xblackfury/types'
 import axios from 'axios'
 import { bn } from 'lib/bignumber/bignumber'
 

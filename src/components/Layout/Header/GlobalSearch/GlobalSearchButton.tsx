@@ -14,7 +14,7 @@ import {
   useEventListener,
   useUpdateEffect,
 } from '@chakra-ui/react'
-import { fromAssetId } from '@xblackfury/caip'
+import { fromAssetId } from '@shapeshiftoss/caip'
 import { isEvmChainId } from '@xblackfury/chain-adapters'
 import { DefiAction } from 'features/defi/contexts/DefiManagerProvider/DefiCommon'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'

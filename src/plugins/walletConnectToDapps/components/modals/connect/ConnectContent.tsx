@@ -11,8 +11,8 @@ import {
   Link,
   VStack,
 } from '@chakra-ui/react'
-import type { AssetId } from '@xblackfury/caip'
-import { ethAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { ethAssetId } from '@shapeshiftoss/caip'
 import {
   isValidWalletConnectUri,
   isWalletConnectV1Uri,

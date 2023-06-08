@@ -1,4 +1,4 @@
-import { ethAssetId } from '@xblackfury/caip'
+import { ethAssetId } from '@shapeshiftoss/caip'
 import { useEffect } from 'react'
 import { selectFeeAssetById } from 'state/slices/assetsSlice/selectors'
 import { useAppSelector } from 'state/store'

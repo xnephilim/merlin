@@ -1,4 +1,4 @@
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import { baseUnitToHuman, bn, convertPrecision } from 'lib/bignumber/bignumber'
 import type { ProtocolFee } from 'lib/swapper/api'
 import { BTC, ETH, MERLIN_MAINNET } from 'lib/swapper/swappers/utils/test-data/assets'

@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/dist/query/react'
-import type { AccountId, AssetId } from '@xblackfury/caip'
-import { ethAssetId, ethChainId, fromAssetId, toAccountId, toAssetId } from '@xblackfury/caip'
+import type { AccountId, AssetId } from '@shapeshiftoss/caip'
+import { ethAssetId, ethChainId, fromAssetId, toAccountId, toAssetId } from '@shapeshiftoss/caip'
 import { evmChainIds } from '@xblackfury/chain-adapters'
 import type { AxiosRequestConfig } from 'axios'
 import axios from 'axios'

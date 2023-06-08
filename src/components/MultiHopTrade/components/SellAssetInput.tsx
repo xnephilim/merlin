@@ -1,4 +1,4 @@
-import type { AccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
 import { useCallback, useState } from 'react'
 import { TradeAssetInput } from 'components/Trade/Components/TradeAssetInput'
 import type { Asset } from 'lib/asset-service'

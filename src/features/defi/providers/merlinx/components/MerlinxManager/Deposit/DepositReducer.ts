@@ -1,4 +1,4 @@
-import { KnownChainIds } from '@shapeshiftoss/types'
+import { KnownChainIds } from '@xblackfury/types'
 import { bn } from 'lib/bignumber/bignumber'
 import { DefiType } from 'state/slices/opportunitiesSlice/types'
 

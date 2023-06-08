@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading, Stack } from '@chakra-ui/react'
-import type { AssetId } from '@xblackfury/caip'
-import { ethAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { ethAssetId } from '@shapeshiftoss/caip'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslate } from 'react-polyglot'
 import { useParams } from 'react-router'

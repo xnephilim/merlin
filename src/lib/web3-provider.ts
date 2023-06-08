@@ -1,4 +1,4 @@
-import type { ChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
 import {
   avalancheChainId,
   bscChainId,
@@ -6,7 +6,7 @@ import {
   gnosisChainId,
   optimismChainId,
   polygonChainId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import { getConfig } from 'config'
 import Web3 from 'web3'
 

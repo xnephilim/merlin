@@ -1,4 +1,4 @@
-import { ethAssetId, thorchainAssetId } from '@xblackfury/caip'
+import { ethAssetId, thorchainAssetId } from '@shapeshiftoss/caip'
 import { isKeepKey } from '@shapeshiftoss/hdwallet-keepkey'
 import { useMemo } from 'react'
 import { useWallet } from 'hooks/useWallet/useWallet'

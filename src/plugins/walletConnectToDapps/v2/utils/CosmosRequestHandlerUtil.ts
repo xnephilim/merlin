@@ -1,6 +1,6 @@
 import type { JsonRpcResult } from '@json-rpc-tools/utils'
 import { formatJsonRpcResult } from '@json-rpc-tools/utils'
-import type { AccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
 import type { ChainAdapter, CosmosSdkChainId } from '@xblackfury/chain-adapters'
 import { toAddressNList } from '@xblackfury/chain-adapters'
 import type { Cosmos, CosmosSignTx, HDWallet } from '@shapeshiftoss/hdwallet-core'

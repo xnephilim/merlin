@@ -1,6 +1,6 @@
 import { AddressZero } from '@ethersproject/constants'
-import { ethAssetId, ethChainId, merlinAssetId } from '@xblackfury/caip'
-import { UtxoAccountType } from '@shapeshiftoss/types'
+import { ethAssetId, ethChainId, merlinAssetId } from '@shapeshiftoss/caip'
+import { UtxoAccountType } from '@xblackfury/types'
 import { Dex, TradeType, TransferType, TxStatus } from '@xblackfury/hightable-client'
 import type { Tx } from 'state/slices/txHistorySlice/txHistorySlice'
 

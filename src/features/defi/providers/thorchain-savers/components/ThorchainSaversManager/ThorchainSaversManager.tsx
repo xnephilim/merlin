@@ -1,4 +1,4 @@
-import type { AccountId } from '@xblackfury/caip'
+import type { AccountId } from '@shapeshiftoss/caip'
 import type {
   DefiParams,
   DefiQueryParams,

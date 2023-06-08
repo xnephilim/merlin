@@ -1,5 +1,5 @@
-import type { AssetId } from '@xblackfury/caip'
-import { ethAssetId, merlinAssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
+import { ethAssetId, merlinAssetId } from '@shapeshiftoss/caip'
 import { clearState, store } from 'state/store'
 
 import { merlinEthLpAssetId } from './constants'

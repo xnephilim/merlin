@@ -1,4 +1,4 @@
-import type { JsonFragment } from '@ethersproject/abi/lib/fragments'
+import { JsonFragment } from '@ethersproject/abi/lib/fragments'
 
 const bep20: JsonFragment[] = [
   {
@@ -126,4 +126,4 @@ const bep20: JsonFragment[] = [
   },
 ]
 
-export { bep20 }
+export default bep20

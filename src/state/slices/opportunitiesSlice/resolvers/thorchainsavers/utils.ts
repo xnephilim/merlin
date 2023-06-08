@@ -1,4 +1,4 @@
-import type { AccountId, AssetId, ChainId } from '@xblackfury/caip'
+import type { AccountId, AssetId, ChainId } from '@shapeshiftoss/caip'
 import {
   adapters,
   avalancheAssetId,
@@ -11,7 +11,7 @@ import {
   fromAccountId,
   fromAssetId,
   ltcAssetId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 import type { UtxoBaseAdapter, UtxoChainId } from '@xblackfury/chain-adapters'
 import axios from 'axios'
 import { getConfig } from 'config'

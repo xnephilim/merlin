@@ -1,4 +1,4 @@
-import { HistoryTimeframe } from '@shapeshiftoss/types'
+import { HistoryTimeframe } from '@xblackfury/types'
 import { useEffect } from 'react'
 import { marketApi } from 'state/slices/marketDataSlice/marketDataSlice'
 import { useAppDispatch, useAppSelector } from 'state/store'

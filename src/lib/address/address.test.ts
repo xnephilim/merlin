@@ -5,7 +5,7 @@ import {
   ethChainId,
   ltcAssetId,
   ltcChainId,
-} from '@xblackfury/caip'
+} from '@shapeshiftoss/caip'
 
 import type { ParseAddressByChainIdOutput } from './address'
 import { parseMaybeUrlWithChainId } from './address'

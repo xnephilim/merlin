@@ -1,15 +1,19 @@
-import type { AssetId } from '@xblackfury/caip'
-import { ASSET_REFERENCE, ethAssetId } from '@xblackfury/caip'
-import type { BIP44Params } from '@shapeshiftoss/types'
-import { KnownChainIds } from '@shapeshiftoss/types'
 import * as hightable from '@xblackfury/hightable-client'
+import { BIP44Params, KnownChainIds } from '@xblackfury/types'
+import { ASSET_REFERENCE, AssetId, ethAssetId } from '@xgridiron/caip'
+import axios from 'axios'
 
-import type { FeeDataEstimate, GetFeeDataInput, ValidAddressResult } from '../../types'
-import { ChainAdapterDisplayName, ValidAddressResultType } from '../../types'
-import { bn, bnOrZero } from '../../utils'
-import type { ChainAdapterArgs } from '../EvmBaseAdapter'
-import { EvmBaseAdapter } from '../EvmBaseAdapter'
-import type { GasFeeDataEstimate } from '../types'
+import { ChainAdapterDisplayName } from '../../types'
+import {
+  FeeDataEstimate,
+  GetFeeDataInput,
+  ValidAddressResult,
+  ValidAddressResultType,
+  ZrxGasApiResponse,
+} from '../../types'
+import { bn, bnOrZero, calcFee } from '../../utils'
+import { ChainAdapterArgs, EvmBaseAdapter } from '../EvmBaseAdapter'
+import { GasFeeDataEstimate } from '../types'
 
 const SUPPORTED_CHAIN_IDS = [KnownChainIds.EthereumMainnet]
 const DEFAULT_CHAIN_ID = KnownChainIds.EthereumMainnet
@@ -25,20 +29,18 @@ export class ChainAdapter extends EvmBaseAdapter<KnownChainIds.EthereumMainnet> 
 
   constructor(args: ChainAdapterArgs<hightable.ethereum.V1Api>) {
     super({
-      assetId: ethAssetId,
       chainId: DEFAULT_CHAIN_ID,
-      defaultBIP44Params: ChainAdapter.defaultBIP44Params,
-      parser: new hightable.ethereum.TransactionParser({
-        assetId: ethAssetId,
-        chainId: args.chainId ?? DEFAULT_CHAIN_ID,
-        rpcUrl: args.rpcUrl,
-        api: args.providers.http,
-      }),
       supportedChainIds: SUPPORTED_CHAIN_IDS,
+      defaultBIP44Params: ChainAdapter.defaultBIP44Params,
       ...args,
     })
 
     this.api = args.providers.http
+    this.assetId = ethAssetId
+    this.parser = new hightable.ethereum.TransactionParser({
+      chainId: this.chainId,
+      rpcUrl: this.rpcUrl,
+    })
   }
 
   getDisplayName() {
@@ -61,23 +63,43 @@ export class ChainAdapter extends EvmBaseAdapter<KnownChainIds.EthereumMainnet> 
   }
 
   async getGasFeeData(): Promise<GasFeeDataEstimate> {
-    const { fast, average, slow } = await this.api.getGasFees()
+    const { data: responseData } = await axios.get<ZrxGasApiResponse>('https://gas.api.0x.org/')
+    const medianFees = responseData.result.find((result) => result.source === 'MEDIAN')
+
+    if (!medianFees) throw new TypeError('ETH Gas Fees should always exist')
+
+    const { maxFeePerGas, maxPriorityFeePerGas } = await this.api.getGasFees()
+
+    const scalars = {
+      fast: bnOrZero(bn(medianFees.fast).dividedBy(medianFees.standard)),
+      average: bn(1),
+      slow: bnOrZero(bn(medianFees.low).dividedBy(medianFees.standard)),
+    }
 
     return {
       fast: {
-        gasPrice: fast.maxFeePerGas ?? '0',
-        maxFeePerGas: fast.maxFeePerGas,
-        maxPriorityFeePerGas: fast.maxPriorityFeePerGas,
+        gasPrice: bnOrZero(medianFees.fast).toString(),
+        ...(maxFeePerGas &&
+          maxPriorityFeePerGas && {
+            maxFeePerGas: calcFee(maxFeePerGas, 'fast', scalars),
+            maxPriorityFeePerGas: calcFee(maxPriorityFeePerGas, 'fast', scalars),
+          }),
       },
       average: {
-        gasPrice: average.maxFeePerGas ?? '0',
-        maxFeePerGas: average.maxFeePerGas,
-        maxPriorityFeePerGas: average.maxPriorityFeePerGas,
+        gasPrice: bnOrZero(medianFees.standard).toString(),
+        ...(maxFeePerGas &&
+          maxPriorityFeePerGas && {
+            maxFeePerGas: calcFee(maxFeePerGas, 'average', scalars),
+            maxPriorityFeePerGas: calcFee(maxPriorityFeePerGas, 'average', scalars),
+          }),
       },
       slow: {
-        gasPrice: slow.maxFeePerGas ?? '0',
-        maxFeePerGas: slow.maxFeePerGas,
-        maxPriorityFeePerGas: slow.maxPriorityFeePerGas,
+        gasPrice: bnOrZero(medianFees.low).toString(),
+        ...(maxFeePerGas &&
+          maxPriorityFeePerGas && {
+            maxFeePerGas: calcFee(maxFeePerGas, 'slow', scalars),
+            maxPriorityFeePerGas: calcFee(maxPriorityFeePerGas, 'slow', scalars),
+          }),
       },
     }
   }
@@ -92,21 +114,21 @@ export class ChainAdapter extends EvmBaseAdapter<KnownChainIds.EthereumMainnet> 
 
     return {
       fast: {
-        txFee: bnOrZero(bn(fast.gasPrice).times(gasLimit)).toFixed(0),
+        txFee: bnOrZero(bn(fast.gasPrice).times(gasLimit)).toPrecision(),
         chainSpecific: { gasLimit, ...fast },
       },
       average: {
-        txFee: bnOrZero(bn(average.gasPrice).times(gasLimit)).toFixed(0),
+        txFee: bnOrZero(bn(average.gasPrice).times(gasLimit)).toPrecision(),
         chainSpecific: { gasLimit, ...average },
       },
       slow: {
-        txFee: bnOrZero(bn(slow.gasPrice).times(gasLimit)).toFixed(0),
+        txFee: bnOrZero(bn(slow.gasPrice).times(gasLimit)).toPrecision(),
         chainSpecific: { gasLimit, ...slow },
       },
     }
   }
 
-  validateEnsAddress(address: string): ValidAddressResult {
+  async validateEnsAddress(address: string): Promise<ValidAddressResult> {
     const isValidEnsAddress = /^([0-9A-Z]([-0-9A-Z]*[0-9A-Z])?\.)+eth$/i.test(address)
     if (isValidEnsAddress) return { valid: true, result: ValidAddressResultType.Valid }
     return { valid: false, result: ValidAddressResultType.Invalid }

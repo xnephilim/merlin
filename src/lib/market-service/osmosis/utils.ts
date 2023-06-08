@@ -1,4 +1,4 @@
-import type { AssetReference } from '@xblackfury/caip'
+import type { AssetReference } from '@shapeshiftoss/caip'
 import axios from 'axios'
 
 import type { OsmosisMarketData, OsmosisPool } from './osmosis-types'

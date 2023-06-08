@@ -1,6 +1,6 @@
 import { skipToken } from '@reduxjs/toolkit/dist/query'
-import type { AssetReference, ChainId } from '@xblackfury/caip'
-import { ASSET_REFERENCE } from '@xblackfury/caip'
+import type { AssetReference, ChainId } from '@shapeshiftoss/caip'
+import { ASSET_REFERENCE } from '@shapeshiftoss/caip'
 import type { ChainAdapter, EvmChainAdapter, EvmChainId } from '@xblackfury/chain-adapters'
 import { evmChainIds } from '@xblackfury/chain-adapters'
 import type { HDWallet } from '@shapeshiftoss/hdwallet-core'

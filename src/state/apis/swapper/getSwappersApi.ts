@@ -1,4 +1,4 @@
-import type { ChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
 import { getSwapperManager } from 'components/Trade/hooks/useSwapper/swapperManager'
 import type { GetTradeQuoteInput, SwapperName, TradeQuote } from 'lib/swapper/api'
 import { swapperApi } from 'state/apis/swapper/swapperApi'

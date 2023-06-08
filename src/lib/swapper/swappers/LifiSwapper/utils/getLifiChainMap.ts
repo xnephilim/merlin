@@ -1,6 +1,6 @@
 import type { ChainId as LifiChainId, ChainKey } from '@lifi/sdk'
-import type { ChainId } from '@xblackfury/caip'
-import { fromChainId } from '@xblackfury/caip'
+import type { ChainId } from '@shapeshiftoss/caip'
+import { fromChainId } from '@shapeshiftoss/caip'
 import { evmChainIds } from '@xblackfury/chain-adapters'
 import type { Result } from '@sniptt/monads/build'
 import { Err, Ok } from '@sniptt/monads/build'

@@ -1,12 +1,11 @@
-import { btcAssetId, btcChainId } from '@xblackfury/caip'
+import { btcAssetId, btcChainId } from '@xgridiron/caip'
 
-import type { ParsedTx } from '../../../../types'
-import { TransferType, TxStatus } from '../../../../types'
+import { ParsedTx, TransferType, TxStatus } from '../../../../types'
 import { TransactionParser } from '../index'
 import standardNoChange from './mockData/standardNoChange'
 import standardWithChange from './mockData/standardWithChange'
 
-const txParser = new TransactionParser({ chainId: btcChainId, assetId: btcAssetId })
+const txParser = new TransactionParser({ chainId: btcChainId })
 
 describe('parseTx', () => {
   describe('standard', () => {

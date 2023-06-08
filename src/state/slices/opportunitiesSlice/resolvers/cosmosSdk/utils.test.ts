@@ -1,4 +1,4 @@
-import { cosmosChainId, ethChainId, osmosisChainId } from '@xblackfury/caip'
+import { cosmosChainId, ethChainId, osmosisChainId } from '@shapeshiftoss/caip'
 
 import {
   XNEPHILIM_COSMOS_VALIDATOR_ADDRESS,

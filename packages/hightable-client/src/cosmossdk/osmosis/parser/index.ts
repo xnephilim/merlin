@@ -1,9 +1,18 @@
-import type { Tx } from '../../../generated/osmosis'
+import { osmosisAssetId } from '@xgridiron/caip'
+
+import { Tx } from '../../../generated/osmosis'
 import { Dex, TradeType } from '../../../types'
-import { BaseTransactionParser } from '../../parser'
-import type { ParsedTx } from '../../parser/types'
+import { BaseTransactionParser, BaseTransactionParserArgs } from '../../parser'
+import { ParsedTx } from '../../parser/types'
+
+export type TransactionParserArgs = BaseTransactionParserArgs
 
 export class TransactionParser extends BaseTransactionParser<Tx> {
+  constructor(args: TransactionParserArgs) {
+    super(args)
+    this.assetId = osmosisAssetId
+  }
+
   async parse(tx: Tx, address: string): Promise<ParsedTx> {
     const parsedTx = await super.parse(tx, address)
 

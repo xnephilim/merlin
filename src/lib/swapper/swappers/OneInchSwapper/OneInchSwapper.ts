@@ -1,4 +1,4 @@
-import type { AssetId } from '@xblackfury/caip'
+import type { AssetId } from '@shapeshiftoss/caip'
 import type {
   avalanche,
   bnbsmartchain,
@@ -8,7 +8,7 @@ import type {
   optimism,
 } from '@xblackfury/chain-adapters'
 import { isEvmChainId } from '@xblackfury/chain-adapters'
-import type { KnownChainIds } from '@shapeshiftoss/types'
+import type { KnownChainIds } from '@xblackfury/types'
 import type { Result } from '@sniptt/monads'
 import { Err, Ok } from '@sniptt/monads'
 import { bnOrZero } from 'lib/bignumber/bignumber'
